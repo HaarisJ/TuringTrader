@@ -5,6 +5,61 @@
 
 using namespace std;
 
+class Portfolio{
+    private: 
+        int totalValue;
+        vector <string> holdings;
+        int profitLoss;
+        int numHoldings; //--> Stock??
+        int buyingPower;
+
+    public:
+        int buyShares();
+        int sellShares();
+        int getValue(int totalValue);
+        int getPL(int profitLoss);
+        int getBuyingPower(int buyingPower);
+        vector <string> getStocks();      
+};
+
+class Stock{
+    private:
+        vector <string> ticker;
+        vector <string> logo; 
+        int currentPrice;
+        int openPrice;
+        int dailyLow;
+        int dailyHigh;
+        int marketCap;
+        vector <string> news; 
+        int candles;
+
+    public:
+        // constructor, creates API objects, sets all private attributes
+        Stock();
+        // updates currentPrice, openPrice, dailyLow, dailyHigh, marketCap, news, candles
+        void updateMarketVals(); 
+        int getCurrentPrice();
+        int getOpenPrice();
+        int getPL(); //two getPL functions? 
+        int getMarketCap(int marketCap);
+        vector <string> getNews(vector <string> news);
+        void generateGraph(int candles); //Creates a graph object     
+};
+
+class User{
+    private:
+        int userID;
+        vector <string> username;
+        vector <string> password;
+        vector <string> email;
+
+    public:
+        int getUserID(int userID);
+        int getUsername(vector <string> username);
+        vector <string> getUserEmail(vector <string> email);
+};
+
 class group {
 
 public:
