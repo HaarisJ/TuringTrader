@@ -8,7 +8,7 @@ using namespace std;
 class Portfolio{
     private: 
         int totalValue;
-        vector <string> holdings;
+        vector<string> holdings;
         int profitLoss;
         int numHoldings; //--> Stock??
         int buyingPower;
@@ -19,19 +19,19 @@ class Portfolio{
         int getValue(int totalValue);
         int getPL(int profitLoss);
         int getBuyingPower(int buyingPower);
-        vector <string> getStocks();      
+        vector<string> getStocks();      
 };
 
 class Stock{
     private:
-        vector <string> ticker;
-        vector <string> logo; 
+        vector<string> ticker;
+        vector<string> logo; 
         int currentPrice;
         int openPrice;
         int dailyLow;
         int dailyHigh;
         int marketCap;
-        vector <string> news; 
+        vector<string> news; 
         int candles;
 
     public:
@@ -43,21 +43,21 @@ class Stock{
         int getOpenPrice();
         int getPL(); //two getPL functions? 
         int getMarketCap(int marketCap);
-        vector <string> getNews(vector <string> news);
+        vector<string> getNews(vector<string> news);
         void generateGraph(int candles); //Creates a graph object     
 };
 
 class User{
     private:
         int userID;
-        vector <string> username;
-        vector <string> password;
-        vector <string> email;
+        vector<string> username;
+        vector<string> password;
+        vector<string> email;
 
     public:
         int getUserID(int userID);
-        int getUsername(vector <string> username);
-        vector <string> getUserEmail(vector <string> email);
+        int getUsername(vector<string> username);
+        vector<string> getUserEmail(vector<string> email);
 };
 
 class Group {
@@ -94,10 +94,10 @@ public:
 	void resetAccount();
 	void tutorialGuide() const;
 	void changeContactInfo(string attribute, string changeTo);
-	string getUsername();
-	string getPassword();
-	string getEmail();
-	string getphoneNumber();
+	string getUsername() const;
+	string getPassword() const;
+	string getEmail() const;
+	string getphoneNumber() const;
 	void setUsername();
 	void setPassword();
 	void setEmail();
