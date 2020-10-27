@@ -60,7 +60,7 @@ class User{
         vector <string> getUserEmail(vector <string> email);
 };
 
-class group {
+class Group {
 
 public:
 	string getName() const;
@@ -76,19 +76,19 @@ private:
 
 };
 
-class trading {
+class Trading {
 
 public:
-	vector<stock> viewTrending();
+	vector<Stock> viewTrending();
 	void bigIndexVals();
-	vector<stock> stockSearch(string search);
-	vector<stock> viewWatchlist();
+	vector<Stock> stockSearch(string search);
+	vector<Stock> viewWatchlist();
 
 private:
-	vector<stock> stock;
+	vector<Stock> stock;
 };
 
-class profile {
+class Profile {
 
 public:
 	void resetAccount();
