@@ -15,15 +15,14 @@ int main(int argc, char** argv) {
     
     const char* text = r.text.c_str();
     
-    Document  d;
+    Document d;
     d.Parse(text);
 
     float price = d["c"].GetFloat();
     float open = d["c"].GetFloat();
     double time = d["c"].GetDouble();
 
-    cout << "FAM IT WORKS!!" << endl;
-    cout << "Current market price for AAPL is " << price << endl;
+    cout << "Hello, the current market price for AAPL is " << price << endl;
 
     return 0;
 }
