@@ -1,0 +1,5 @@
+﻿  Stock.cpp
+C:\School\CMPE_320\projects\TuringTraderDLL\TuringTraderDLL\Stock.h(14,16): warning C4251: 'Stock::symbol': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+     Creating library C:\School\CMPE_320\projects\TuringTraderDLL\Debug\TuringTraderDLL.lib and object C:\School\CMPE_320\projects\TuringTraderDLL\Debug\TuringTraderDLL.exp
+  TuringTraderDLL.vcxproj -> C:\School\CMPE_320\projects\TuringTraderDLL\Debug\TuringTraderDLL.dll

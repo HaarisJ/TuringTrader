@@ -1,0 +1,4 @@
+C:\School\CMPE_320\projects\TuringTraderDLL\GUI\Debug\GUI.vcxprojAssemblyReference.cache
+C:\School\CMPE_320\projects\TuringTraderDLL\GUI\Debug\GUI.CompanyPage.resources
+C:\School\CMPE_320\projects\TuringTraderDLL\GUI\Debug\GUI.vcxproj.GenerateResource.cache
+C:\School\CMPE_320\projects\TuringTraderDLL\GUI\Debug\GUI.vcxproj.CopyComplete
