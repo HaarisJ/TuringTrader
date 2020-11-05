@@ -2,3 +2,7 @@ C:\School\CMPE_320\projects\TuringTraderDLL\GUI\Debug\GUI.vcxprojAssemblyReferen
 C:\School\CMPE_320\projects\TuringTraderDLL\GUI\Debug\GUI.CompanyPage.resources
 C:\School\CMPE_320\projects\TuringTraderDLL\GUI\Debug\GUI.vcxproj.GenerateResource.cache
 C:\School\CMPE_320\projects\TuringTraderDLL\GUI\Debug\GUI.vcxproj.CopyComplete
+C:\School\CMPE_320\turing\TuringTraderDLL\GUI\Debug\GUI.vcxprojAssemblyReference.cache
+C:\School\CMPE_320\turing\TuringTraderDLL\GUI\Debug\GUI.CompanyPage.resources
+C:\School\CMPE_320\turing\TuringTraderDLL\GUI\Debug\GUI.vcxproj.GenerateResource.cache
+C:\School\CMPE_320\turing\TuringTraderDLL\GUI\Debug\GUI.vcxproj.CopyComplete
