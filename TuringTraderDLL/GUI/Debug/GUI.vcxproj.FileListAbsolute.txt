@@ -7,6 +7,8 @@ C:\School\CMPE_320\turing\TuringTraderDLL\GUI\Debug\GUI.CompanyPage.resources
 C:\School\CMPE_320\turing\TuringTraderDLL\GUI\Debug\GUI.vcxproj.GenerateResource.cache
 C:\School\CMPE_320\turing\TuringTraderDLL\GUI\Debug\GUI.vcxproj.CopyComplete
 C:\Users\jason\OneDrive\Desktop\uni_course\turing\TuringTraderDLL\GUI\Debug\GUI.vcxprojAssemblyReference.cache
-C:\Users\jason\OneDrive\Desktop\uni_course\turing\TuringTraderDLL\GUI\Debug\GUI.CompanyPage.resources
 C:\Users\jason\OneDrive\Desktop\uni_course\turing\TuringTraderDLL\GUI\Debug\GUI.vcxproj.GenerateResource.cache
 C:\Users\jason\OneDrive\Desktop\uni_course\turing\TuringTraderDLL\GUI\Debug\GUI.vcxproj.CopyComplete
+C:\Users\jason\OneDrive\Desktop\uni_course\turing\TuringTraderDLL\GUI\Debug\GUI.TestGUI.resources
+C:\Users\jason\OneDrive\Desktop\uni_course\turing\TuringTraderDLL\GUI\Debug\GUI.CompanyPage.resources
+C:\Users\jason\OneDrive\Desktop\uni_course\turing\TuringTraderDLL\GUI\Debug\GUI.LoginPage.resources

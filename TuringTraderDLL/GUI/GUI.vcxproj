@@ -99,6 +99,7 @@
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\TuringTraderDLL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>..\TuringTraderDLL</AdditionalUsingDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies />
@@ -127,15 +128,45 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CompanyPage.cpp" />
+    <ClCompile Include="GroupsPage.cpp" />
+    <ClCompile Include="LoginPage.cpp" />
+    <ClCompile Include="PortfolioPage.cpp" />
+    <ClCompile Include="ProfilePage.cpp" />
+    <ClCompile Include="testGUI.cpp" />
+    <ClCompile Include="TradingPage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CompanyPage.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="GroupsPage.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="LoginPage.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="PortfolioPage.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ProfilePage.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="TestGUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="TradingPage.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CompanyPage.resx">
       <DependentUpon>CompanyPage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginPage.resx">
+      <DependentUpon>LoginPage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestGUI.resx">
+      <DependentUpon>TestGUI.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

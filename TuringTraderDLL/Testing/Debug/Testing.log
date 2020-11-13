@@ -1,12 +1,1 @@
-﻿  StockTests.cpp
-C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(15,22): warning C4251: 'Stock::ticker': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(16,20): warning C4251: 'Stock::name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(17,24): warning C4251: 'Stock::exchange': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(18,20): warning C4251: 'Stock::logo': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-  CompanyTests.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-     Creating library C:\School\CMPE_320\turing\TuringTraderDLL\Debug\Testing.lib and object C:\School\CMPE_320\turing\TuringTraderDLL\Debug\Testing.exp
-  Testing.vcxproj -> C:\School\CMPE_320\turing\TuringTraderDLL\Debug\Testing.exe
+﻿  Testing.vcxproj -> C:\Users\jason\OneDrive\Desktop\uni_course\turing\TuringTraderDLL\Debug\Testing.exe
