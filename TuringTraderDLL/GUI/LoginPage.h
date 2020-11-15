@@ -1,8 +1,10 @@
 #pragma once
 #include "TestGUI.h"
+#include "MainGUI.h"
 
 namespace GUI {
 	using namespace AppGUI;
+	using namespace MainAppGUI;
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -40,7 +42,8 @@ namespace GUI {
 	private: System::Windows::Forms::Label^ titleLabel;
 	private: System::Windows::Forms::Label^ subtitleLabel;
 	private: System::Windows::Forms::LinkLabel^ CreateAccount;
-	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ loginLabel;
+
 	private: System::Windows::Forms::Button^ loginBtn;
 	private: System::Windows::Forms::LinkLabel^ forgotPassword;
 	private: System::Windows::Forms::TextBox^ passwordInput;
@@ -65,7 +68,7 @@ namespace GUI {
 			this->titleLabel = (gcnew System::Windows::Forms::Label());
 			this->subtitleLabel = (gcnew System::Windows::Forms::Label());
 			this->CreateAccount = (gcnew System::Windows::Forms::LinkLabel());
-			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->loginLabel = (gcnew System::Windows::Forms::Label());
 			this->loginBtn = (gcnew System::Windows::Forms::Button());
 			this->forgotPassword = (gcnew System::Windows::Forms::LinkLabel());
 			this->passwordInput = (gcnew System::Windows::Forms::TextBox());
@@ -80,10 +83,11 @@ namespace GUI {
 			this->loginTitle->BackColor = System::Drawing::SystemColors::ButtonShadow;
 			this->loginTitle->Controls->Add(this->titleLabel);
 			this->loginTitle->Controls->Add(this->subtitleLabel);
-			this->loginTitle->Location = System::Drawing::Point(1, 2);
+			this->loginTitle->Dock = System::Windows::Forms::DockStyle::Left;
+			this->loginTitle->Location = System::Drawing::Point(0, 0);
 			this->loginTitle->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->loginTitle->Name = L"loginTitle";
-			this->loginTitle->Size = System::Drawing::Size(437, 751);
+			this->loginTitle->Size = System::Drawing::Size(437, 700);
 			this->loginTitle->TabIndex = 20;
 			// 
 			// titleLabel
@@ -120,16 +124,16 @@ namespace GUI {
 			this->CreateAccount->TabStop = true;
 			this->CreateAccount->Text = L"Create Account";
 			// 
-			// label2
+			// loginLabel
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 25.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->loginLabel->AutoSize = true;
+			this->loginLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 25.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(582, 123);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(445, 51);
-			this->label2->TabIndex = 18;
-			this->label2->Text = L"Login to Turing Trader";
+			this->loginLabel->Location = System::Drawing::Point(582, 123);
+			this->loginLabel->Name = L"loginLabel";
+			this->loginLabel->Size = System::Drawing::Size(445, 51);
+			this->loginLabel->TabIndex = 18;
+			this->loginLabel->Text = L"Login to Turing Trader";
 			// 
 			// loginBtn
 			// 
@@ -207,13 +211,14 @@ namespace GUI {
 			this->ClientSize = System::Drawing::Size(1200, 700);
 			this->Controls->Add(this->loginTitle);
 			this->Controls->Add(this->CreateAccount);
-			this->Controls->Add(this->label2);
+			this->Controls->Add(this->loginLabel);
 			this->Controls->Add(this->loginBtn);
 			this->Controls->Add(this->forgotPassword);
 			this->Controls->Add(this->passwordInput);
 			this->Controls->Add(this->password);
 			this->Controls->Add(this->usernameInput);
 			this->Controls->Add(this->username);
+			this->MaximumSize = System::Drawing::Size(1218, 747);
 			this->Name = L"LoginPage";
 			this->Text = L"LoginPage";
 			this->Load += gcnew System::EventHandler(this, &LoginPage::LoginPage_Load);
@@ -227,7 +232,7 @@ namespace GUI {
 	private: System::Void LoginPage_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void loginBtn_Click(System::Object^ sender, System::EventArgs^ e) {
-		testGUI^ test = gcnew testGUI();
+		MainGUI^ test = gcnew MainGUI();
 		this->Hide();
 		test->ShowDialog();
 		this->Show();

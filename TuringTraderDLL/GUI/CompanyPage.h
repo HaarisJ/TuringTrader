@@ -36,6 +36,14 @@ namespace CompanyPageGUI {
 		}
 	private: System::Windows::Forms::Button^ button1;
 	protected:
+
+	protected:
+
+	protected:
+
+	protected:
+
+	protected:
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
@@ -85,12 +93,12 @@ namespace CompanyPageGUI {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -106,13 +114,14 @@ namespace CompanyPageGUI {
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Back";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &CompanyPage::button1_Click);
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(284, 470);
+			this->label1->Location = System::Drawing::Point(284, 447);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(238, 32);
 			this->label1->TabIndex = 1;
@@ -125,7 +134,7 @@ namespace CompanyPageGUI {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label2->Location = System::Drawing::Point(198, 194);
+			this->label2->Location = System::Drawing::Point(198, 171);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(141, 32);
 			this->label2->TabIndex = 2;
@@ -136,7 +145,7 @@ namespace CompanyPageGUI {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(43, 194);
+			this->label3->Location = System::Drawing::Point(43, 171);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(88, 32);
 			this->label3->TabIndex = 3;
@@ -144,7 +153,7 @@ namespace CompanyPageGUI {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(500, 190);
+			this->button2->Location = System::Drawing::Point(500, 167);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(64, 32);
 			this->button2->TabIndex = 4;
@@ -157,7 +166,7 @@ namespace CompanyPageGUI {
 			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button3->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->button3->Location = System::Drawing::Point(630, 190);
+			this->button3->Location = System::Drawing::Point(630, 167);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(205, 36);
 			this->button3->TabIndex = 5;
@@ -166,10 +175,11 @@ namespace CompanyPageGUI {
 			// 
 			// label4
 			// 
+			this->label4->Anchor = System::Windows::Forms::AnchorStyles::Right;
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(1021, 235);
+			this->label4->Location = System::Drawing::Point(1008, 186);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(224, 36);
 			this->label4->TabIndex = 6;
@@ -177,10 +187,11 @@ namespace CompanyPageGUI {
 			// 
 			// label5
 			// 
+			this->label5->Anchor = System::Windows::Forms::AnchorStyles::Right;
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(1059, 321);
+			this->label5->Location = System::Drawing::Point(1046, 272);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(105, 25);
 			this->label5->TabIndex = 7;
@@ -188,10 +199,11 @@ namespace CompanyPageGUI {
 			// 
 			// label6
 			// 
+			this->label6->Anchor = System::Windows::Forms::AnchorStyles::Right;
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(1059, 430);
+			this->label6->Location = System::Drawing::Point(1046, 381);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(105, 25);
 			this->label6->TabIndex = 8;
@@ -199,10 +211,11 @@ namespace CompanyPageGUI {
 			// 
 			// label7
 			// 
+			this->label7->Anchor = System::Windows::Forms::AnchorStyles::Right;
 			this->label7->AutoSize = true;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(1059, 374);
+			this->label7->Location = System::Drawing::Point(1046, 325);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(105, 25);
 			this->label7->TabIndex = 9;
@@ -210,10 +223,11 @@ namespace CompanyPageGUI {
 			// 
 			// label8
 			// 
+			this->label8->Anchor = System::Windows::Forms::AnchorStyles::Right;
 			this->label8->AutoSize = true;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(1021, 539);
+			this->label8->Location = System::Drawing::Point(1022, 492);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(92, 36);
 			this->label8->TabIndex = 10;
@@ -221,9 +235,10 @@ namespace CompanyPageGUI {
 			// 
 			// textBox1
 			// 
+			this->textBox1->Anchor = System::Windows::Forms::AnchorStyles::Right;
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(1027, 608);
+			this->textBox1->Location = System::Drawing::Point(1028, 561);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(286, 38);
 			this->textBox1->TabIndex = 11;
@@ -231,11 +246,12 @@ namespace CompanyPageGUI {
 			// 
 			// button4
 			// 
+			this->button4->Anchor = System::Windows::Forms::AnchorStyles::Right;
 			this->button4->BackColor = System::Drawing::Color::MediumSeaGreen;
 			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button4->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->button4->Location = System::Drawing::Point(1027, 678);
+			this->button4->Location = System::Drawing::Point(1028, 631);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(107, 48);
 			this->button4->TabIndex = 12;
@@ -244,11 +260,12 @@ namespace CompanyPageGUI {
 			// 
 			// button5
 			// 
+			this->button5->Anchor = System::Windows::Forms::AnchorStyles::Right;
 			this->button5->BackColor = System::Drawing::Color::Crimson;
 			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button5->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->button5->Location = System::Drawing::Point(1206, 678);
+			this->button5->Location = System::Drawing::Point(1207, 631);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(107, 48);
 			this->button5->TabIndex = 13;
@@ -257,6 +274,7 @@ namespace CompanyPageGUI {
 			// 
 			// tableLayoutPanel1
 			// 
+			this->tableLayoutPanel1->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->tableLayoutPanel1->ColumnCount = 2;
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				50)));
@@ -268,7 +286,7 @@ namespace CompanyPageGUI {
 			this->tableLayoutPanel1->Controls->Add(this->label11, 0, 1);
 			this->tableLayoutPanel1->Controls->Add(this->label10, 1, 0);
 			this->tableLayoutPanel1->Controls->Add(this->label9, 0, 0);
-			this->tableLayoutPanel1->Location = System::Drawing::Point(106, 718);
+			this->tableLayoutPanel1->Location = System::Drawing::Point(106, 662);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 3;
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 33.33333F)));
@@ -276,61 +294,6 @@ namespace CompanyPageGUI {
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 33.33333F)));
 			this->tableLayoutPanel1->Size = System::Drawing::Size(659, 140);
 			this->tableLayoutPanel1->TabIndex = 14;
-			// 
-			// label9
-			// 
-			this->label9->AutoSize = true;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(3, 0);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(126, 25);
-			this->label9->TabIndex = 0;
-			this->label9->Text = L"Market Open";
-			// 
-			// label10
-			// 
-			this->label10->AutoSize = true;
-			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label10->Location = System::Drawing::Point(332, 0);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(72, 25);
-			this->label10->TabIndex = 1;
-			this->label10->Text = L"112.89";
-			// 
-			// label11
-			// 
-			this->label11->AutoSize = true;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label11->Location = System::Drawing::Point(3, 46);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(76, 25);
-			this->label11->TabIndex = 2;
-			this->label11->Text = L"P&L Day";
-			// 
-			// label12
-			// 
-			this->label12->AutoSize = true;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label12->Location = System::Drawing::Point(332, 46);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(64, 25);
-			this->label12->TabIndex = 3;
-			this->label12->Text = L"-3.3%";
-			// 
-			// label13
-			// 
-			this->label13->AutoSize = true;
-			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label13->Location = System::Drawing::Point(3, 92);
-			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(114, 25);
-			this->label13->TabIndex = 4;
-			this->label13->Text = L"Market Cap";
 			// 
 			// label14
 			// 
@@ -343,11 +306,66 @@ namespace CompanyPageGUI {
 			this->label14->TabIndex = 5;
 			this->label14->Text = L"1.93 T";
 			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label13->Location = System::Drawing::Point(3, 92);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(114, 25);
+			this->label13->TabIndex = 4;
+			this->label13->Text = L"Market Cap";
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label12->Location = System::Drawing::Point(332, 46);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(64, 25);
+			this->label12->TabIndex = 3;
+			this->label12->Text = L"-3.3%";
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label11->Location = System::Drawing::Point(3, 46);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(76, 25);
+			this->label11->TabIndex = 2;
+			this->label11->Text = L"P&L Day";
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label10->Location = System::Drawing::Point(332, 0);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(72, 25);
+			this->label10->TabIndex = 1;
+			this->label10->Text = L"112.89";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label9->Location = System::Drawing::Point(3, 0);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(126, 25);
+			this->label9->TabIndex = 0;
+			this->label9->Text = L"Market Open";
+			// 
 			// CompanyPage
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1600, 900);
+			this->ClientSize = System::Drawing::Size(1582, 903);
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
@@ -364,7 +382,7 @@ namespace CompanyPageGUI {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button1);
 			this->Name = L"CompanyPage";
-			this->Text = L"a";
+			this->Text = L"Apple Inc.";
 			this->Load += gcnew System::EventHandler(this, &CompanyPage::CompanyPage_Load);
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->tableLayoutPanel1->PerformLayout();
@@ -377,5 +395,8 @@ namespace CompanyPageGUI {
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
 };
 }

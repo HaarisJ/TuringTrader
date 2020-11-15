@@ -130,6 +130,7 @@
     <ClCompile Include="CompanyPage.cpp" />
     <ClCompile Include="GroupsPage.cpp" />
     <ClCompile Include="LoginPage.cpp" />
+    <ClCompile Include="MainGUI.cpp" />
     <ClCompile Include="PortfolioPage.cpp" />
     <ClCompile Include="ProfilePage.cpp" />
     <ClCompile Include="testGUI.cpp" />
@@ -143,6 +144,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="LoginPage.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MainGUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PortfolioPage.h">
@@ -162,11 +166,26 @@
     <EmbeddedResource Include="CompanyPage.resx">
       <DependentUpon>CompanyPage.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GroupsPage.resx">
+      <DependentUpon>GroupsPage.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainGUI.resx">
+      <DependentUpon>MainGUI.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PortfolioPage.resx">
+      <DependentUpon>PortfolioPage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfilePage.resx">
+      <DependentUpon>ProfilePage.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TestGUI.resx">
       <DependentUpon>TestGUI.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TradingPage.resx">
+      <DependentUpon>TradingPage.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

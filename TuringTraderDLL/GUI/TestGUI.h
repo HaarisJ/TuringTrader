@@ -568,6 +568,7 @@ private: System::Windows::Forms::Label^ label71;
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Logout";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &testGUI::button1_Click_1);
 			// 
 			// portfolioTab
 			// 
@@ -1563,7 +1564,7 @@ private: System::Windows::Forms::Label^ label71;
 			// 
 			// button12
 			// 
-			this->button12->Location = System::Drawing::Point(827, 613);
+			this->button12->Location = System::Drawing::Point(888, 600);
 			this->button12->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button12->Name = L"button12";
 			this->button12->Size = System::Drawing::Size(264, 53);
@@ -1575,7 +1576,7 @@ private: System::Windows::Forms::Label^ label71;
 			// 
 			this->panel4->BackColor = System::Drawing::Color::Black;
 			this->panel4->Controls->Add(this->pictureBox1);
-			this->panel4->Location = System::Drawing::Point(1037, 540);
+			this->panel4->Location = System::Drawing::Point(1098, 527);
 			this->panel4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel4->Name = L"panel4";
 			this->panel4->Size = System::Drawing::Size(53, 58);
@@ -1594,7 +1595,7 @@ private: System::Windows::Forms::Label^ label71;
 			// label70
 			// 
 			this->label70->AutoSize = true;
-			this->label70->Location = System::Drawing::Point(732, 479);
+			this->label70->Location = System::Drawing::Point(793, 466);
 			this->label70->Name = L"label70";
 			this->label70->Size = System::Drawing::Size(493, 100);
 			this->label70->TabIndex = 16;
@@ -1605,7 +1606,7 @@ private: System::Windows::Forms::Label^ label71;
 			// 
 			this->label69->AutoSize = true;
 			this->label69->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18));
-			this->label69->Location = System::Drawing::Point(867, 417);
+			this->label69->Location = System::Drawing::Point(928, 404);
 			this->label69->Name = L"label69";
 			this->label69->Size = System::Drawing::Size(210, 36);
 			this->label69->TabIndex = 15;
@@ -1616,7 +1617,7 @@ private: System::Windows::Forms::Label^ label71;
 			this->label68->AutoSize = true;
 			this->label68->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label68->Location = System::Drawing::Point(759, 298);
+			this->label68->Location = System::Drawing::Point(820, 285);
 			this->label68->Name = L"label68";
 			this->label68->Size = System::Drawing::Size(371, 51);
 			this->label68->TabIndex = 14;
@@ -1628,7 +1629,7 @@ private: System::Windows::Forms::Label^ label71;
 			this->label67->AutoSize = true;
 			this->label67->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label67->Location = System::Drawing::Point(759, 165);
+			this->label67->Location = System::Drawing::Point(820, 152);
 			this->label67->Name = L"label67";
 			this->label67->Size = System::Drawing::Size(186, 51);
 			this->label67->TabIndex = 13;
@@ -1639,7 +1640,7 @@ private: System::Windows::Forms::Label^ label71;
 			this->label66->AutoSize = true;
 			this->label66->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label66->Location = System::Drawing::Point(915, 87);
+			this->label66->Location = System::Drawing::Point(976, 74);
 			this->label66->Name = L"label66";
 			this->label66->Size = System::Drawing::Size(84, 38);
 			this->label66->TabIndex = 12;
@@ -1852,7 +1853,15 @@ private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e)
 }
 private: System::Void label21_Click(System::Object^ sender, System::EventArgs^ e) {
 	CompanyPage^ testCompany = gcnew CompanyPage();
-	testCompany->ShowDialog();
+	testCompany->TopLevel = false;
+	testCompany->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+	testCompany->Dock = System::Windows::Forms::DockStyle::Fill;
+	this->settingsTab->Controls->Add(testCompany);
+	testCompany->BringToFront();
+	testCompany->Show();
+//	testCompany->ShowDialog();
+}
+private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
