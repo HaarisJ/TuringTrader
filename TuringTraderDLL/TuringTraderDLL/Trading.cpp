@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Trading.h"
 #include <string>
 #include <vector>

@@ -152,11 +152,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Group.h" />
     <ClInclude Include="Holding.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Portfolio.h" />
+    <ClInclude Include="Profile.h" />
     <ClInclude Include="Stock.h" />
+    <ClInclude Include="Trading.h" />
+    <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\..\Desktop\Turing Trader\Group.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\Desktop\Turing Trader\Portfolio.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\Desktop\Turing Trader\Profile.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\Desktop\Turing Trader\Trading.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\Desktop\Turing Trader\User.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Holding.cpp" />
     <ClCompile Include="pch.cpp">
