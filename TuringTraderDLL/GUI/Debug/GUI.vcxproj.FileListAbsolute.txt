@@ -17,3 +17,15 @@ C:\Users\jason\OneDrive\Desktop\uni_course\turing\TuringTraderDLL\GUI\Debug\GUI.
 C:\Users\jason\OneDrive\Desktop\uni_course\turing\TuringTraderDLL\GUI\Debug\GUI.PortfolioPage.resources
 C:\Users\jason\OneDrive\Desktop\uni_course\turing\TuringTraderDLL\GUI\Debug\GUI.ProfilePage.resources
 C:\Users\jason\OneDrive\Desktop\uni_course\turing\TuringTraderDLL\GUI\Debug\GUI.TradingPage.resources
+C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.vcxprojAssemblyReference.cache
+C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.CompanyPage.resources
+C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.GroupCreationPage.resources
+C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.GroupsPage.resources
+C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.LoginPage.resources
+C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.MainGUI.resources
+C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.PortfolioPage.resources
+C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.ProfilePage.resources
+C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.TestGUI.resources
+C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.TradingPage.resources
+C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.vcxproj.GenerateResource.cache
+C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.vcxproj.CopyComplete
