@@ -39,6 +39,9 @@
     <ClInclude Include="MainGUI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GroupCreationPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="testGUI.cpp">
@@ -63,6 +66,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MainGUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GroupCreationPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

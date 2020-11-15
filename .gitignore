@@ -1,3 +1,10 @@
 .vscode
 /build
 CMakeLists.txt
+ipch/
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile

@@ -1,7 +1,8 @@
 #pragma once
+#include "GroupCreationPage.h"
 
 namespace GroupsGUI {
-
+	using namespace GroupCreationGUI;
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -100,36 +101,36 @@ namespace GroupsGUI {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
-			this->label43 = (gcnew System::Windows::Forms::Label());
-			this->label42 = (gcnew System::Windows::Forms::Label());
-			this->label41 = (gcnew System::Windows::Forms::Label());
-			this->label40 = (gcnew System::Windows::Forms::Label());
-			this->label39 = (gcnew System::Windows::Forms::Label());
-			this->label38 = (gcnew System::Windows::Forms::Label());
-			this->label37 = (gcnew System::Windows::Forms::Label());
-			this->label36 = (gcnew System::Windows::Forms::Label());
-			this->label35 = (gcnew System::Windows::Forms::Label());
-			this->label34 = (gcnew System::Windows::Forms::Label());
-			this->label33 = (gcnew System::Windows::Forms::Label());
-			this->label32 = (gcnew System::Windows::Forms::Label());
-			this->label31 = (gcnew System::Windows::Forms::Label());
-			this->label30 = (gcnew System::Windows::Forms::Label());
-			this->label29 = (gcnew System::Windows::Forms::Label());
-			this->label44 = (gcnew System::Windows::Forms::Label());
-			this->label45 = (gcnew System::Windows::Forms::Label());
-			this->label46 = (gcnew System::Windows::Forms::Label());
-			this->label47 = (gcnew System::Windows::Forms::Label());
-			this->label48 = (gcnew System::Windows::Forms::Label());
-			this->label49 = (gcnew System::Windows::Forms::Label());
-			this->label50 = (gcnew System::Windows::Forms::Label());
-			this->label53 = (gcnew System::Windows::Forms::Label());
-			this->label56 = (gcnew System::Windows::Forms::Label());
-			this->label51 = (gcnew System::Windows::Forms::Label());
-			this->label54 = (gcnew System::Windows::Forms::Label());
-			this->label57 = (gcnew System::Windows::Forms::Label());
-			this->label52 = (gcnew System::Windows::Forms::Label());
-			this->label55 = (gcnew System::Windows::Forms::Label());
 			this->label58 = (gcnew System::Windows::Forms::Label());
+			this->label55 = (gcnew System::Windows::Forms::Label());
+			this->label52 = (gcnew System::Windows::Forms::Label());
+			this->label57 = (gcnew System::Windows::Forms::Label());
+			this->label54 = (gcnew System::Windows::Forms::Label());
+			this->label51 = (gcnew System::Windows::Forms::Label());
+			this->label56 = (gcnew System::Windows::Forms::Label());
+			this->label53 = (gcnew System::Windows::Forms::Label());
+			this->label50 = (gcnew System::Windows::Forms::Label());
+			this->label49 = (gcnew System::Windows::Forms::Label());
+			this->label48 = (gcnew System::Windows::Forms::Label());
+			this->label47 = (gcnew System::Windows::Forms::Label());
+			this->label46 = (gcnew System::Windows::Forms::Label());
+			this->label45 = (gcnew System::Windows::Forms::Label());
+			this->label44 = (gcnew System::Windows::Forms::Label());
+			this->label29 = (gcnew System::Windows::Forms::Label());
+			this->label30 = (gcnew System::Windows::Forms::Label());
+			this->label31 = (gcnew System::Windows::Forms::Label());
+			this->label32 = (gcnew System::Windows::Forms::Label());
+			this->label33 = (gcnew System::Windows::Forms::Label());
+			this->label34 = (gcnew System::Windows::Forms::Label());
+			this->label35 = (gcnew System::Windows::Forms::Label());
+			this->label36 = (gcnew System::Windows::Forms::Label());
+			this->label37 = (gcnew System::Windows::Forms::Label());
+			this->label38 = (gcnew System::Windows::Forms::Label());
+			this->label39 = (gcnew System::Windows::Forms::Label());
+			this->label40 = (gcnew System::Windows::Forms::Label());
+			this->label41 = (gcnew System::Windows::Forms::Label());
+			this->label42 = (gcnew System::Windows::Forms::Label());
+			this->label43 = (gcnew System::Windows::Forms::Label());
 			this->label60 = (gcnew System::Windows::Forms::Label());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
@@ -144,10 +145,10 @@ namespace GroupsGUI {
 			// 
 			this->button6->BackColor = System::Drawing::Color::LimeGreen;
 			this->button6->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->button6->Location = System::Drawing::Point(342, 37);
+			this->button6->Location = System::Drawing::Point(385, 46);
 			this->button6->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(151, 39);
+			this->button6->Size = System::Drawing::Size(170, 49);
 			this->button6->TabIndex = 10;
 			this->button6->Text = L"Join Group";
 			this->button6->UseVisualStyleBackColor = false;
@@ -156,10 +157,10 @@ namespace GroupsGUI {
 			// 
 			this->button2->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->button2->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->button2->Location = System::Drawing::Point(40, 14);
+			this->button2->Location = System::Drawing::Point(45, 18);
 			this->button2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(173, 84);
+			this->button2->Size = System::Drawing::Size(195, 105);
 			this->button2->TabIndex = 0;
 			this->button2->Text = L"Group 1";
 			this->button2->UseVisualStyleBackColor = false;
@@ -168,10 +169,10 @@ namespace GroupsGUI {
 			// 
 			this->button3->BackColor = System::Drawing::Color::DodgerBlue;
 			this->button3->ForeColor = System::Drawing::SystemColors::Window;
-			this->button3->Location = System::Drawing::Point(379, 14);
+			this->button3->Location = System::Drawing::Point(426, 18);
 			this->button3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(173, 84);
+			this->button3->Size = System::Drawing::Size(195, 105);
 			this->button3->TabIndex = 1;
 			this->button3->Text = L"Group 2";
 			this->button3->UseVisualStyleBackColor = false;
@@ -179,10 +180,10 @@ namespace GroupsGUI {
 			// button4
 			// 
 			this->button4->BackColor = System::Drawing::Color::WhiteSmoke;
-			this->button4->Location = System::Drawing::Point(703, 14);
+			this->button4->Location = System::Drawing::Point(791, 18);
 			this->button4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(173, 84);
+			this->button4->Size = System::Drawing::Size(195, 105);
 			this->button4->TabIndex = 2;
 			this->button4->Text = L"Group 3";
 			this->button4->UseVisualStyleBackColor = false;
@@ -195,10 +196,10 @@ namespace GroupsGUI {
 			this->panel2->Controls->Add(this->button4);
 			this->panel2->Controls->Add(this->button3);
 			this->panel2->Controls->Add(this->button2);
-			this->panel2->Location = System::Drawing::Point(88, 239);
+			this->panel2->Location = System::Drawing::Point(99, 299);
 			this->panel2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(1076, 112);
+			this->panel2->Size = System::Drawing::Size(1210, 140);
 			this->panel2->TabIndex = 9;
 			// 
 			// tableLayoutPanel1
@@ -244,7 +245,7 @@ namespace GroupsGUI {
 			this->tableLayoutPanel1->Controls->Add(this->label41, 1, 3);
 			this->tableLayoutPanel1->Controls->Add(this->label42, 1, 4);
 			this->tableLayoutPanel1->Controls->Add(this->label43, 1, 5);
-			this->tableLayoutPanel1->Location = System::Drawing::Point(17, 20);
+			this->tableLayoutPanel1->Location = System::Drawing::Point(19, 25);
 			this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 7;
@@ -255,285 +256,285 @@ namespace GroupsGUI {
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 14.28571F)));
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 14.28571F)));
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 14.28571F)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(1147, 319);
+			this->tableLayoutPanel1->Size = System::Drawing::Size(1290, 399);
 			this->tableLayoutPanel1->TabIndex = 0;
 			// 
-			// label43
+			// label58
 			// 
-			this->label43->AutoSize = true;
-			this->label43->Location = System::Drawing::Point(232, 225);
-			this->label43->Name = L"label43";
-			this->label43->Size = System::Drawing::Size(24, 17);
-			this->label43->TabIndex = 14;
-			this->label43->Text = L"10";
+			this->label58->AutoSize = true;
+			this->label58->Location = System::Drawing::Point(1035, 280);
+			this->label58->Name = L"label58";
+			this->label58->Size = System::Drawing::Size(72, 20);
+			this->label58->TabIndex = 35;
+			this->label58->Text = L"-$18,000";
 			// 
-			// label42
+			// label55
 			// 
-			this->label42->AutoSize = true;
-			this->label42->Location = System::Drawing::Point(232, 180);
-			this->label42->Name = L"label42";
-			this->label42->Size = System::Drawing::Size(24, 17);
-			this->label42->TabIndex = 13;
-			this->label42->Text = L"10";
+			this->label55->AutoSize = true;
+			this->label55->Location = System::Drawing::Point(1035, 224);
+			this->label55->Name = L"label55";
+			this->label55->Size = System::Drawing::Size(72, 20);
+			this->label55->TabIndex = 34;
+			this->label55->Text = L"-$18,000";
 			// 
-			// label41
+			// label52
 			// 
-			this->label41->AutoSize = true;
-			this->label41->Location = System::Drawing::Point(232, 135);
-			this->label41->Name = L"label41";
-			this->label41->Size = System::Drawing::Size(24, 17);
-			this->label41->TabIndex = 12;
-			this->label41->Text = L"10";
+			this->label52->AutoSize = true;
+			this->label52->Location = System::Drawing::Point(1035, 168);
+			this->label52->Name = L"label52";
+			this->label52->Size = System::Drawing::Size(72, 20);
+			this->label52->TabIndex = 33;
+			this->label52->Text = L"-$18,000";
 			// 
-			// label40
+			// label57
 			// 
-			this->label40->AutoSize = true;
-			this->label40->Location = System::Drawing::Point(232, 90);
-			this->label40->Name = L"label40";
-			this->label40->Size = System::Drawing::Size(16, 17);
-			this->label40->TabIndex = 11;
-			this->label40->Text = L"8";
+			this->label57->AutoSize = true;
+			this->label57->Location = System::Drawing::Point(777, 280);
+			this->label57->Name = L"label57";
+			this->label57->Size = System::Drawing::Size(67, 20);
+			this->label57->TabIndex = 32;
+			this->label57->Text = L"$82,000";
 			// 
-			// label39
+			// label54
 			// 
-			this->label39->AutoSize = true;
-			this->label39->Location = System::Drawing::Point(232, 45);
-			this->label39->Name = L"label39";
-			this->label39->Size = System::Drawing::Size(24, 17);
-			this->label39->TabIndex = 10;
-			this->label39->Text = L"15";
+			this->label54->AutoSize = true;
+			this->label54->Location = System::Drawing::Point(777, 224);
+			this->label54->Name = L"label54";
+			this->label54->Size = System::Drawing::Size(67, 20);
+			this->label54->TabIndex = 31;
+			this->label54->Text = L"$82,000";
 			// 
-			// label38
+			// label51
 			// 
-			this->label38->AutoSize = true;
-			this->label38->Location = System::Drawing::Point(3, 225);
-			this->label38->Name = L"label38";
-			this->label38->Size = System::Drawing::Size(50, 17);
-			this->label38->TabIndex = 9;
-			this->label38->Text = L"Maddy";
+			this->label51->AutoSize = true;
+			this->label51->Location = System::Drawing::Point(777, 168);
+			this->label51->Name = L"label51";
+			this->label51->Size = System::Drawing::Size(67, 20);
+			this->label51->TabIndex = 30;
+			this->label51->Text = L"$82,000";
 			// 
-			// label37
+			// label56
 			// 
-			this->label37->AutoSize = true;
-			this->label37->Location = System::Drawing::Point(3, 180);
-			this->label37->Name = L"label37";
-			this->label37->Size = System::Drawing::Size(46, 17);
-			this->label37->TabIndex = 8;
-			this->label37->Text = L"Jason";
+			this->label56->AutoSize = true;
+			this->label56->Location = System::Drawing::Point(519, 280);
+			this->label56->Name = L"label56";
+			this->label56->Size = System::Drawing::Size(18, 20);
+			this->label56->TabIndex = 27;
+			this->label56->Text = L"7";
 			// 
-			// label36
+			// label53
 			// 
-			this->label36->AutoSize = true;
-			this->label36->Location = System::Drawing::Point(3, 135);
-			this->label36->Name = L"label36";
-			this->label36->Size = System::Drawing::Size(39, 17);
-			this->label36->TabIndex = 7;
-			this->label36->Text = L"Mark";
+			this->label53->AutoSize = true;
+			this->label53->Location = System::Drawing::Point(519, 224);
+			this->label53->Name = L"label53";
+			this->label53->Size = System::Drawing::Size(18, 20);
+			this->label53->TabIndex = 24;
+			this->label53->Text = L"7";
 			// 
-			// label35
+			// label50
 			// 
-			this->label35->AutoSize = true;
-			this->label35->Location = System::Drawing::Point(3, 90);
-			this->label35->Name = L"label35";
-			this->label35->Size = System::Drawing::Size(46, 17);
-			this->label35->TabIndex = 6;
-			this->label35->Text = L"Harris";
+			this->label50->AutoSize = true;
+			this->label50->Location = System::Drawing::Point(519, 168);
+			this->label50->Name = L"label50";
+			this->label50->Size = System::Drawing::Size(18, 20);
+			this->label50->TabIndex = 21;
+			this->label50->Text = L"7";
 			// 
-			// label34
+			// label49
 			// 
-			this->label34->AutoSize = true;
-			this->label34->Location = System::Drawing::Point(3, 45);
-			this->label34->Name = L"label34";
-			this->label34->Size = System::Drawing::Size(38, 17);
-			this->label34->TabIndex = 5;
-			this->label34->Text = L"Liam";
+			this->label49->AutoSize = true;
+			this->label49->Location = System::Drawing::Point(1035, 112);
+			this->label49->Name = L"label49";
+			this->label49->Size = System::Drawing::Size(72, 20);
+			this->label49->TabIndex = 20;
+			this->label49->Text = L"-$18,000";
 			// 
-			// label33
+			// label48
 			// 
-			this->label33->AutoSize = true;
-			this->label33->Location = System::Drawing::Point(919, 0);
-			this->label33->Name = L"label33";
-			this->label33->Size = System::Drawing::Size(81, 17);
-			this->label33->TabIndex = 4;
-			this->label33->Text = L"Total Gains";
+			this->label48->AutoSize = true;
+			this->label48->Location = System::Drawing::Point(777, 112);
+			this->label48->Name = L"label48";
+			this->label48->Size = System::Drawing::Size(67, 20);
+			this->label48->TabIndex = 19;
+			this->label48->Text = L"$82,000";
 			// 
-			// label32
+			// label47
 			// 
-			this->label32->AutoSize = true;
-			this->label32->Location = System::Drawing::Point(690, 0);
-			this->label32->Name = L"label32";
-			this->label32->Size = System::Drawing::Size(60, 17);
-			this->label32->TabIndex = 3;
-			this->label32->Text = L"Portfolio";
+			this->label47->AutoSize = true;
+			this->label47->Location = System::Drawing::Point(519, 112);
+			this->label47->Name = L"label47";
+			this->label47->Size = System::Drawing::Size(18, 20);
+			this->label47->TabIndex = 18;
+			this->label47->Text = L"4";
 			// 
-			// label31
+			// label46
 			// 
-			this->label31->AutoSize = true;
-			this->label31->Location = System::Drawing::Point(461, 0);
-			this->label31->Name = L"label31";
-			this->label31->Size = System::Drawing::Size(63, 17);
-			this->label31->TabIndex = 2;
-			this->label31->Text = L"Holdings";
+			this->label46->AutoSize = true;
+			this->label46->Location = System::Drawing::Point(1035, 56);
+			this->label46->Name = L"label46";
+			this->label46->Size = System::Drawing::Size(67, 20);
+			this->label46->TabIndex = 17;
+			this->label46->Text = L"$12,800";
+			// 
+			// label45
+			// 
+			this->label45->AutoSize = true;
+			this->label45->Location = System::Drawing::Point(777, 56);
+			this->label45->Name = L"label45";
+			this->label45->Size = System::Drawing::Size(76, 20);
+			this->label45->TabIndex = 16;
+			this->label45->Text = L"$112,800";
+			// 
+			// label44
+			// 
+			this->label44->AutoSize = true;
+			this->label44->Location = System::Drawing::Point(519, 56);
+			this->label44->Name = L"label44";
+			this->label44->Size = System::Drawing::Size(18, 20);
+			this->label44->TabIndex = 15;
+			this->label44->Text = L"5";
+			// 
+			// label29
+			// 
+			this->label29->AutoSize = true;
+			this->label29->Location = System::Drawing::Point(261, 0);
+			this->label29->Name = L"label29";
+			this->label29->Size = System::Drawing::Size(81, 20);
+			this->label29->TabIndex = 0;
+			this->label29->Text = L"Trades/wk";
 			// 
 			// label30
 			// 
 			this->label30->AutoSize = true;
 			this->label30->Location = System::Drawing::Point(3, 0);
 			this->label30->Name = L"label30";
-			this->label30->Size = System::Drawing::Size(45, 17);
+			this->label30->Size = System::Drawing::Size(51, 20);
 			this->label30->TabIndex = 1;
 			this->label30->Text = L"Name";
 			// 
-			// label29
+			// label31
 			// 
-			this->label29->AutoSize = true;
-			this->label29->Location = System::Drawing::Point(232, 0);
-			this->label29->Name = L"label29";
-			this->label29->Size = System::Drawing::Size(73, 17);
-			this->label29->TabIndex = 0;
-			this->label29->Text = L"Trades/wk";
+			this->label31->AutoSize = true;
+			this->label31->Location = System::Drawing::Point(519, 0);
+			this->label31->Name = L"label31";
+			this->label31->Size = System::Drawing::Size(71, 20);
+			this->label31->TabIndex = 2;
+			this->label31->Text = L"Holdings";
 			// 
-			// label44
+			// label32
 			// 
-			this->label44->AutoSize = true;
-			this->label44->Location = System::Drawing::Point(461, 45);
-			this->label44->Name = L"label44";
-			this->label44->Size = System::Drawing::Size(16, 17);
-			this->label44->TabIndex = 15;
-			this->label44->Text = L"5";
+			this->label32->AutoSize = true;
+			this->label32->Location = System::Drawing::Point(777, 0);
+			this->label32->Name = L"label32";
+			this->label32->Size = System::Drawing::Size(67, 20);
+			this->label32->TabIndex = 3;
+			this->label32->Text = L"Portfolio";
 			// 
-			// label45
+			// label33
 			// 
-			this->label45->AutoSize = true;
-			this->label45->Location = System::Drawing::Point(690, 45);
-			this->label45->Name = L"label45";
-			this->label45->Size = System::Drawing::Size(68, 17);
-			this->label45->TabIndex = 16;
-			this->label45->Text = L"$112,800";
+			this->label33->AutoSize = true;
+			this->label33->Location = System::Drawing::Point(1035, 0);
+			this->label33->Name = L"label33";
+			this->label33->Size = System::Drawing::Size(90, 20);
+			this->label33->TabIndex = 4;
+			this->label33->Text = L"Total Gains";
 			// 
-			// label46
+			// label34
 			// 
-			this->label46->AutoSize = true;
-			this->label46->Location = System::Drawing::Point(919, 45);
-			this->label46->Name = L"label46";
-			this->label46->Size = System::Drawing::Size(60, 17);
-			this->label46->TabIndex = 17;
-			this->label46->Text = L"$12,800";
+			this->label34->AutoSize = true;
+			this->label34->Location = System::Drawing::Point(3, 56);
+			this->label34->Name = L"label34";
+			this->label34->Size = System::Drawing::Size(43, 20);
+			this->label34->TabIndex = 5;
+			this->label34->Text = L"Liam";
 			// 
-			// label47
+			// label35
 			// 
-			this->label47->AutoSize = true;
-			this->label47->Location = System::Drawing::Point(461, 90);
-			this->label47->Name = L"label47";
-			this->label47->Size = System::Drawing::Size(16, 17);
-			this->label47->TabIndex = 18;
-			this->label47->Text = L"4";
+			this->label35->AutoSize = true;
+			this->label35->Location = System::Drawing::Point(3, 112);
+			this->label35->Name = L"label35";
+			this->label35->Size = System::Drawing::Size(51, 20);
+			this->label35->TabIndex = 6;
+			this->label35->Text = L"Harris";
 			// 
-			// label48
+			// label36
 			// 
-			this->label48->AutoSize = true;
-			this->label48->Location = System::Drawing::Point(690, 90);
-			this->label48->Name = L"label48";
-			this->label48->Size = System::Drawing::Size(60, 17);
-			this->label48->TabIndex = 19;
-			this->label48->Text = L"$82,000";
+			this->label36->AutoSize = true;
+			this->label36->Location = System::Drawing::Point(3, 168);
+			this->label36->Name = L"label36";
+			this->label36->Size = System::Drawing::Size(44, 20);
+			this->label36->TabIndex = 7;
+			this->label36->Text = L"Mark";
 			// 
-			// label49
+			// label37
 			// 
-			this->label49->AutoSize = true;
-			this->label49->Location = System::Drawing::Point(919, 90);
-			this->label49->Name = L"label49";
-			this->label49->Size = System::Drawing::Size(65, 17);
-			this->label49->TabIndex = 20;
-			this->label49->Text = L"-$18,000";
+			this->label37->AutoSize = true;
+			this->label37->Location = System::Drawing::Point(3, 224);
+			this->label37->Name = L"label37";
+			this->label37->Size = System::Drawing::Size(52, 20);
+			this->label37->TabIndex = 8;
+			this->label37->Text = L"Jason";
 			// 
-			// label50
+			// label38
 			// 
-			this->label50->AutoSize = true;
-			this->label50->Location = System::Drawing::Point(461, 135);
-			this->label50->Name = L"label50";
-			this->label50->Size = System::Drawing::Size(16, 17);
-			this->label50->TabIndex = 21;
-			this->label50->Text = L"7";
+			this->label38->AutoSize = true;
+			this->label38->Location = System::Drawing::Point(3, 280);
+			this->label38->Name = L"label38";
+			this->label38->Size = System::Drawing::Size(56, 20);
+			this->label38->TabIndex = 9;
+			this->label38->Text = L"Maddy";
 			// 
-			// label53
+			// label39
 			// 
-			this->label53->AutoSize = true;
-			this->label53->Location = System::Drawing::Point(461, 180);
-			this->label53->Name = L"label53";
-			this->label53->Size = System::Drawing::Size(16, 17);
-			this->label53->TabIndex = 24;
-			this->label53->Text = L"7";
+			this->label39->AutoSize = true;
+			this->label39->Location = System::Drawing::Point(261, 56);
+			this->label39->Name = L"label39";
+			this->label39->Size = System::Drawing::Size(27, 20);
+			this->label39->TabIndex = 10;
+			this->label39->Text = L"15";
 			// 
-			// label56
+			// label40
 			// 
-			this->label56->AutoSize = true;
-			this->label56->Location = System::Drawing::Point(461, 225);
-			this->label56->Name = L"label56";
-			this->label56->Size = System::Drawing::Size(16, 17);
-			this->label56->TabIndex = 27;
-			this->label56->Text = L"7";
+			this->label40->AutoSize = true;
+			this->label40->Location = System::Drawing::Point(261, 112);
+			this->label40->Name = L"label40";
+			this->label40->Size = System::Drawing::Size(18, 20);
+			this->label40->TabIndex = 11;
+			this->label40->Text = L"8";
 			// 
-			// label51
+			// label41
 			// 
-			this->label51->AutoSize = true;
-			this->label51->Location = System::Drawing::Point(690, 135);
-			this->label51->Name = L"label51";
-			this->label51->Size = System::Drawing::Size(60, 17);
-			this->label51->TabIndex = 30;
-			this->label51->Text = L"$82,000";
+			this->label41->AutoSize = true;
+			this->label41->Location = System::Drawing::Point(261, 168);
+			this->label41->Name = L"label41";
+			this->label41->Size = System::Drawing::Size(27, 20);
+			this->label41->TabIndex = 12;
+			this->label41->Text = L"10";
 			// 
-			// label54
+			// label42
 			// 
-			this->label54->AutoSize = true;
-			this->label54->Location = System::Drawing::Point(690, 180);
-			this->label54->Name = L"label54";
-			this->label54->Size = System::Drawing::Size(60, 17);
-			this->label54->TabIndex = 31;
-			this->label54->Text = L"$82,000";
+			this->label42->AutoSize = true;
+			this->label42->Location = System::Drawing::Point(261, 224);
+			this->label42->Name = L"label42";
+			this->label42->Size = System::Drawing::Size(27, 20);
+			this->label42->TabIndex = 13;
+			this->label42->Text = L"10";
 			// 
-			// label57
+			// label43
 			// 
-			this->label57->AutoSize = true;
-			this->label57->Location = System::Drawing::Point(690, 225);
-			this->label57->Name = L"label57";
-			this->label57->Size = System::Drawing::Size(60, 17);
-			this->label57->TabIndex = 32;
-			this->label57->Text = L"$82,000";
-			// 
-			// label52
-			// 
-			this->label52->AutoSize = true;
-			this->label52->Location = System::Drawing::Point(919, 135);
-			this->label52->Name = L"label52";
-			this->label52->Size = System::Drawing::Size(65, 17);
-			this->label52->TabIndex = 33;
-			this->label52->Text = L"-$18,000";
-			// 
-			// label55
-			// 
-			this->label55->AutoSize = true;
-			this->label55->Location = System::Drawing::Point(919, 180);
-			this->label55->Name = L"label55";
-			this->label55->Size = System::Drawing::Size(65, 17);
-			this->label55->TabIndex = 34;
-			this->label55->Text = L"-$18,000";
-			// 
-			// label58
-			// 
-			this->label58->AutoSize = true;
-			this->label58->Location = System::Drawing::Point(919, 225);
-			this->label58->Name = L"label58";
-			this->label58->Size = System::Drawing::Size(65, 17);
-			this->label58->TabIndex = 35;
-			this->label58->Text = L"-$18,000";
+			this->label43->AutoSize = true;
+			this->label43->Location = System::Drawing::Point(261, 280);
+			this->label43->Name = L"label43";
+			this->label43->Size = System::Drawing::Size(27, 20);
+			this->label43->TabIndex = 14;
+			this->label43->Text = L"10";
 			// 
 			// label60
 			// 
 			this->label60->AutoSize = true;
-			this->label60->Location = System::Drawing::Point(27, 361);
+			this->label60->Location = System::Drawing::Point(30, 451);
 			this->label60->Name = L"label60";
-			this->label60->Size = System::Drawing::Size(318, 34);
+			this->label60->Size = System::Drawing::Size(351, 40);
 			this->label60->TabIndex = 1;
 			this->label60->Text = L"Group Code: x8Km2K9\r\nUse this code to invite your friends to your group!\r\n";
 			// 
@@ -541,10 +542,10 @@ namespace GroupsGUI {
 			// 
 			this->button7->BackColor = System::Drawing::Color::Crimson;
 			this->button7->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->button7->Location = System::Drawing::Point(1012, 353);
+			this->button7->Location = System::Drawing::Point(1138, 441);
 			this->button7->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(151, 39);
+			this->button7->Size = System::Drawing::Size(170, 49);
 			this->button7->TabIndex = 6;
 			this->button7->Text = L"Leave Group";
 			this->button7->UseVisualStyleBackColor = false;
@@ -556,23 +557,24 @@ namespace GroupsGUI {
 			this->panel3->Controls->Add(this->button7);
 			this->panel3->Controls->Add(this->label60);
 			this->panel3->Controls->Add(this->tableLayoutPanel1);
-			this->panel3->Location = System::Drawing::Point(88, 357);
+			this->panel3->Location = System::Drawing::Point(99, 446);
 			this->panel3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(1285, 420);
+			this->panel3->Size = System::Drawing::Size(1446, 525);
 			this->panel3->TabIndex = 8;
 			// 
 			// button5
 			// 
 			this->button5->BackColor = System::Drawing::Color::DodgerBlue;
 			this->button5->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->button5->Location = System::Drawing::Point(94, 37);
+			this->button5->Location = System::Drawing::Point(106, 46);
 			this->button5->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(171, 39);
+			this->button5->Size = System::Drawing::Size(192, 49);
 			this->button5->TabIndex = 7;
 			this->button5->Text = L"Create Group";
 			this->button5->UseVisualStyleBackColor = false;
+			this->button5->Click += gcnew System::EventHandler(this, &GroupsPage::button5_Click);
 			// 
 			// label59
 			// 
@@ -581,22 +583,23 @@ namespace GroupsGUI {
 			this->label59->AutoSize = true;
 			this->label59->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label59->Location = System::Drawing::Point(88, 195);
+			this->label59->Location = System::Drawing::Point(99, 244);
 			this->label59->Name = L"label59";
-			this->label59->Size = System::Drawing::Size(175, 32);
+			this->label59->Size = System::Drawing::Size(203, 38);
 			this->label59->TabIndex = 11;
 			this->label59->Text = L"Your Groups";
 			// 
 			// GroupsPage
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1602, 903);
+			this->ClientSize = System::Drawing::Size(1802, 1129);
 			this->Controls->Add(this->label59);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->panel2);
+			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"GroupsPage";
 			this->Text = L"GroupsPage";
 			this->panel2->ResumeLayout(false);
@@ -609,5 +612,9 @@ namespace GroupsGUI {
 
 		}
 #pragma endregion
-	};
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+		GroupCreationPage^ group_creation_dialog = gcnew GroupCreationPage();
+		group_creation_dialog->ShowDialog();
+	}
+};
 }

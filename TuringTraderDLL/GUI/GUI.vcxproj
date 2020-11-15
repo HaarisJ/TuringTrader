@@ -120,6 +120,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -128,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CompanyPage.cpp" />
+    <ClCompile Include="GroupCreationPage.cpp" />
     <ClCompile Include="GroupsPage.cpp" />
     <ClCompile Include="LoginPage.cpp" />
     <ClCompile Include="MainGUI.cpp" />
@@ -138,6 +140,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CompanyPage.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="GroupCreationPage.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="GroupsPage.h">
@@ -165,6 +170,9 @@
   <ItemGroup>
     <EmbeddedResource Include="CompanyPage.resx">
       <DependentUpon>CompanyPage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupCreationPage.resx">
+      <DependentUpon>GroupCreationPage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GroupsPage.resx">
       <DependentUpon>GroupsPage.h</DependentUpon>
