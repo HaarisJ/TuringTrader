@@ -1,7 +1,9 @@
 #pragma once
 #include "GroupCreationPage.h"
+#include "GroupJoinPage.h"
 
 namespace GroupsGUI {
+	using namespace GroupJoinGUI;
 	using namespace GroupCreationGUI;
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -152,6 +154,7 @@ namespace GroupsGUI {
 			this->button6->TabIndex = 10;
 			this->button6->Text = L"Join Group";
 			this->button6->UseVisualStyleBackColor = false;
+			this->button6->Click += gcnew System::EventHandler(this, &GroupsPage::button6_Click);
 			// 
 			// button2
 			// 
@@ -615,6 +618,10 @@ namespace GroupsGUI {
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 		GroupCreationPage^ group_creation_dialog = gcnew GroupCreationPage();
 		group_creation_dialog->ShowDialog();
+	}
+	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+		GroupJoinPage^ group_join_dialog = gcnew GroupJoinPage();
+		group_join_dialog->ShowDialog();
 	}
 };
 }

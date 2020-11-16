@@ -1,5 +1,6 @@
   GUI.CompanyPage.resources - Embedded, ContainedInManifestFile, 
   GUI.GroupCreationPage.resources - Embedded, ContainedInManifestFile, 
+  GUI.GroupJoinPage.resources - Embedded, ContainedInManifestFile, 
   GUI.GroupsPage.resources - Embedded, ContainedInManifestFile, 
   GUI.LoginPage.resources - Embedded, ContainedInManifestFile, 
   GUI.MainGUI.resources - Embedded, ContainedInManifestFile, 
@@ -130,6 +131,9 @@ Class CompanyPageGUI.CompanyPage: AutoLayout, AnsiClass, Class, Public, BeforeFi
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class GroupCreationGUI.GroupCreationPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class GroupJoinGUI.GroupJoinPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class GroupsGUI.GroupsPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit

@@ -29,3 +29,4 @@ C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.TestGUI.resourc
 C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.TradingPage.resources
 C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.vcxproj.GenerateResource.cache
 C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.vcxproj.CopyComplete
+C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.GroupJoinPage.resources

@@ -130,6 +130,7 @@
   <ItemGroup>
     <ClCompile Include="CompanyPage.cpp" />
     <ClCompile Include="GroupCreationPage.cpp" />
+    <ClCompile Include="GroupJoinPage.cpp" />
     <ClCompile Include="GroupsPage.cpp" />
     <ClCompile Include="LoginPage.cpp" />
     <ClCompile Include="MainGUI.cpp" />
@@ -143,6 +144,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="GroupCreationPage.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="GroupJoinPage.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="GroupsPage.h">
@@ -173,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GroupCreationPage.resx">
       <DependentUpon>GroupCreationPage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupJoinPage.resx">
+      <DependentUpon>GroupJoinPage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GroupsPage.resx">
       <DependentUpon>GroupsPage.h</DependentUpon>

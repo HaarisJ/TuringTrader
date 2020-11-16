@@ -42,6 +42,9 @@
     <ClInclude Include="GroupCreationPage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GroupJoinPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="testGUI.cpp">
@@ -69,6 +72,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GroupCreationPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GroupJoinPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
