@@ -56,19 +56,19 @@
     <ClCompile Include="Holding.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\..\Desktop\Turing Trader\Group.cpp">
+    <ClCompile Include="Group.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\..\Desktop\Turing Trader\Portfolio.cpp">
+    <ClCompile Include="Portfolio.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\..\Desktop\Turing Trader\Profile.cpp">
+    <ClCompile Include="Profile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\..\Desktop\Turing Trader\Trading.cpp">
+    <ClCompile Include="Trading.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\..\Desktop\Turing Trader\User.cpp">
+    <ClCompile Include="User.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -162,11 +162,11 @@
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\..\..\Desktop\Turing Trader\Group.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\Desktop\Turing Trader\Portfolio.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\Desktop\Turing Trader\Profile.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\Desktop\Turing Trader\Trading.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\Desktop\Turing Trader\User.cpp" />
+    <ClCompile Include="Group.cpp" />
+    <ClCompile Include="Portfolio.cpp" />
+    <ClCompile Include="Profile.cpp" />
+    <ClCompile Include="Trading.cpp" />
+    <ClCompile Include="User.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Holding.cpp" />
     <ClCompile Include="pch.cpp">
