@@ -8,7 +8,6 @@
 #include <iostream>
 
 using namespace std;
-using namespace rapidjson;
 
 STOCKDLL Stock::Stock(const string& symbol) {
     // Set all the private attributes here. Make necessary API calls to do so.
@@ -16,23 +15,14 @@ STOCKDLL Stock::Stock(const string& symbol) {
 }
 
 
-// The api member functions will make specific calls using this api() member function 
-//STOCKDLL Document Stock::api(const string& endpoint) {
-//    cpr::Response r = cpr::Get(cpr::Url{ endpoint },
-//        cpr::Parameters{ {"symbol", ticker}, {"token", "bu4gihf48v6p8t6gh4bg"} });
-//
-//    const char* text = r.text.c_str();
-//    Document d;
-//    d.Parse(text);
-//    return d;
-//}
-
 STOCKDLL void Stock::updateMarketVals () {
-    cpr::Response r = cpr::Get(cpr::Url{ "https://finnhub.io/api/v1/quote" },
+    cpr::AsyncResponse fr = cpr::GetAsync(cpr::Url{ "https://finnhub.io/api/v1/quote" },
         cpr::Parameters{ {"symbol", ticker}, {"token", "bu4gihf48v6p8t6gh4bg"} });
 
+    cpr::Response r = fr.get();
+
     const char* text = r.text.c_str();
-    Document doc;
+    rapidjson::Document doc;
     doc.Parse(text);
 
     currentPrice = doc["c"].GetFloat();
@@ -41,36 +31,70 @@ STOCKDLL void Stock::updateMarketVals () {
     dailyLow = doc["l"].GetFloat();
 }
 
-//STOCKDLL void Stock::updateProfile() {
-//    Document doc = Stock::api("https://finnhub.io/api/v1/stock/profile2");
-//    name = doc["name"].GetString();
-//    exchange = doc["exchange"].GetString();
-//    logo = doc["logo"].GetString();
-//    marketCap = doc["marketCapitalization"].GetFloat();
-//}
+STOCKDLL void Stock::updateProfile() {
+    cpr::AsyncResponse fr = cpr::GetAsync(cpr::Url{ "https://finnhub.io/api/v1/stock/profile2" },
+        cpr::Parameters{ {"symbol", ticker}, {"token", "bu4gihf48v6p8t6gh4bg"} });
 
-//STOCKDLL void Stock::updateCandles(const string& resolution) {
-//    string resolution = resolution; // This can be 1, 5, 15, 30, 60, D, W or M in string format
-//    // Have to do some research on UNIX timestamps for the 2 variables below
-//    string from = "insert UNIX timestamp from a certain predetermined point";
-//    string to = "insert UNIX timestamp to now";
-//    cpr::Response r = cpr::Get(cpr::Url{ "https://finnhub.io/api/v1/stock/candle" },
-//        cpr::Parameters{ {"symbol", ticker}, {"resolution", resolution}, {"from", from}, {"to", to}, {"token", "bu4gihf48v6p8t6gh4bg"} });
-//
-//    const char* text = r.text.c_str();
-//    Document d;
-//    d.Parse(text);
-//    candles = "find a good way to set the candles here in some vector format";
-//}
+    cpr::Response r = fr.get();
+    const char* text = r.text.c_str();
+    rapidjson::Document doc;
+    doc.Parse(text);
+    name = doc["name"].GetString();
+    exchange = doc["exchange"].GetString();
+    logo = doc["logo"].GetString();
+    marketCap = doc["marketCapitalization"].GetFloat();
+}
+
+
+STOCKDLL void Stock::updateCandles(const string& resolution) {
+    // Resolution can be 1, 5, 15, 30, 60, D, W or M in string format
+    // Have to do some research on UNIX timestamps for the 2 variables below
+
+    const auto p1 = chrono::system_clock::now();
+    const auto time_now = std::chrono::duration_cast<std::chrono::seconds>(
+        p1.time_since_epoch()).count();
+    auto time_from = time_now;
+
+    if (resolution == "D") {
+        time_from = time_now - 86400;
+    }
+    else if (resolution == "W") {
+        time_from = time_now - 604800;
+    }
+    else if (resolution == "M") {
+        time_from = time_now - 2.628e+6;
+    }
+    else {
+        string from = "ERROR, resolution must be D, W or M";
+        time_from = NULL;
+    }
+
+    string from = to_string(time_from);
+    string to = to_string(time_now);
+
+    cpr::AsyncResponse fr = cpr::GetAsync(cpr::Url{ "https://finnhub.io/api/v1/stock/candle" },
+        cpr::Parameters{ {"symbol", ticker}, {"resolution", resolution}, {"from", from}, {"to", to}, {"token", "bu4gihf48v6p8t6gh4bg"} });
+
+    cpr::Response r = fr.get();
+    const char* text = r.text.c_str();
+    rapidjson::Document d;
+    d.Parse(text);
+
+    //for (auto& v : d["c"].GetArray())
+    //    candles.push_back(v.GetFloat());
+    //for (auto& v : d["t"].GetArray())
+    //    candleTimes.push_back(v.GetInt());
+}
 
 STOCKDLL void Stock::updateNews() {
     string fromDate = "2020-09-19";
     string currentDate = "2020-10-19";
-    cpr::Response r = cpr::Get(cpr::Url{ "https://finnhub.io/api/v1/company-news" },
+    cpr::AsyncResponse fr = cpr::GetAsync(cpr::Url{ "https://finnhub.io/api/v1/company-news" },
         cpr::Parameters{ {"symbol", ticker}, {"from", fromDate}, {"to", currentDate},  {"token", "bu4gihf48v6p8t6gh4bg"} });
 
+    cpr::Response r = fr.get();
     const char* text = r.text.c_str();
-    Document doc;
+    rapidjson::Document doc;
     doc.Parse(text);
     cout << doc.GetString() << endl;
     //cout << r.text << endl; // Look at what the data looks  like
