@@ -9,6 +9,7 @@ int main() {
 	Stock apple("AAPL");
 	apple.updateMarketVals();
 	apple.updateProfile();
+	apple.updateNews();
 	apple.updateCandles("D");
 	float price = apple.getCurrentPrice();
 

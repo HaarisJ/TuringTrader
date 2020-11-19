@@ -9,6 +9,7 @@
 using namespace std;
 //using namespace rapidjson;
 #include <string>
+#include <vector>
 
 class STOCKDLL Stock {
 	private:
@@ -21,14 +22,22 @@ class STOCKDLL Stock {
         float dailyLow;
         float dailyHigh;
         float marketCap;
-        //vector<struct> companyNews;
-        int candles;
+        struct news {
+            string headline;
+            string image;
+            string url;
+            string source;
+            string date;
+        };
+        vector<news> companyNews;
+        vector<float> candles;
+        vector<int> candleTimes;
+        string unixTimeToHumanReadable(long int seconds);
 
 	public:
         // constructor, creates API objects, sets all private attributes
         Stock(const string& symbol);
         // updates currentPrice, openPrice, dailyLow, dailyHigh, marketCap, news, candles
-        //Document api(const string& endpoint);
         void updateMarketVals();
         void updateProfile();
         void updateCandles(const string&);
@@ -37,7 +46,8 @@ class STOCKDLL Stock {
         float getCurrentPrice();
         float getOpenPrice();
         float getPL();
-        //float getMarketCap();
+        float getMarketCap();
+        float getDailyHigh();
+        float getDailyLow();
         //vector<string> getNews(vector <string> news);
-        void generateGraph(int candles); //Creates a graph object
 };
