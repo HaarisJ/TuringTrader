@@ -6,7 +6,7 @@ using namespace std;
 #include "Stock.h"
 #include <string>
 
-class HOLDINGDLL Holding {
+class HOLDINGDLL Holding: public Stock {
 	private:
 		string ticker;
 		int qty;
@@ -21,5 +21,6 @@ class HOLDINGDLL Holding {
 		void addShares(int, float);
 		void removeShares(int, float);
 		float getAvgPrice();
+		float getMarketPrice();
 
 };

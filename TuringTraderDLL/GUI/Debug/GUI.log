@@ -1,25 +1,49 @@
 ﻿  No way to resolve conflict between "System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" and "System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51". Choosing "System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" arbitrarily.
   No way to resolve conflict between "System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" and "System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51". Choosing "System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" arbitrarily.
   Consider app.config remapping of assembly "System.Memory, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" from Version "4.0.1.0" [] to Version "4.0.1.1" [C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\PublicAssemblies\System.Memory.dll] to solve conflict and get rid of warning.
-  Consider app.config remapping of assembly "System.Buffers, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" from Version "4.0.2.0" [] to Version "4.0.3.0" [C:\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\System.Buffers.dll] to solve conflict and get rid of warning.
+  Consider app.config remapping of assembly "System.Buffers, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" from Version "4.0.2.0" [] to Version "4.0.3.0" [C:\Program Files (x86)\MySQL\MySQL Connector Net 8.0.22\Assemblies\v4.5.2\System.Buffers.dll] to solve conflict and get rid of warning.
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(2084,5): warning MSB3276: Found conflicts between different versions of the same dependent assembly. Please set the "AutoGenerateBindingRedirects" property to true in the project file. For more information, see http://go.microsoft.com/fwlink/?LinkId=294190.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.MetaGen.targets(91,5): warning : Required file "C:\PROGRAM FILES (X86)\MYSQL\CONNECTOR NET 8.0\ASSEMBLIES\V4.5.2\MYSQL.DATA.DLL" is missing.
+  CompanyPage.cpp
+  GroupCreationPage.cpp
   GroupJoinPage.cpp
-C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\GroupJoinPage.h(103,11): warning C4101: 'username': unreferenced local variable
+C:\School\CMPE_320\turing\TuringTraderDLL\GUI\GroupJoinPage.h(103,11): warning C4101: 'username': unreferenced local variable
   GroupsPage.cpp
-C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\GroupJoinPage.h(103,11): warning C4101: 'username': unreferenced local variable
+C:\School\CMPE_320\turing\TuringTraderDLL\GUI\GroupJoinPage.h(103,11): warning C4101: 'username': unreferenced local variable
   LoginPage.cpp
-C:\Users\markl\source\repos\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(15,22): warning C4251: 'Stock::ticker': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(15,22): warning C4251: 'Stock::ticker': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\markl\source\repos\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(16,20): warning C4251: 'Stock::name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(16,20): warning C4251: 'Stock::name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\markl\source\repos\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(17,24): warning C4251: 'Stock::exchange': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(17,24): warning C4251: 'Stock::exchange': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\markl\source\repos\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(18,20): warning C4251: 'Stock::logo': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(18,20): warning C4251: 'Stock::logo': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\GroupJoinPage.h(103,11): warning C4101: 'username': unreferenced local variable
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(25,15): error C2143: syntax error: missing ';' before '<'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(25,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(25,30): error C2238: unexpected token(s) preceding ';'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(26,15): error C2143: syntax error: missing ';' before '<'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(26,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(26,32): error C2238: unexpected token(s) preceding ';'
   MainGUI.cpp
-C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\GroupJoinPage.h(103,11): warning C4101: 'username': unreferenced local variable
+C:\School\CMPE_320\turing\TuringTraderDLL\GUI\GroupJoinPage.h(103,11): warning C4101: 'username': unreferenced local variable
+  PortfolioPage.cpp
+  ProfilePage.cpp
+  testGUI.cpp
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(15,22): warning C4251: 'Stock::ticker': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(16,20): warning C4251: 'Stock::name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(17,24): warning C4251: 'Stock::exchange': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(18,20): warning C4251: 'Stock::logo': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(25,15): error C2143: syntax error: missing ';' before '<'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(25,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(25,30): error C2238: unexpected token(s) preceding ';'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(26,15): error C2143: syntax error: missing ';' before '<'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(26,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(26,32): error C2238: unexpected token(s) preceding ';'
+  TradingPage.cpp
+  .NETFramework,Version=v4.5.2.AssemblyAttributes.cpp
   Generating Code...
-  CompanyPage.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-     Creating library C:\Users\markl\source\repos\turing\TuringTraderDLL\Debug\AppGUI.lib and object C:\Users\markl\source\repos\turing\TuringTraderDLL\Debug\AppGUI.exp
-  GUI.vcxproj -> C:\Users\markl\source\repos\turing\TuringTraderDLL\Debug\AppGUI.exe
