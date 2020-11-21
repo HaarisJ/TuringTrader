@@ -30,3 +30,16 @@ C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.TradingPage.res
 C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.vcxproj.GenerateResource.cache
 C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.vcxproj.CopyComplete
 C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.GroupJoinPage.resources
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\Debug\GUI.vcxprojAssemblyReference.cache
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\Debug\GUI.CompanyPage.resources
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\Debug\GUI.GroupCreationPage.resources
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\Debug\GUI.GroupJoinPage.resources
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\Debug\GUI.GroupsPage.resources
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\Debug\GUI.LoginPage.resources
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\Debug\GUI.MainGUI.resources
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\Debug\GUI.PortfolioPage.resources
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\Debug\GUI.ProfilePage.resources
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\Debug\GUI.TestGUI.resources
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\Debug\GUI.TradingPage.resources
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\Debug\GUI.vcxproj.GenerateResource.cache
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\Debug\GUI.vcxproj.CopyComplete
