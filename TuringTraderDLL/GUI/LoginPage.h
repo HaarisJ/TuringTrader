@@ -3,7 +3,7 @@
 #include "MainGUI.h"
 #include <msclr\marshal_cppstd.h>
 
-string currentUser = "test";
+string currentUser = "test_user";
 
 namespace GUI {
 	using namespace AppGUI;
