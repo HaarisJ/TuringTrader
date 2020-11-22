@@ -120,9 +120,11 @@ namespace GroupJoinGUI {
 			dr1 = cmd1->ExecuteReader();
 			dr1->Close();
 			MessageBox::Show("You have successfully joined the group");
+			this->Close();
 		}
 		catch (Exception^ ex) {
 			MessageBox::Show(ex->Message);
+			this->Close();
 		}
 
 	}

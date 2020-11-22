@@ -4,6 +4,7 @@
   Consider app.config remapping of assembly "System.Buffers, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" from Version "4.0.2.0" [] to Version "4.0.3.0" [C:\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\System.Buffers.dll] to solve conflict and get rid of warning.
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(2084,5): warning MSB3276: Found conflicts between different versions of the same dependent assembly. Please set the "AutoGenerateBindingRedirects" property to true in the project file. For more information, see http://go.microsoft.com/fwlink/?LinkId=294190.
   GroupCreationPage.cpp
+  GroupJoinPage.cpp
   GroupsPage.cpp
   LoginPage.cpp
 C:\Users\markl\source\repos\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(15,22): warning C4251: 'Stock::ticker': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'

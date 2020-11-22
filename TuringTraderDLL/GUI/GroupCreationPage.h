@@ -172,9 +172,11 @@ namespace GroupCreationGUI {
 			dr2 = cmd2->ExecuteReader();
 
 			MessageBox::Show("Your group has been created with join code: " + join_code + ", and you have been automatically added to the group.");
+			this->Close();
 		}
 		catch (Exception^ ex) {
 			MessageBox::Show(ex->Message);
+			this->Close();
 		}
 	}
 };
