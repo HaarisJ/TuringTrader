@@ -221,17 +221,22 @@ namespace MainAppGUI {
 		}
 		private: Form^ activeForm = nullptr;
 		private: void openChildForm(Form^ childForm) {
-			if (activeForm != nullptr) {
-				activeForm->Close();
+			try {
+				if (activeForm != nullptr) {
+					activeForm->Close();
+				}
+				activeForm = childForm;
+				childForm->TopLevel = false;
+				childForm->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+				childForm->Dock = System::Windows::Forms::DockStyle::Fill;
+				this->contentPanel->Controls->Add(childForm);
+				this->contentPanel->Tag = childForm;
+				childForm->BringToFront();
+				childForm->Show();
 			}
-			activeForm = childForm;
-			childForm->TopLevel = false;
-			childForm->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			childForm->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->contentPanel->Controls->Add(childForm);
-			this->contentPanel->Tag = childForm;
-			childForm->BringToFront();
-			childForm->Show();
+			catch (Exception^ ex) {
+				MessageBox::Show(ex->Message);
+			}
 		}
 #pragma endregion
 	private: System::Void tradingButton_Click(System::Object^ sender, System::EventArgs^ e) {
