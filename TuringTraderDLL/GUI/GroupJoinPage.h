@@ -1,6 +1,13 @@
 #pragma once
 
+#include "msclr\marshal_cppstd.h"
+#include <string>
+
+extern std::string currentUser;
+
 namespace GroupJoinGUI {
+	using namespace std;
+	using namespace msclr::interop; // This namespace is used for marshalling between string and String^
 	using namespace MySql::Data::MySqlClient;
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -100,21 +107,24 @@ namespace GroupJoinGUI {
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ join_code = textBox1->Text;
-		String^ username; // TODO: Need a user object to get a username to insert into the SQL query
+		String^ username;
+		username = marshal_as<String^>(currentUser);
 
 		try {
 			// Attempt to insert member into groupMember table
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("INSERT INTO groupMember VALUES('mark_laufert', '" + join_code + "')", connection); // TODO: replace hardcoded username
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("INSERT INTO groupMember VALUES('" + username + "', '" + join_code + "')", connection); // TODO: replace hardcoded username
 			MySqlDataReader^ dr1;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
 			dr1->Close();
 			MessageBox::Show("You have successfully joined the group");
+			this->Close();
 		}
 		catch (Exception^ ex) {
 			MessageBox::Show(ex->Message);
+			this->Close();
 		}
 
 	}

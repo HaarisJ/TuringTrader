@@ -2,3 +2,5 @@ C:\School\CMPE_320\turing\TuringTraderDLL\Testing\Debug\Testing.vcxprojAssemblyR
 C:\School\CMPE_320\turing\TuringTraderDLL\Testing\Debug\Testing.vcxproj.CopyComplete
 C:\Users\jason\OneDrive\Desktop\uni_course\turing\TuringTraderDLL\Testing\Debug\Testing.vcxprojAssemblyReference.cache
 C:\Users\jason\OneDrive\Desktop\uni_course\turing\TuringTraderDLL\Testing\Debug\Testing.vcxproj.CopyComplete
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\Testing\Debug\Testing.vcxprojAssemblyReference.cache
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\Testing\Debug\Testing.vcxproj.CopyComplete

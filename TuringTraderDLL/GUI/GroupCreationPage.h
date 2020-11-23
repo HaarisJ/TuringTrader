@@ -2,11 +2,14 @@
 #include <random>
 #include <string>
 #include <ctime>
+#include "msclr\marshal_cppstd.h"
+
+extern std::string currentUser;
 
 using namespace MySql::Data::MySqlClient;
 
 namespace GroupCreationGUI {
-
+	using namespace msclr::interop; // This namespace is used for marshalling between string and String^
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -152,6 +155,8 @@ namespace GroupCreationGUI {
 			
 		String^ group_name = textBox1->Text;
 		String^ group_descr = textBox2->Text;
+		String^ username;
+		username = marshal_as<String^>(currentUser);
 
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
@@ -160,10 +165,18 @@ namespace GroupCreationGUI {
 			MySqlDataReader^ dr;
 			connection->Open();
 			dr = cmd->ExecuteReader();
-			MessageBox::Show("Your group has been created with join code: " + join_code);
+			dr->Close();
+
+			MySqlCommand^ cmd2 = gcnew MySqlCommand("INSERT INTO groupMember VALUES('" + username + "', '" + join_code + "')", connection);
+			MySqlDataReader^ dr2;
+			dr2 = cmd2->ExecuteReader();
+
+			MessageBox::Show("Your group has been created with join code: " + join_code + ", and you have been automatically added to the group.");
+			this->Close();
 		}
 		catch (Exception^ ex) {
 			MessageBox::Show(ex->Message);
+			this->Close();
 		}
 	}
 };

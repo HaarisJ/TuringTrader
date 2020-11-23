@@ -1,0 +1,61 @@
+CREATE DATABASE TuringTrader; 
+
+USE TuringTrader;
+
+CREATE TABLE users(
+    username VARCHAR(20) NOT NULL PRIMARY KEY,
+    Fname VARCHAR(15) NOT NULL,
+    Lname VARCHAR(15) NOT NULL,
+    email VARCHAR(20) NOT NULL,
+    PASSWORD VARCHAR(20) NOT NULL,
+    accountBalance INTEGER NOT NULL
+); 
+
+CREATE TABLE tradingGroup(
+    joinCode CHAR(10) NOT NULL PRIMARY KEY,
+    groupName VARCHAR(20) NOT NULL,
+    description VARCHAR(280)
+); 
+
+CREATE TABLE company(
+    ticker VARCHAR(5) NOT NULL PRIMARY KEY,
+    compNAME VARCHAR(25) NOT NULL
+); 
+
+CREATE TABLE groupMember(
+    member VARCHAR(20) NOT NULL,
+    groupCode CHAR(10) NOT NULL,
+    PRIMARY KEY(member, groupCode)
+); 
+
+CREATE TABLE watches(
+    person VARCHAR(20) NOT NULL,
+    ticker VARCHAR(5) NOT NULL,
+    PRIMARY KEY(person, ticker)
+); 
+
+CREATE TABLE holdings(
+    person VARCHAR(20) NOT NULL,
+    ticker VARCHAR(5) NOT NULL,
+    numShares INTEGER NOT NULL,
+    avgShareCost VARCHAR(10) NOT NULL,
+    PRIMARY KEY(person, ticker)
+); 
+
+ALTER TABLE
+    groupMember ADD FOREIGN KEY(member) REFERENCES users(username) ON DELETE CASCADE;
+
+ALTER TABLE
+    groupMember ADD FOREIGN KEY(groupCode) REFERENCES tradingGroup(joinCode) ON DELETE CASCADE;
+
+ALTER TABLE
+    watches ADD FOREIGN KEY(person) REFERENCES users(username) ON DELETE CASCADE;
+
+ALTER TABLE
+    watches ADD FOREIGN KEY(ticker) REFERENCES company(ticker) ON DELETE CASCADE;
+
+ALTER TABLE
+    holdings ADD FOREIGN KEY(person) REFERENCES users(username) ON DELETE CASCADE;
+
+ALTER TABLE
+    holdings ADD FOREIGN KEY(ticker) REFERENCES company(ticker) ON DELETE CASCADE;
