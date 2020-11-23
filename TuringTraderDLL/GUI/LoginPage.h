@@ -59,6 +59,7 @@ namespace GUI {
 	private: System::Windows::Forms::Label^ invalidInputsText;
 
 
+
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -95,7 +96,7 @@ namespace GUI {
 			this->loginTitle->Location = System::Drawing::Point(0, 0);
 			this->loginTitle->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->loginTitle->Name = L"loginTitle";
-			this->loginTitle->Size = System::Drawing::Size(437, 680);
+			this->loginTitle->Size = System::Drawing::Size(437, 653);
 			this->loginTitle->TabIndex = 20;
 			// 
 			// titleLabel
@@ -125,7 +126,7 @@ namespace GUI {
 			this->CreateAccount->AutoSize = true;
 			this->CreateAccount->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->CreateAccount->Location = System::Drawing::Point(905, 392);
+			this->CreateAccount->Location = System::Drawing::Point(995, 194);
 			this->CreateAccount->Name = L"CreateAccount";
 			this->CreateAccount->Size = System::Drawing::Size(148, 25);
 			this->CreateAccount->TabIndex = 19;
@@ -138,7 +139,7 @@ namespace GUI {
 			this->loginLabel->AutoSize = true;
 			this->loginLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 25.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->loginLabel->Location = System::Drawing::Point(582, 123);
+			this->loginLabel->Location = System::Drawing::Point(621, 86);
 			this->loginLabel->Name = L"loginLabel";
 			this->loginLabel->Size = System::Drawing::Size(445, 51);
 			this->loginLabel->TabIndex = 18;
@@ -150,7 +151,7 @@ namespace GUI {
 			this->loginBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->loginBtn->ForeColor = System::Drawing::Color::GhostWhite;
-			this->loginBtn->Location = System::Drawing::Point(565, 470);
+			this->loginBtn->Location = System::Drawing::Point(717, 438);
 			this->loginBtn->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->loginBtn->Name = L"loginBtn";
 			this->loginBtn->Size = System::Drawing::Size(181, 65);
@@ -161,44 +162,44 @@ namespace GUI {
 			// 
 			// passwordInput
 			// 
-			this->passwordInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->passwordInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->passwordInput->Location = System::Drawing::Point(785, 313);
+			this->passwordInput->Location = System::Drawing::Point(764, 313);
 			this->passwordInput->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->passwordInput->Name = L"passwordInput";
-			this->passwordInput->Size = System::Drawing::Size(267, 38);
+			this->passwordInput->Size = System::Drawing::Size(379, 34);
 			this->passwordInput->TabIndex = 15;
 			// 
 			// password
 			// 
 			this->password->AutoSize = true;
-			this->password->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->password->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->password->Location = System::Drawing::Point(558, 320);
 			this->password->Name = L"password";
-			this->password->Size = System::Drawing::Size(147, 32);
+			this->password->Size = System::Drawing::Size(126, 29);
 			this->password->TabIndex = 14;
 			this->password->Text = L"Password:";
 			// 
 			// usernameInput
 			// 
-			this->usernameInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->usernameInput->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->usernameInput->Location = System::Drawing::Point(785, 237);
+			this->usernameInput->Location = System::Drawing::Point(764, 237);
 			this->usernameInput->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->usernameInput->Name = L"usernameInput";
-			this->usernameInput->Size = System::Drawing::Size(267, 38);
+			this->usernameInput->Size = System::Drawing::Size(379, 34);
 			this->usernameInput->TabIndex = 13;
 			this->usernameInput->TextChanged += gcnew System::EventHandler(this, &LoginPage::usernameInput_TextChanged);
 			// 
 			// username
 			// 
 			this->username->AutoSize = true;
-			this->username->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->username->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->username->Location = System::Drawing::Point(558, 237);
 			this->username->Name = L"username";
-			this->username->Size = System::Drawing::Size(153, 32);
+			this->username->Size = System::Drawing::Size(130, 29);
 			this->username->TabIndex = 12;
 			this->username->Text = L"Username:";
 			// 
@@ -208,18 +209,19 @@ namespace GUI {
 			this->invalidInputsText->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->invalidInputsText->ForeColor = System::Drawing::Color::Red;
-			this->invalidInputsText->Location = System::Drawing::Point(737, 386);
+			this->invalidInputsText->Location = System::Drawing::Point(693, 394);
 			this->invalidInputsText->Name = L"invalidInputsText";
-			this->invalidInputsText->Size = System::Drawing::Size(237, 20);
+			this->invalidInputsText->Size = System::Drawing::Size(232, 20);
 			this->invalidInputsText->TabIndex = 21;
-			this->invalidInputsText->Text = L"Invalid Username or Password";
+			this->invalidInputsText->Text = L"Invalid username or password";
 			this->invalidInputsText->Visible = false;
 			// 
 			// LoginPage
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1193, 680);
+			this->ClientSize = System::Drawing::Size(1182, 653);
+			this->Controls->Add(this->invalidInputsText);
 			this->Controls->Add(this->loginTitle);
 			this->Controls->Add(this->CreateAccount);
 			this->Controls->Add(this->loginLabel);
@@ -228,8 +230,8 @@ namespace GUI {
 			this->Controls->Add(this->password);
 			this->Controls->Add(this->usernameInput);
 			this->Controls->Add(this->username);
-			this->MaximumSize = System::Drawing::Size(1211, 727);
-			this->MinimumSize = System::Drawing::Size(1211, 727);
+			this->MaximumSize = System::Drawing::Size(1200, 700);
+			this->MinimumSize = System::Drawing::Size(1200, 700);
 			this->Name = L"LoginPage";
 			this->Text = L"LoginPage";
 			this->Load += gcnew System::EventHandler(this, &LoginPage::LoginPage_Load);
@@ -263,7 +265,6 @@ namespace GUI {
 					userNameUsing = dr->GetString(0);
 					break;
 				}
-				MessageBox::Show(dr->GetString(0));
 			}
 		}
 		catch (Exception^ ex) {

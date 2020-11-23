@@ -45,6 +45,9 @@
     <ClInclude Include="GroupJoinPage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AccountCreationPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="testGUI.cpp">
@@ -77,5 +80,13 @@
     <ClCompile Include="GroupJoinPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AccountCreationPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AccountCreationPage.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

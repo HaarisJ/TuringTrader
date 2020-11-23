@@ -128,6 +128,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AccountCreationPage.cpp" />
     <ClCompile Include="CompanyPage.cpp" />
     <ClCompile Include="GroupCreationPage.cpp" />
     <ClCompile Include="GroupJoinPage.cpp" />
@@ -140,6 +141,9 @@
     <ClCompile Include="TradingPage.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AccountCreationPage.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="CompanyPage.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -172,6 +176,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AccountCreationPage.resx" />
     <EmbeddedResource Include="CompanyPage.resx">
       <DependentUpon>CompanyPage.h</DependentUpon>
     </EmbeddedResource>
