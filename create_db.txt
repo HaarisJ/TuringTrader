@@ -19,7 +19,7 @@ CREATE TABLE tradingGroup(
 
 CREATE TABLE company(
     ticker VARCHAR(5) NOT NULL PRIMARY KEY,
-    compNAME VARCHAR(25) NOT NULL
+    compNAME VARCHAR(200) NOT NULL
 ); 
 
 CREATE TABLE groupMember(
