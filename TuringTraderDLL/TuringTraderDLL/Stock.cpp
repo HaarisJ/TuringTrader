@@ -28,6 +28,8 @@ STOCKDLL void Stock::updateMarketVals () {
     doc.Parse(text);
 
     currentPrice = doc["c"].GetFloat();
+    currentPrice = (int)(currentPrice * 100 + .5);
+    currentPrice = (float)currentPrice / 100;
     openPrice = doc["o"].GetFloat();
     dailyHigh = doc["h"].GetFloat();
     dailyLow = doc["l"].GetFloat();
@@ -44,7 +46,10 @@ STOCKDLL void Stock::updateProfile() {
     name = doc["name"].GetString();
     exchange = doc["exchange"].GetString();
     logo = doc["logo"].GetString();
+    
     marketCap = doc["marketCapitalization"].GetFloat();
+    marketCap = (int)(marketCap * 100 + .5);
+    marketCap = (float)marketCap / 100;
 }
 
 
@@ -160,30 +165,39 @@ STOCKDLL void Stock::updateNews() {
 
 
 STOCKDLL float Stock::getCurrentPrice() {
-    return currentPrice;
+    float value = (int)(currentPrice * 100 + .5);
+    return (float)value / 100;
 }
 
 STOCKDLL float Stock::getOpenPrice() {
-    return openPrice;
+    float value = (int)(openPrice * 100 + .5);
+    return (float)value / 100;
 }
 
 STOCKDLL float Stock::getPL() {
-    return currentPrice - openPrice;
+    float value = currentPrice - openPrice;
+    value = (int)(value * 100 + .5);
+    return (float)value / 100;
 }
 
 STOCKDLL float Stock::getMarketCap() {
-    return marketCap;
+    float value = (int)(marketCap * 100 + .5);
+    return (float)value / 100;
 }
 
 STOCKDLL float Stock::getDailyHigh() {
-    return dailyHigh;
+    float value = (int)(dailyHigh * 100 + .5);
+    return (float)value / 100;
 }
 
 STOCKDLL float Stock::getDailyLow() {
-    return dailyLow;
+    float value = (int)(dailyLow * 100 + .5);
+    return (float)value / 100;
 }
 
-//STOCKDLL vector<string> Stock::getNews(vector <string> news) {}
+STOCKDLL vector<Stock::news> Stock::getNews() {
+    return companyNews;
+}
 
 // CONVERT DATETIME FROM 155458347 to something readable
 STOCKDLL string Stock::unixTimeToHumanReadable(long int seconds) {

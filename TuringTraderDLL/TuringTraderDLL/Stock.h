@@ -12,16 +12,7 @@ using namespace std;
 #include <vector>
 
 class STOCKDLL Stock {
-	private:
-        string ticker;
-        string name;
-        string exchange;
-        string logo;
-        float currentPrice;
-        float openPrice;
-        float dailyLow;
-        float dailyHigh;
-        float marketCap;
+    public: 
         struct news {
             string headline;
             string image;
@@ -29,12 +20,23 @@ class STOCKDLL Stock {
             string source;
             string date;
         };
+	private:
+        string ticker;
+        float currentPrice;
+        float openPrice;
+        float dailyLow;
+        float dailyHigh;
+        float marketCap;
+        
         vector<news> companyNews;
         vector<float> candles;
         vector<int> candleTimes;
         string unixTimeToHumanReadable(long int seconds);
 
 	public:
+        string name;
+        string exchange;
+        string logo;
         // constructor, creates API objects, sets all private attributes
         Stock(const string& symbol);
         // updates currentPrice, openPrice, dailyLow, dailyHigh, marketCap, news, candles
@@ -49,5 +51,5 @@ class STOCKDLL Stock {
         float getMarketCap();
         float getDailyHigh();
         float getDailyLow();
-        //vector<string> getNews(vector <string> news);
+        vector<news> getNews();
 };

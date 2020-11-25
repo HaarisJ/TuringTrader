@@ -9,9 +9,9 @@ int main() {
 
 	Stock apple("AAPL");
 	apple.updateMarketVals();
-	//apple.updateProfile();
-	//apple.updateNews();
-	//apple.updateCandles("D");
+	apple.updateProfile();
+	apple.updateNews();
+	apple.updateCandles("W");
 	float price = apple.getCurrentPrice();
 
 	// Example of running API calls on Holding class
