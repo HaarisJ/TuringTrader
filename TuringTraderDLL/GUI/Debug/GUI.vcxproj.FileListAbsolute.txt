@@ -46,3 +46,4 @@ C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\
 C:\Users\jason\OneDrive\Desktop\uni_course\turing\TuringTraderDLL\GUI\Debug\GUI.AccountCreationPage.resources
 C:\Users\jason\OneDrive\Desktop\uni_course\turing\TuringTraderDLL\GUI\Debug\GUI.GroupCreationPage.resources
 C:\Users\jason\OneDrive\Desktop\uni_course\turing\TuringTraderDLL\GUI\Debug\GUI.GroupJoinPage.resources
+C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.AccountCreationPage.resources
