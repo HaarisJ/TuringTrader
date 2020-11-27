@@ -45,11 +45,7 @@
     <ClInclude Include="GroupJoinPage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="AccountCreationPage.h">
-=======
-    <ClInclude Include="OrderDlg.h">
->>>>>>> TT-46-company-page
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -84,7 +80,6 @@
     <ClCompile Include="GroupJoinPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="AccountCreationPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -93,10 +88,5 @@
     <EmbeddedResource Include="AccountCreationPage.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
-=======
-    <ClCompile Include="OrderDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
->>>>>>> TT-46-company-page
   </ItemGroup>
 </Project>
