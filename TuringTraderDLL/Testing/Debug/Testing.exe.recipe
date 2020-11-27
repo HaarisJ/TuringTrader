@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project>
+<<<<<<< HEAD
   <ProjectOutputs>
     <ProjectOutput>
       <FullPath>C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\Debug\TuringTraderDLL.dll</FullPath>
@@ -11,4 +12,10 @@
   <ContentFiles />
   <SatelliteDlls />
   <NonRecipeFileRefs />
+=======
+  <ProjectOutputs>C:\School\CMPE_320\turing\TuringTraderDLL\Debug\Testing.exe</ProjectOutputs>
+  <ContentFiles></ContentFiles>
+  <SatelliteDlls></SatelliteDlls>
+  <NonRecipeFileRefs></NonRecipeFileRefs>
+>>>>>>> TT-46-company-page
 </Project>

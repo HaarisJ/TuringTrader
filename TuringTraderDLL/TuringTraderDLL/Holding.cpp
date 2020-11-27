@@ -4,7 +4,7 @@
 
 using namespace std;
 
-HOLDINGDLL Holding::Holding(string symb, int numShares, float cost) {
+HOLDINGDLL Holding::Holding(string symb, int numShares, float cost) : Stock(symb) {
 	ticker = symb;
 	qty = numShares;
 	totalCost = cost;
@@ -28,4 +28,9 @@ HOLDINGDLL void Holding::removeShares(int numNewShares, float cost) {
 
 HOLDINGDLL float Holding::getAvgPrice() {
 	return totalCost / qty;
+}
+
+HOLDINGDLL float Holding::getMarketPrice() {
+	Stock::updateMarketVals();
+	return this->getCurrentPrice() * qty;
 }
