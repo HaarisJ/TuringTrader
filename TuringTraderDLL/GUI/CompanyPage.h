@@ -1,7 +1,10 @@
 #pragma once
 #include "Stock.h"
 #include "OrderDlg.h"
+#include <msclr\marshal_cppstd.h>
 #include <algorithm>
+
+extern std::string currentUser;
 using namespace MySql::Data::MySqlClient;
 
 namespace CompanyPageGUI {
@@ -886,9 +889,10 @@ namespace CompanyPageGUI {
 		// Check if this stock is in user's watchlist
 		//MySqlCommand^ cmd = gcnew MySqlCommand("SELECT * from watches");
 
-		std::string ticker = "TSLA";
-		Stock company = Stock(ticker);
+		System::String^ tickerM = "TSLA";
+		std::string tickerUM = msclr::interop::marshal_as<std::string>(tickerM);
 
+		Stock company = Stock(tickerUM);
 
 		// Initialization and updating fields with realtime data
 		company.updateMarketVals();
@@ -900,13 +904,12 @@ namespace CompanyPageGUI {
 		vector<Stock::news> cNews = company.getNews();
 
 		// Call accessors and set labels
-		String^ ticker2 = gcnew String(ticker.c_str());
 		pictureBox1->ImageLocation = gcnew String(company.logo.c_str());
 
 		label2->Text = gcnew String(company.name.c_str());
 		label1->Text = gcnew String(company.exchange.c_str());
 
-		label3->Text = ticker2;
+		label3->Text = tickerM;
 
 		float cp = company.getCurrentPrice();
 		labelPrice->Text = cp.ToString(L"F");
@@ -987,9 +990,26 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 	// Check if enough buying power or shares owned for proposed order
 		// Buy order: Reduce user cash, and numShares in holding
 		// Sell order: increase user cash, reduce numShares in holding.
-	//String^ username;
-	//username = marshal_as<String^>(currentUser);
-	//MySqlCommand^ cmd = gcnew MySqlCommand("SELECT * from holdings");
+
+
+	extern std::string currentUser;
+	//String^ username = marshal_as<String^>(currentUser);
+	float userCash = 0;
+	//try {
+	//	String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+	//	MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+	//	MySqlCommand^ cmd = gcnew MySqlCommand("SELECT accountbalance from users WHERE username='" + username + "'", connection);		
+	//	MySqlDataReader^ dr;
+	//	connection->Open();
+	//	dr = cmd->ExecuteReader();
+	//	while (dr->Read()) {
+	//		userCash = dr->GetFloat(0);
+	//	}
+	//	dr->Close();
+	//}
+	//catch (Exception^ ex) {
+	//	MessageBox::Show(ex->Message);
+	//}
 
 	std::string ticker = "TSLA";
 	Stock company = Stock("TSLA");
@@ -1004,9 +1024,11 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 	String^ newBuy = gcnew String("DB CASH - TOTAL HERE");
 	OrderGUI::OrderDlg^ dlg = gcnew OrderGUI::OrderDlg(title, value, buyingPwr, newBuy);
 	if (dlg->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
-		// If enough cash:
-		//Place the order in the DB here
-		MessageBox::Show("Order Placed Successfully!");
+		if (userCash >= total) {
+			//Place the order in the DB here
+			MessageBox::Show("Order Placed Successfully!");
+		}
+		
 	}
 	delete dlg;
 	textBox1->Text = "";

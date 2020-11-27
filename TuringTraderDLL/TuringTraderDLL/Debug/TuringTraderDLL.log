@@ -1,1 +1,32 @@
-﻿  TuringTraderDLL.vcxproj -> C:\Users\markl\source\repos\turing\TuringTraderDLL\Debug\TuringTraderDLL.dll
+﻿  Stock.cpp
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(24,18): warning C4251: 'Stock::ticker': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(31,29): warning C4251: 'Stock::companyNews': class 'std::vector<Stock::news,std::allocator<Stock::news>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(31): message : see declaration of 'std::vector<Stock::news,std::allocator<Stock::news>>'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(32,26): warning C4251: 'Stock::candles': class 'std::vector<float,std::allocator<float>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(32): message : see declaration of 'std::vector<float,std::allocator<float>>'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(33,28): warning C4251: 'Stock::candleTimes': class 'std::vector<int,std::allocator<int>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(33): message : see declaration of 'std::vector<int,std::allocator<int>>'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(37,16): warning C4251: 'Stock::name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(38,20): warning C4251: 'Stock::exchange': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(39,16): warning C4251: 'Stock::logo': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.cpp(31,45): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.cpp(51,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.cpp(79,30): warning C4244: '=': conversion from 'double' to '_Rep', possible loss of data
+          with
+          [
+              _Rep=__int64
+          ]
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.cpp(171,17): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.cpp(176,17): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.cpp(182,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.cpp(187,17): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.cpp(192,17): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.cpp(197,17): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.cpp(226,9): warning C4101: 'minutes': unreferenced local variable
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.cpp(226,18): warning C4101: 'secondss': unreferenced local variable
+C:\School\CMPE_320\turing\TuringTraderDLL\TuringTraderDLL\Stock.cpp(225,40): warning C4101: 'hours': unreferenced local variable
+  TuringTraderDLL.vcxproj -> C:\School\CMPE_320\turing\TuringTraderDLL\Debug\TuringTraderDLL.dll
