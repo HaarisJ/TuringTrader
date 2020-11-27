@@ -51,5 +51,7 @@ class STOCKDLL Stock {
         float getMarketCap();
         float getDailyHigh();
         float getDailyLow();
+        vector<float> getCandles();
+        vector<int> getCandleTimes();
         vector<news> getNews();
 };

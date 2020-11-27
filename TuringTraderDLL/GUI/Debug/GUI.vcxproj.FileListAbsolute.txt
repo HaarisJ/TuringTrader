@@ -30,3 +30,13 @@ C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.TradingPage.res
 C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.vcxproj.GenerateResource.cache
 C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.vcxproj.CopyComplete
 C:\Users\markl\source\repos\turing\TuringTraderDLL\GUI\Debug\GUI.GroupJoinPage.resources
+C:\School\CMPE_320\turing\TuringTraderDLL\GUI\Debug\GUI.GroupCreationPage.resources
+C:\School\CMPE_320\turing\TuringTraderDLL\GUI\Debug\GUI.GroupJoinPage.resources
+C:\School\CMPE_320\turing\TuringTraderDLL\GUI\Debug\GUI.GroupsPage.resources
+C:\School\CMPE_320\turing\TuringTraderDLL\GUI\Debug\GUI.LoginPage.resources
+C:\School\CMPE_320\turing\TuringTraderDLL\GUI\Debug\GUI.MainGUI.resources
+C:\School\CMPE_320\turing\TuringTraderDLL\GUI\Debug\GUI.PortfolioPage.resources
+C:\School\CMPE_320\turing\TuringTraderDLL\GUI\Debug\GUI.ProfilePage.resources
+C:\School\CMPE_320\turing\TuringTraderDLL\GUI\Debug\GUI.TestGUI.resources
+C:\School\CMPE_320\turing\TuringTraderDLL\GUI\Debug\GUI.TradingPage.resources
+C:\School\CMPE_320\turing\TuringTraderDLL\GUI\Debug\GUI.OrderDlg.resources

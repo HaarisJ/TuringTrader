@@ -1,5 +1,8 @@
 #pragma once
 #include "Stock.h"
+#include "OrderDlg.h"
+#include <algorithm>
+using namespace MySql::Data::MySqlClient;
 
 namespace CompanyPageGUI {
 
@@ -9,12 +12,15 @@ namespace CompanyPageGUI {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace OrderGUI;
 
+	
 	/// <summary>
 	/// Summary for CompanyPage
 	/// </summary>
 	public ref class CompanyPage : public System::Windows::Forms::Form
 	{
+		
 	public:
 		CompanyPage(void)
 		{
@@ -91,6 +97,10 @@ namespace CompanyPageGUI {
 	private: System::Windows::Forms::Label^ label24;
 	private: System::Windows::Forms::Label^ label25;
 	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart1;
+	private: System::Windows::Forms::RadioButton^ radioButton1;
+	private: System::Windows::Forms::GroupBox^ groupBox1;
+	private: System::Windows::Forms::RadioButton^ radioButton3;
+	private: System::Windows::Forms::RadioButton^ radioButton2;
 
 
 
@@ -156,6 +166,10 @@ namespace CompanyPageGUI {
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
 			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
+			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->radioButton3 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton2 = (gcnew System::Windows::Forms::RadioButton());
 			this->tableLayoutPanel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->tableLayoutPanel2->SuspendLayout();
@@ -167,6 +181,7 @@ namespace CompanyPageGUI {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
+			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -220,6 +235,7 @@ namespace CompanyPageGUI {
 			this->button2->TabIndex = 4;
 			this->button2->Text = L"Refresh";
 			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &CompanyPage::button2_Click);
 			// 
 			// button3
 			// 
@@ -305,7 +321,6 @@ namespace CompanyPageGUI {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(216, 27);
 			this->textBox1->TabIndex = 11;
-			this->textBox1->Text = L"Enter Quantity";
 			// 
 			// button4
 			// 
@@ -755,18 +770,63 @@ namespace CompanyPageGUI {
 			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
 			series1->IsVisibleInLegend = false;
 			series1->Legend = L"Legend1";
-			series1->Name = L"Series1";
+			series1->Name = L"Candles";
 			this->chart1->Series->Add(series1);
 			this->chart1->Size = System::Drawing::Size(527, 243);
 			this->chart1->TabIndex = 37;
 			this->chart1->Text = L"chart1";
 			this->chart1->Click += gcnew System::EventHandler(this, &CompanyPage::chart1_Click);
 			// 
+			// radioButton1
+			// 
+			this->radioButton1->AutoSize = true;
+			this->radioButton1->Checked = true;
+			this->radioButton1->Location = System::Drawing::Point(6, 13);
+			this->radioButton1->Name = L"radioButton1";
+			this->radioButton1->Size = System::Drawing::Size(44, 17);
+			this->radioButton1->TabIndex = 38;
+			this->radioButton1->TabStop = true;
+			this->radioButton1->Text = L"Day";
+			this->radioButton1->UseVisualStyleBackColor = true;
+			// 
+			// groupBox1
+			// 
+			this->groupBox1->Controls->Add(this->radioButton3);
+			this->groupBox1->Controls->Add(this->radioButton2);
+			this->groupBox1->Controls->Add(this->radioButton1);
+			this->groupBox1->Location = System::Drawing::Point(372, 181);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Size = System::Drawing::Size(181, 35);
+			this->groupBox1->TabIndex = 39;
+			this->groupBox1->TabStop = false;
+			this->groupBox1->Enter += gcnew System::EventHandler(this, &CompanyPage::groupBox1_Enter);
+			// 
+			// radioButton3
+			// 
+			this->radioButton3->AutoSize = true;
+			this->radioButton3->Location = System::Drawing::Point(116, 13);
+			this->radioButton3->Name = L"radioButton3";
+			this->radioButton3->Size = System::Drawing::Size(55, 17);
+			this->radioButton3->TabIndex = 40;
+			this->radioButton3->Text = L"Month";
+			this->radioButton3->UseVisualStyleBackColor = true;
+			// 
+			// radioButton2
+			// 
+			this->radioButton2->AutoSize = true;
+			this->radioButton2->Location = System::Drawing::Point(56, 13);
+			this->radioButton2->Name = L"radioButton2";
+			this->radioButton2->Size = System::Drawing::Size(54, 17);
+			this->radioButton2->TabIndex = 39;
+			this->radioButton2->Text = L"Week";
+			this->radioButton2->UseVisualStyleBackColor = true;
+			// 
 			// CompanyPage
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1186, 734);
+			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->chart1);
 			this->Controls->Add(this->pictureBox5);
 			this->Controls->Add(this->pictureBox4);
@@ -811,19 +871,31 @@ namespace CompanyPageGUI {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
+			this->groupBox1->ResumeLayout(false);
+			this->groupBox1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void CompanyPage_Load(System::Object^ sender, System::EventArgs^ e) {
-		std::string ticker = "MSFT";
-		// Initialization and updating fields with realtime data
+		// DB SETUP
+		String^ constr = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+		MySqlConnection^ con = gcnew MySqlConnection(constr);
+
+		// Check if this stock is in user's watchlist
+		//MySqlCommand^ cmd = gcnew MySqlCommand("SELECT * from watches");
+
+		std::string ticker = "TSLA";
 		Stock company = Stock(ticker);
+
+
+		// Initialization and updating fields with realtime data
 		company.updateMarketVals();
 		company.updateProfile();
-		company.updateCandles("W");
 		company.updateNews();
+
+		CompanyPage::initChart(company);
 		
 		vector<Stock::news> cNews = company.getNews();
 
@@ -885,7 +957,8 @@ namespace CompanyPageGUI {
 		// MAKE DB CALL TO SEE IF TICKER IS IN USER WATCHLIST
 		// SET WATCHLIST BUTTON TEXT AND COLOUR
 
-		// INIT CANDLE CHART
+		
+		
 		
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -911,13 +984,73 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 	}
 
 	// ONCE ALL BOUNDARIES HAVE BEEN CHECKED, OPEN A CONFIRMATION DIALOG BOX
-	// 
+	// Check if enough buying power or shares owned for proposed order
+		// Buy order: Reduce user cash, and numShares in holding
+		// Sell order: increase user cash, reduce numShares in holding.
+	//String^ username;
+	//username = marshal_as<String^>(currentUser);
+	//MySqlCommand^ cmd = gcnew MySqlCommand("SELECT * from holdings");
+
+	std::string ticker = "TSLA";
+	Stock company = Stock("TSLA");
+	company.updateMarketVals();
+
+	String^ ticker2 = gcnew String(ticker.c_str());
+	String^ title = gcnew String("Buy " + textBox1->Text + " " + ticker2 + " @ Market");
+	String^ price = company.getCurrentPrice().ToString();
+	float total = company.getCurrentPrice() * qtyInput;
+	String^ value = gcnew String(qtyInput.ToString() + " x " + price + " = " + total.ToString(L"c") + " USD");
+	String^ buyingPwr = gcnew String("(" + total.ToString(L"c") + ")" + " USD");
+	String^ newBuy = gcnew String("DB CASH - TOTAL HERE");
+	OrderGUI::OrderDlg^ dlg = gcnew OrderGUI::OrderDlg(title, value, buyingPwr, newBuy);
+	if (dlg->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+		// If enough cash:
+		//Place the order in the DB here
+		MessageBox::Show("Order Placed Successfully!");
+	}
+	delete dlg;
+	textBox1->Text = "";
 
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	// ADD TO WATCHLIST HERE OR REMOVE IF ITS ALREADY IN IT
 }
 private: System::Void chart1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+
+private: System::Void initChart(Stock& company) {
+	chart1->Series["Candles"]->Points->Clear();
+
+	if (radioButton1->Checked) {
+		company.updateCandles("D");
+	}
+	else if (radioButton2->Checked) {
+		company.updateCandles("W");
+	}
+	else if (radioButton3->Checked) {
+		company.updateCandles("M");
+	}
+
+	// INIT CANDLE CHART
+	vector<float> candles = company.getCandles();
+	vector<int> candleTimes = company.getCandleTimes();
+
+	float minCan = *std::min_element(candles.begin(), candles.end());
+	float maxCan = *std::max_element(candles.begin(), candles.end());
+	float diff = maxCan - minCan;
+
+	for (int i = 0; i < candles.size(); i++) {
+		chart1->Series["Candles"]->Points->AddY(candles[i]);
+	}
+	chart1->ChartAreas[0]->AxisY->Minimum = minCan - 0.1 * diff;
+	chart1->ChartAreas[0]->AxisY->Maximum = maxCan + 0.1 * diff;
+	chart1->ChartAreas[0]->AxisY->LabelStyle->Format = "0.00";
+}
+private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
+	//CompanyPage::initChart();
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	CompanyPage::CompanyPage_Load(sender, e);
 }
 };
 }

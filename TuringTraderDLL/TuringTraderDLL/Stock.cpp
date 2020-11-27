@@ -57,6 +57,9 @@ STOCKDLL void Stock::updateCandles(const string& resolution) {
     // Resolution can be 1, 5, 15, 30, 60, D, W or M in string format
     // Have to do some research on UNIX timestamps for the 2 variables below
 
+    // RESET Candles vector attribute
+    candles.clear();
+
     const auto p1 = chrono::system_clock::now();
     const auto time_now = std::chrono::duration_cast<std::chrono::seconds>(
         p1.time_since_epoch()).count();
@@ -193,6 +196,14 @@ STOCKDLL float Stock::getDailyHigh() {
 STOCKDLL float Stock::getDailyLow() {
     float value = (int)(dailyLow * 100 + .5);
     return (float)value / 100;
+}
+
+STOCKDLL vector<float> Stock::getCandles() {
+    return candles;
+}
+
+STOCKDLL vector<int> Stock::getCandleTimes() {
+    return candleTimes;
 }
 
 STOCKDLL vector<Stock::news> Stock::getNews() {
