@@ -57,3 +57,4 @@ C:\School\CMPE_320\turing\TuringTraderDLL\GUI\Debug\GUI.PortfolioPage.resources
 C:\School\CMPE_320\turing\TuringTraderDLL\GUI\Debug\GUI.ProfilePage.resources
 C:\School\CMPE_320\turing\TuringTraderDLL\GUI\Debug\GUI.TestGUI.resources
 C:\School\CMPE_320\turing\TuringTraderDLL\GUI\Debug\GUI.TradingPage.resources
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\Debug\GUI.AccountCreationPage.resources
