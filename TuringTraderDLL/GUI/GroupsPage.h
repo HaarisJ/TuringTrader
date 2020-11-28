@@ -4,6 +4,8 @@
 #include "GroupCreationPage.h"
 #include "GroupJoinPage.h"
 #include "msclr\marshal_cppstd.h"
+#include <cliext/vector>
+#include "Holding.h"
 
 extern std::string currentUser;
 using namespace MySql::Data::MySqlClient;
@@ -17,6 +19,7 @@ namespace GroupsGUI {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace msclr::interop;
 
 	/// <summary>
 	/// Summary for GroupsPage
@@ -44,44 +47,8 @@ namespace GroupsGUI {
 			}
 		}
 	private: System::Windows::Forms::Button^ button6;
+
 	protected:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Label^ label59;
@@ -96,15 +63,7 @@ namespace GroupsGUI {
 	private: System::Windows::Forms::Panel^ panel3;
 	private: System::Windows::Forms::TreeView^ treeView1;
 
-
-
-
-
-
-
 	protected:
-
-
 
 	private:
 		/// <summary>
@@ -186,6 +145,11 @@ namespace GroupsGUI {
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->AllowUserToAddRows = false;
+			this->dataGridView1->AllowUserToDeleteRows = false;
+			this->dataGridView1->AllowUserToOrderColumns = true;
+			this->dataGridView1->AllowUserToResizeColumns = false;
+			this->dataGridView1->AllowUserToResizeRows = false;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
 				this->Username,
@@ -237,6 +201,7 @@ namespace GroupsGUI {
 			this->button7->TabIndex = 6;
 			this->button7->Text = L"Leave Group";
 			this->button7->UseVisualStyleBackColor = false;
+			this->button7->Click += gcnew System::EventHandler(this, &GroupsPage::button7_Click);
 			// 
 			// listBox1
 			// 
@@ -320,19 +285,99 @@ namespace GroupsGUI {
 		}
 	}
 	private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-		String^ currentGroup = listBox1->SelectedItem->ToString();
+		// Resetting the groups table
+		dataGridView1->Rows->Clear();
+
+		String^ current_group_name = listBox1->SelectedItem->ToString();
+		String^ current_group_code = "";
+		cliext::vector<String^> current_group_members;
 
 		String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 		MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-		MySqlCommand^ cmd = gcnew MySqlCommand("SELECT joinCode FROM tradingGroup WHERE groupName='" + currentGroup + "'", connection);
+		MySqlCommand^ cmd = gcnew MySqlCommand("SELECT joinCode FROM tradingGroup WHERE groupName='" + current_group_name + "'", connection);
 		MySqlDataReader^ dr;
 		connection->Open();
 		dr = cmd->ExecuteReader();
 		while (dr->Read()) {
-			label60->Text = L"Group Code: " + dr->GetString(0) +  "\r\nUse this code to invite your friends to your group!\r\n";
+			current_group_code = dr->GetString(0);
+			label60->Text = L"Group Code: " + current_group_code + "\r\nUse this code to invite your friends to your group!\r\n";
 		}
 		dr->Close();
 
+		// Adding usernames of members of current group to a vector and displaying in table
+		MySqlCommand^ cmd2 = gcnew MySqlCommand("SELECT member from groupMember INNER JOIN tradingGroup ON groupMember.groupCode = tradingGroup.joinCode WHERE joinCode='" + current_group_code + "'", connection);
+		MySqlDataReader^ dr2;
+		dr2 = cmd2->ExecuteReader();
+		while (dr2->Read()) {
+			current_group_members.push_back(dr2->GetString(0));
+		}
+		dr2->Close();
+
+		// For each group member, create a holdings object for each of their holdings
+		for (int i = 0; i < current_group_members.size(); i++) {
+			std::vector<Holding> user_portfolio;
+			MySqlCommand^ cmd3 = gcnew MySqlCommand("SELECT ticker, numShares, totalCost FROM holdings WHERE person='" + current_group_members[i] + "'", connection);
+			MySqlDataReader^ dr3;
+			dr3 = cmd3->ExecuteReader();
+			// This loops through each holding possessed by the user
+			while (dr3->Read()) {			
+				std::string ticker = marshal_as<std::string>(dr3->GetString(0));
+				int num_shares = dr3->GetInt32(1);
+				float total_cost = dr3->GetFloat(2);
+				Holding holding(ticker, num_shares, total_cost);
+				user_portfolio.push_back(holding);
+			}
+			dr3->Close();
+
+			// Get user's cash balance
+			MySqlCommand^ cmd4 = gcnew MySqlCommand("SELECT accountBalance FROM users WHERE username='" + current_group_members[i] + "'", connection);
+			MySqlDataReader^ dr4;
+			dr4 = cmd4->ExecuteReader();
+			float user_cash_balance;
+			while (dr4->Read()) {
+				user_cash_balance = dr4->GetInt32(0);
+			}
+
+			dr4->Close();
+
+			// Add user's stats to the DataGridView
+			float user_portfolio_value = user_cash_balance;
+			float user_portfolio_cost = 0;
+			for (int i = 0; i < user_portfolio.size(); i++) {
+				user_portfolio[i].updateMarketVals();
+				float holding_price = user_portfolio[i].getCurrentPrice();
+				user_portfolio_value += holding_price * (user_portfolio[i].getQty());
+				user_portfolio_cost += user_portfolio[i].getTotalCost();
+			}
+			dataGridView1->Rows->Add(current_group_members[i], user_portfolio.size(), user_portfolio_value, user_portfolio_value - 100000);
+		}
 	}
+private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (listBox1->SelectedIndex < 0) {
+		MessageBox::Show("Select a group from the listbox to indicate which one you would like to leave.");
+	}
+	else {
+		String^ current_group_name = listBox1->SelectedItem->ToString();
+
+		String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+		MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+		MySqlCommand^ cmd = gcnew MySqlCommand("SELECT joinCode FROM tradingGroup WHERE groupName='" + current_group_name + "'", connection);
+		MySqlDataReader^ dr;
+		connection->Open();
+		dr = cmd->ExecuteReader();
+		String^ current_join_code = "";
+		while (dr->Read()) {
+			current_join_code = dr->GetString(0);
+		}
+		dr->Close();
+
+		MySqlCommand^ cmd2 = gcnew MySqlCommand("DELETE FROM groupMember WHERE groupCode='" + current_join_code + "'", connection);
+		MySqlDataReader^ dr2;
+		dr2 = cmd2->ExecuteReader();
+
+		dr2->Close();
+		listBox1->Items->Remove(listBox1->SelectedItem);
+	}
+}
 };
 }

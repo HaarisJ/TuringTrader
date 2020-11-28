@@ -4,7 +4,7 @@
 
 using namespace std;
 
-HOLDINGDLL Holding::Holding(string symb, int numShares, float cost) {
+HOLDINGDLL Holding::Holding(string symb, int numShares, float cost) : Stock(symb) {
 	ticker = symb;
 	qty = numShares;
 	totalCost = cost;
