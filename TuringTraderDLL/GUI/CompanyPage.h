@@ -960,9 +960,6 @@ namespace CompanyPageGUI {
 		// MAKE DB CALL TO SEE IF TICKER IS IN USER WATCHLIST
 		// SET WATCHLIST BUTTON TEXT AND COLOUR
 
-		
-		
-		
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -985,31 +982,30 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 		MessageBox::Show("Quantity must be between 1-1000");
 		return;
 	}
-
+	
 	// ONCE ALL BOUNDARIES HAVE BEEN CHECKED, OPEN A CONFIRMATION DIALOG BOX
-	// Check if enough buying power or shares owned for proposed order
-		// Buy order: Reduce user cash, and numShares in holding
-		// Sell order: increase user cash, reduce numShares in holding.
-
-
 	extern std::string currentUser;
-	//String^ username = marshal_as<String^>(currentUser);
+	String^ username = msclr::interop::marshal_as<String^>(currentUser);
 	float userCash = 0;
-	//try {
-	//	String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
-	//	MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-	//	MySqlCommand^ cmd = gcnew MySqlCommand("SELECT accountbalance from users WHERE username='" + username + "'", connection);		
-	//	MySqlDataReader^ dr;
-	//	connection->Open();
-	//	dr = cmd->ExecuteReader();
-	//	while (dr->Read()) {
-	//		userCash = dr->GetFloat(0);
-	//	}
-	//	dr->Close();
-	//}
-	//catch (Exception^ ex) {
-	//	MessageBox::Show(ex->Message);
-	//}
+	MySqlConnection^ connection;
+
+	try {
+		String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+		connection = gcnew MySqlConnection(connection_str);
+		MySqlCommand^ cmd = gcnew MySqlCommand("SELECT accountBalance from users WHERE username='" + username + "'", connection);
+		
+		MySqlDataReader^ dr;
+		connection->Open();
+		dr = cmd->ExecuteReader();
+		while (dr->Read()) {
+			userCash = dr->GetFloat(0);
+		}
+		dr->Close();
+		connection->Close();
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show(ex->Message);
+	}
 
 	std::string ticker = "TSLA";
 	Stock company = Stock("TSLA");
@@ -1021,14 +1017,38 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 	float total = company.getCurrentPrice() * qtyInput;
 	String^ value = gcnew String(qtyInput.ToString() + " x " + price + " = " + total.ToString(L"c") + " USD");
 	String^ buyingPwr = gcnew String("(" + total.ToString(L"c") + ")" + " USD");
-	String^ newBuy = gcnew String("DB CASH - TOTAL HERE");
+	float newBal = userCash - total;
+	String^ newBuy = newBal.ToString(L"c");
 	OrderGUI::OrderDlg^ dlg = gcnew OrderGUI::OrderDlg(title, value, buyingPwr, newBuy);
 	if (dlg->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 		if (userCash >= total) {
 			//Place the order in the DB here
-			MessageBox::Show("Order Placed Successfully!");
+			//UPDATE TuringTrader.holdings SET numShares=numShares+10, totalCost=totalCost+2000 WHERE person='mark_l' AND ticker='AAPL'
+			//UPDATE TuringTrader.users SET accountBalance=accountBalance-5000 WHERE username='mark_l'
+			//INSERT INTO TuringTrader.holdings (person, ticker, numShares, totalCost) VALUES ('mark_l', 'SQ', 120, 1070) ON DUPLICATE KEY UPDATE numShares=numShares+10, totalCost=totalCost+150
+
+			try {
+				MySqlCommand^ cmdUpdShares = gcnew MySqlCommand("INSERT INTO holdings (person, ticker, numShares, totalCost) VALUES ('" + username + "', '" + ticker2
+					+ "', " + qtyInput + ", " + total + ") ON DUPLICATE KEY UPDATE numShares=numShares+" + qtyInput + ", totalCost=totalCost+" + total, connection);
+				
+				MySqlCommand^ cmdUpdBalance = gcnew MySqlCommand("UPDATE users SET accountBalance=accountBalance-" + total + " WHERE username='" + username + "'", connection);
+				
+				connection->Open();
+				MySqlDataReader^ dr2;
+				dr2 = cmdUpdShares->ExecuteReader();
+				dr2->Close();
+				dr2 = cmdUpdBalance->ExecuteReader();
+				dr2->Close();
+				connection->Close();
+				MessageBox::Show("Order Placed Successfully!");
+			}
+			catch (Exception^ ex) {
+				MessageBox::Show(ex->Message);
+			}
 		}
-		
+		else {
+			MessageBox::Show("You do not have enough buying power for this order.");
+		}
 	}
 	delete dlg;
 	textBox1->Text = "";
