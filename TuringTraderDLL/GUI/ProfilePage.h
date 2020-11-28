@@ -182,7 +182,6 @@ namespace ProfileGUI {
 			// 
 			// button12
 			// 
-			this->button12->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->button12->Location = System::Drawing::Point(1868, 1234);
 			this->button12->Margin = System::Windows::Forms::Padding(6, 4, 6, 4);
 			this->button12->Name = L"button12";
@@ -194,7 +193,6 @@ namespace ProfileGUI {
 			// 
 			// label70
 			// 
-			this->label70->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->label70->AutoSize = true;
 			this->label70->Location = System::Drawing::Point(1732, 953);
 			this->label70->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
@@ -207,7 +205,6 @@ namespace ProfileGUI {
 			// 
 			// label69
 			// 
-			this->label69->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->label69->AutoSize = true;
 			this->label69->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18));
 			this->label69->Location = System::Drawing::Point(1948, 854);
@@ -220,7 +217,6 @@ namespace ProfileGUI {
 			// 
 			// label68
 			// 
-			this->label68->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->label68->AutoSize = true;
 			this->label68->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -235,7 +231,6 @@ namespace ProfileGUI {
 			// 
 			// label67
 			// 
-			this->label67->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->label67->AutoSize = true;
 			this->label67->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -249,7 +244,6 @@ namespace ProfileGUI {
 			// 
 			// label66
 			// 
-			this->label66->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->label66->AutoSize = true;
 			this->label66->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -559,7 +553,6 @@ namespace ProfileGUI {
 			// 
 			// label14
 			// 
-			this->label14->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->label14->AutoSize = true;
 			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->label14->Location = System::Drawing::Point(1730, 318);
@@ -572,7 +565,6 @@ namespace ProfileGUI {
 			// 
 			// label15
 			// 
-			this->label15->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->label15->AutoSize = true;
 			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->label15->Location = System::Drawing::Point(1741, 578);
@@ -690,24 +682,24 @@ private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ 
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("update users set accountBalance=10000 WHERE username='" + username + "'", connection);
-			MySqlCommand^ cmd2 = gcnew MySqlCommand("delete from watches WHERE username='" + username + "'", connection);
-			MySqlCommand^ cmd3 = gcnew MySqlCommand("delete from holdings WHERE username='" + username + "'", connection);
-			MySqlCommand^ cmd4 = gcnew MySqlCommand("delete from group WHERE username='" + username + "'", connection);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("update users set accountBalance=100000 WHERE username='" + username + "'", connection);
+			MySqlCommand^ cmd2 = gcnew MySqlCommand("delete from watches WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd3 = gcnew MySqlCommand("delete from holdings WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd4 = gcnew MySqlCommand("delete from groupMember WHERE member='" + username + "'", connection);
 			MySqlDataReader^ dr1;
 			MySqlDataReader^ dr2;
 			MySqlDataReader^ dr3;
 			MySqlDataReader^ dr4;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
-			dr2 = cmd2->ExecuteReader();
-			dr3 = cmd3->ExecuteReader();
-			dr4 = cmd4->ExecuteReader();
-			MessageBox::Show("Account Reset Successfully");
 			dr1->Close();
+			dr2 = cmd2->ExecuteReader();
 			dr2->Close();
+			dr3 = cmd3->ExecuteReader();
 			dr3->Close();
+			dr4 = cmd4->ExecuteReader();
 			dr4->Close();
+			MessageBox::Show("Account Reset Successfully");
 		}
 		catch (Exception^ ex) {
 			MessageBox::Show(ex->Message);
