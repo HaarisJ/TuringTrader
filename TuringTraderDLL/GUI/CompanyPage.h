@@ -353,6 +353,7 @@ namespace CompanyPageGUI {
 			this->button5->TabIndex = 13;
 			this->button5->Text = L"Sell";
 			this->button5->UseVisualStyleBackColor = false;
+			this->button5->Click += gcnew System::EventHandler(this, &CompanyPage::button5_Click);
 			// 
 			// tableLayoutPanel1
 			// 
@@ -1093,6 +1094,107 @@ private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	CompanyPage::CompanyPage_Load(sender, e);
+}
+
+//================================================
+//================= SELL BUTTON ==================
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (textBox1->Text == "") {
+		MessageBox::Show("Please enter an order quantity");
+		return;
+	}
+	int qtyInput;
+	if (!int::TryParse(textBox1->Text, qtyInput)) {
+		MessageBox::Show("Quantity must be an integer");
+		return;
+	}
+
+	if (qtyInput == 0) {
+		MessageBox::Show("Quantity must be between 1-1000");
+		return;
+	}
+
+	// ONCE ALL BOUNDARIES HAVE BEEN CHECKED, OPEN A CONFIRMATION DIALOG BOX
+	extern std::string currentUser;
+	String^ username = msclr::interop::marshal_as<String^>(currentUser);
+	float userCash = 0;
+	int numShares = 0;
+	MySqlConnection^ connection;
+	std::string ticker = "TSLA";
+	String^ ticker2 = gcnew String(ticker.c_str());
+
+	try {
+		String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+		connection = gcnew MySqlConnection(connection_str);
+		MySqlCommand^ cmd = gcnew MySqlCommand("SELECT accountBalance from users WHERE username='" + username + "'", connection);
+
+		MySqlDataReader^ dr;
+		connection->Open();
+		dr = cmd->ExecuteReader();
+		while (dr->Read()) {
+			userCash = dr->GetFloat(0);
+		}
+		dr->Close();
+		connection->Close();
+
+		MySqlCommand^ cmd2 = gcnew MySqlCommand("SELECT numShares from holdings WHERE person='" + username + "' AND ticker='" + ticker2 + "'", connection);
+
+		connection->Open();
+		dr = cmd2->ExecuteReader();
+		while (dr->Read()) {
+			numShares = dr->GetInt16(0);
+		}
+		dr->Close();
+		connection->Close();
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show(ex->Message);
+	}
+
+	Stock company = Stock("TSLA");
+	company.updateMarketVals();
+
+	String^ title = gcnew String("Sell " + textBox1->Text + " " + ticker2 + " @ Market");
+	String^ price = company.getCurrentPrice().ToString();
+	float total = company.getCurrentPrice() * qtyInput;
+	String^ value = gcnew String(qtyInput.ToString() + " x " + price + " = " + total.ToString(L"c") + " USD");
+	String^ buyingPwr = gcnew String("+ " + total.ToString(L"c") + " USD");
+	float newBal = userCash + total;
+	String^ newBuy = newBal.ToString(L"c");
+	OrderGUI::OrderDlg^ dlg = gcnew OrderGUI::OrderDlg(title, value, buyingPwr, newBuy);
+	if (dlg->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+		if (numShares >= qtyInput) {
+			//Place the order in the DB here
+			//UPDATE TuringTrader.holdings SET numShares=numShares+10, totalCost=totalCost+2000 WHERE person='mark_l' AND ticker='AAPL'
+			//UPDATE TuringTrader.users SET accountBalance=accountBalance-5000 WHERE username='mark_l'
+			//INSERT INTO TuringTrader.holdings (person, ticker, numShares, totalCost) VALUES ('mark_l', 'SQ', 120, 1070) ON DUPLICATE KEY UPDATE numShares=numShares+10, totalCost=totalCost+150
+
+			try {
+				MySqlCommand^ cmdUpdShares = gcnew MySqlCommand("INSERT INTO holdings (person, ticker, numShares, totalCost) VALUES ('" + username + "', '" + ticker2
+					+ "', " + qtyInput + ", " + total + ") ON DUPLICATE KEY UPDATE numShares=numShares-" + qtyInput + ", totalCost=totalCost-" + total, connection);
+
+				MySqlCommand^ cmdUpdBalance = gcnew MySqlCommand("UPDATE users SET accountBalance=accountBalance+" + total + " WHERE username='" + username + "'", connection);
+
+				connection->Open();
+				MySqlDataReader^ dr2;
+				dr2 = cmdUpdShares->ExecuteReader();
+				dr2->Close();
+				dr2 = cmdUpdBalance->ExecuteReader();
+				dr2->Close();
+				connection->Close();
+				MessageBox::Show("Shares Sold Successfully!");
+			}
+			catch (Exception^ ex) {
+				MessageBox::Show(ex->Message);
+			}
+		}
+		else {
+			MessageBox::Show("You do not own enough shares to sell for this order.");
+		}
+	}
+	delete dlg;
+	textBox1->Text = "";
+
 }
 };
 }
