@@ -1764,7 +1764,6 @@ private: System::Windows::Forms::Label^ label71;
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"testGUI";
 			this->Text = L"CompanyPage";
-			this->Load += gcnew System::EventHandler(this, &testGUI::CompanyPage_Load);
 			this->loginPanel->ResumeLayout(false);
 			this->loginPanel->PerformLayout();
 			this->loginTitle->ResumeLayout(false);
@@ -1799,8 +1798,6 @@ private: System::Windows::Forms::Label^ label71;
 	//		Stock apple("AAPL");
 	//		label1->Text = apple.getPrice().ToString();
 			loginPanel->Visible = true;
-		}
-		private: System::Void CompanyPage_Load(System::Object^ sender, System::EventArgs^ e) {
 		}
 		private: System::Void usernameInput_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 		}
@@ -1848,17 +1845,10 @@ private: System::Void dataGridView1_CellContentClick(System::Object^ sender, Sys
 private: System::Void loginPanel_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
-	CompanyPage^ testCompany = gcnew CompanyPage();
-	testCompany->ShowDialog();
+
 }
 private: System::Void label21_Click(System::Object^ sender, System::EventArgs^ e) {
-	CompanyPage^ testCompany = gcnew CompanyPage();
-	testCompany->TopLevel = false;
-	testCompany->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-	testCompany->Dock = System::Windows::Forms::DockStyle::Fill;
-	this->settingsTab->Controls->Add(testCompany);
-	testCompany->BringToFront();
-	testCompany->Show();
+
 //	testCompany->ShowDialog();
 }
 private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
