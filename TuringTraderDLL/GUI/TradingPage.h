@@ -263,7 +263,6 @@ namespace TradingGUI {
 			// 
 			// Owned4
 			// 
-			this->Owned4->AutoSize = true;
 			this->Owned4->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -279,7 +278,6 @@ namespace TradingGUI {
 			// 
 			// Owned3
 			// 
-			this->Owned3->AutoSize = true;
 			this->Owned3->BackColor = System::Drawing::Color::DarkRed;
 			this->Owned3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -295,7 +293,6 @@ namespace TradingGUI {
 			// 
 			// Owned6
 			// 
-			this->Owned6->AutoSize = true;
 			this->Owned6->BackColor = System::Drawing::Color::DarkRed;
 			this->Owned6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -303,7 +300,7 @@ namespace TradingGUI {
 			this->Owned6->Location = System::Drawing::Point(1642, 457);
 			this->Owned6->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->Owned6->Name = L"Owned6";
-			this->Owned6->Size = System::Drawing::Size(174, 138);
+			this->Owned6->Size = System::Drawing::Size(196, 138);
 			this->Owned6->TabIndex = 50;
 			this->Owned6->Text = L"BUD:\r\n3,408.54\r\n-0.51%";
 			this->Owned6->Visible = false;
@@ -311,7 +308,6 @@ namespace TradingGUI {
 			// 
 			// Owned2
 			// 
-			this->Owned2->AutoSize = true;
 			this->Owned2->BackColor = System::Drawing::Color::DarkRed;
 			this->Owned2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -319,7 +315,7 @@ namespace TradingGUI {
 			this->Owned2->Location = System::Drawing::Point(1642, 262);
 			this->Owned2->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->Owned2->Name = L"Owned2";
-			this->Owned2->Size = System::Drawing::Size(174, 138);
+			this->Owned2->Size = System::Drawing::Size(196, 138);
 			this->Owned2->TabIndex = 49;
 			this->Owned2->Text = L"F:\r\n3,408.54\r\n-0.51%";
 			this->Owned2->Visible = false;
@@ -327,7 +323,6 @@ namespace TradingGUI {
 			// 
 			// Owned5
 			// 
-			this->Owned5->AutoSize = true;
 			this->Owned5->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -343,7 +338,6 @@ namespace TradingGUI {
 			// 
 			// Owned1
 			// 
-			this->Owned1->AutoSize = true;
 			this->Owned1->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -365,9 +359,9 @@ namespace TradingGUI {
 			this->StocksOwnedHeader->Location = System::Drawing::Point(1395, 117);
 			this->StocksOwnedHeader->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->StocksOwnedHeader->Name = L"StocksOwnedHeader";
-			this->StocksOwnedHeader->Size = System::Drawing::Size(1233, 54);
+			this->StocksOwnedHeader->Size = System::Drawing::Size(1269, 54);
 			this->StocksOwnedHeader->TabIndex = 46;
-			this->StocksOwnedHeader->Text = L"Performance of Stocks Owned Since Last Market Opening";
+			this->StocksOwnedHeader->Text = L"Performance of Stocks Watched Since Last Market Opening";
 			// 
 			// searchButton
 			// 
@@ -388,10 +382,11 @@ namespace TradingGUI {
 			});
 			this->dataGridView1->Location = System::Drawing::Point(96, 322);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->RowHeadersWidth = 150;
+			this->dataGridView1->RowHeadersWidth = 50;
 			this->dataGridView1->RowTemplate->Height = 40;
 			this->dataGridView1->Size = System::Drawing::Size(855, 720);
 			this->dataGridView1->TabIndex = 65;
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &TradingPage::dataGridView1_CellContentClick);
 			// 
 			// Ticker
 			// 
@@ -399,7 +394,7 @@ namespace TradingGUI {
 			this->Ticker->MinimumWidth = 12;
 			this->Ticker->Name = L"Ticker";
 			this->Ticker->ReadOnly = true;
-			this->Ticker->Width = 250;
+			this->Ticker->Width = 75;
 			// 
 			// Company
 			// 
@@ -407,11 +402,10 @@ namespace TradingGUI {
 			this->Company->MinimumWidth = 12;
 			this->Company->Name = L"Company";
 			this->Company->ReadOnly = true;
-			this->Company->Width = 250;
+			this->Company->Width = 200;
 			// 
 			// Owned7
 			// 
-			this->Owned7->AutoSize = true;
 			this->Owned7->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -427,7 +421,6 @@ namespace TradingGUI {
 			// 
 			// Owned8
 			// 
-			this->Owned8->AutoSize = true;
 			this->Owned8->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -443,7 +436,6 @@ namespace TradingGUI {
 			// 
 			// Owned9
 			// 
-			this->Owned9->AutoSize = true;
 			this->Owned9->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -459,7 +451,6 @@ namespace TradingGUI {
 			// 
 			// Owned10
 			// 
-			this->Owned10->AutoSize = true;
 			this->Owned10->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -475,7 +466,6 @@ namespace TradingGUI {
 			// 
 			// Owned11
 			// 
-			this->Owned11->AutoSize = true;
 			this->Owned11->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -491,7 +481,6 @@ namespace TradingGUI {
 			// 
 			// Owned12
 			// 
-			this->Owned12->AutoSize = true;
 			this->Owned12->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -507,7 +496,6 @@ namespace TradingGUI {
 			// 
 			// Owned13
 			// 
-			this->Owned13->AutoSize = true;
 			this->Owned13->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -523,7 +511,6 @@ namespace TradingGUI {
 			// 
 			// Owned17
 			// 
-			this->Owned17->AutoSize = true;
 			this->Owned17->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -539,7 +526,6 @@ namespace TradingGUI {
 			// 
 			// Owned20
 			// 
-			this->Owned20->AutoSize = true;
 			this->Owned20->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -555,7 +541,6 @@ namespace TradingGUI {
 			// 
 			// Owned19
 			// 
-			this->Owned19->AutoSize = true;
 			this->Owned19->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -571,7 +556,6 @@ namespace TradingGUI {
 			// 
 			// Owned18
 			// 
-			this->Owned18->AutoSize = true;
 			this->Owned18->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -587,7 +571,6 @@ namespace TradingGUI {
 			// 
 			// Owned16
 			// 
-			this->Owned16->AutoSize = true;
 			this->Owned16->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -603,7 +586,6 @@ namespace TradingGUI {
 			// 
 			// Owned15
 			// 
-			this->Owned15->AutoSize = true;
 			this->Owned15->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -619,7 +601,6 @@ namespace TradingGUI {
 			// 
 			// Owned14
 			// 
-			this->Owned14->AutoSize = true;
 			this->Owned14->BackColor = System::Drawing::Color::DarkRed;
 			this->Owned14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -627,7 +608,7 @@ namespace TradingGUI {
 			this->Owned14->Location = System::Drawing::Point(1642, 870);
 			this->Owned14->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->Owned14->Name = L"Owned14";
-			this->Owned14->Size = System::Drawing::Size(174, 138);
+			this->Owned14->Size = System::Drawing::Size(196, 138);
 			this->Owned14->TabIndex = 74;
 			this->Owned14->Text = L"BUD:\r\n3,408.54\r\n-0.51%";
 			this->Owned14->Visible = false;
@@ -712,8 +693,8 @@ namespace TradingGUI {
 					i += 1;
 				}
 				dr1->Close();
-				// CompanyPage^ companyPage = gcnew CompanyPage();
-				// openChildForm(companyPage);
+				CompanyPage^ companyPage = gcnew CompanyPage();
+				openChildForm(companyPage);
 			}
 			catch (Exception^ ex) {
 				MessageBox::Show(ex->Message);
@@ -722,27 +703,84 @@ namespace TradingGUI {
 	}
 	private: System::Void searchButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ s = searchBox->Text;
+		String^ company;
+		String^ ticker;
+		try {
+			dataGridView1->Rows->Clear();
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from company WHERE compName regexp'" + s  + "' or ticker regexp'" + s + "'", connection);
+			MySqlDataReader^ dr1;
+			connection->Open();
+			dr1 = cmd1->ExecuteReader();
+			while (dr1->Read()) {
+				ticker = dr1->GetString(0);
+				company = dr1->GetString(1);
+				dataGridView1->Rows->Add(ticker, company);
+			}
+			dr1->Close();
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+
 	}
 	private: System::Void TradingPage_Load(System::Object^ sender, System::EventArgs^ e) {
 		String^ username;
 		username = marshal_as<String^>(currentUser);
 		int i = 1;
+		int j = 0;
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
 			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd2 = gcnew MySqlCommand("SELECT * from company", connection);
 			MySqlDataReader^ dr1;
+			MySqlDataReader^ dr2;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
 			while (dr1->Read()) {
 				Label^ label = (Label^)this->Controls["Owned" + i.ToString()];
-				String^ text1 = "'" + dr1->GetString(1) + "' \r\n '" + dr1->GetString(0) + "'";
+				String^ text1 = "'" + dr1->GetString(1) + "' \r\n ";
 				label->Text = text1;
 				label->Visible = true;
 				i += 1;
 
 			}
 			dr1->Close();
+			dataGridView1->Rows->Add("XOM","Exxon Mobile");
+			dataGridView1->Rows->Add("AAPL", "Apple");
+			dataGridView1->Rows->Add("MSFT", "Microsoft");
+			dataGridView1->Rows->Add("GE", "General Electric");
+			dataGridView1->Rows->Add("IBM", "International Business Machine");
+			dataGridView1->Rows->Add("MO", "Altria");
+			dataGridView1->Rows->Add("JNJ", "Johnson and Johnson");
+			dataGridView1->Rows->Add("CVX", "Chevron");
+			dataGridView1->Rows->Add("WMT", "Walmart");
+			dataGridView1->Rows->Add("GOOGL", "Alphabet");
+			dataGridView1->Rows->Add("BRK.A", "Berkshire Hathway");
+			dataGridView1->Rows->Add("PG", "Proctor & Gamble");
+			dataGridView1->Rows->Add("AMZN", "Amazon");
+			dataGridView1->Rows->Add("KO", "Coco Cola");
+			dataGridView1->Rows->Add("MRK", "Merck");
+			dataGridView1->Rows->Add("WFC", "Wells Fargo");
+			dataGridView1->Rows->Add("INTC", "Intel");
+			dataGridView1->Rows->Add("JPM", "JPMorgan Chase");
+			dataGridView1->Rows->Add("HD", "Home Depot");
+			dataGridView1->Rows->Add("PEP", "Pepsi Co.");
+			dataGridView1->Rows->Add("ORCL", "Oracle Corp");
+			dataGridView1->Rows->Add("MMM", "3M");
+			dataGridView1->Rows->Add("DIS", "Walt Disney Co.");
+			dataGridView1->Rows->Add("FB", "Facebook");
+			dataGridView1->Rows->Add("ABT", "Abbott Laboratories");
+			dataGridView1->Rows->Add("PFE", "Phizer");
+			dataGridView1->Rows->Add("RY", "Royal Bank");
+			dataGridView1->Rows->Add("SHOP", "Shopify");
+			dataGridView1->Rows->Add("ACB", "Aurora Cannibis");
+			dataGridView1->Rows->Add("TSLA", "Telsa");
+
+
+
 		}
 		catch (Exception^ ex) {
 			MessageBox::Show(ex->Message);
@@ -1260,6 +1298,12 @@ private: System::Void Owned5_Click(System::Object^ sender, System::EventArgs^ e)
 			MessageBox::Show(ex->Message);
 		}
 	}
+}
+private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	String^ str;
+	DataGridViewRow^ row = dataGridView1->Rows[e->RowIndex];
+	str = row->Cells[0]->Value->ToString();
+
 }
 };
 }
