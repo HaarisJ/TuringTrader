@@ -3,93 +3,6 @@
   Consider app.config remapping of assembly "System.Memory, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" from Version "4.0.1.0" [] to Version "4.0.1.1" [C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\PublicAssemblies\System.Memory.dll] to solve conflict and get rid of warning.
   Consider app.config remapping of assembly "System.Buffers, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" from Version "4.0.2.0" [] to Version "4.0.3.0" [C:\Program Files (x86)\MySQL\MySQL Connector Net 8.0.22\Assemblies\v4.5.2\System.Buffers.dll] to solve conflict and get rid of warning.
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(2123,5): warning MSB3276: Found conflicts between different versions of the same dependent assembly. Please set the "AutoGenerateBindingRedirects" property to true in the project file. For more information, see http://go.microsoft.com/fwlink/?LinkId=294190.
-  AccountCreationPage.cpp
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\AccountCreationPage.h(302,22): warning C4101: 'ex': unreferenced local variable
-  CompanyPage.cpp
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(24,18): warning C4251: 'Stock::ticker': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(31,29): warning C4251: 'Stock::companyNews': class 'std::vector<Stock::news,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Stock'
-          with
-          [
-              _Ty=Stock::news
-          ]
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(31): message : see declaration of 'std::vector<Stock::news,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=Stock::news
-          ]
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(32,26): warning C4251: 'Stock::candles': class 'std::vector<float,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Stock'
-          with
-          [
-              _Ty=float
-          ]
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(32): message : see declaration of 'std::vector<float,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=float
-          ]
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(33,28): warning C4251: 'Stock::candleTimes': class 'std::vector<int,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Stock'
-          with
-          [
-              _Ty=int
-          ]
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(33): message : see declaration of 'std::vector<int,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=int
-          ]
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(37,16): warning C4251: 'Stock::name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(38,20): warning C4251: 'Stock::exchange': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(39,16): warning C4251: 'Stock::logo': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1109,20): warning C4018: '<': signed/unsigned mismatch
-  GroupCreationPage.cpp
-  GroupJoinPage.cpp
-  GroupsPage.cpp
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(24,18): warning C4251: 'Stock::ticker': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(31,29): warning C4251: 'Stock::companyNews': class 'std::vector<Stock::news,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Stock'
-          with
-          [
-              _Ty=Stock::news
-          ]
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(31): message : see declaration of 'std::vector<Stock::news,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=Stock::news
-          ]
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(32,26): warning C4251: 'Stock::candles': class 'std::vector<float,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Stock'
-          with
-          [
-              _Ty=float
-          ]
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(32): message : see declaration of 'std::vector<float,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=float
-          ]
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(33,28): warning C4251: 'Stock::candleTimes': class 'std::vector<int,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Stock'
-          with
-          [
-              _Ty=int
-          ]
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(33): message : see declaration of 'std::vector<int,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=int
-          ]
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(37,16): warning C4251: 'Stock::name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(38,20): warning C4251: 'Stock::exchange': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(39,16): warning C4251: 'Stock::logo': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Holding.h(11,15): warning C4251: 'Holding::ticker': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Holding'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\GroupsPage.h(338,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\GroupsPage.h(346,22): warning C4018: '<': signed/unsigned mismatch
   LoginPage.cpp
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(24,18): warning C4251: 'Stock::ticker': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
@@ -129,7 +42,9 @@ C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\Turi
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(39,16): warning C4251: 'Stock::logo': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1109,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1148,21): warning C4101: 'ex': unreferenced local variable
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1159,20): warning C4101: 'ex': unreferenced local variable
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1192,20): warning C4018: '<': signed/unsigned mismatch
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Holding.h(11,15): warning C4251: 'Holding::ticker': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Holding'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\GroupsPage.h(338,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
@@ -181,50 +96,9 @@ C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\Turi
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\GroupsPage.h(338,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\GroupsPage.h(346,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1109,20): warning C4018: '<': signed/unsigned mismatch
-  OrderDlg.cpp
-  PortfolioPage.cpp
-  ProfilePage.cpp
-  testGUI.cpp
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(24,18): warning C4251: 'Stock::ticker': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(31,29): warning C4251: 'Stock::companyNews': class 'std::vector<Stock::news,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Stock'
-          with
-          [
-              _Ty=Stock::news
-          ]
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(31): message : see declaration of 'std::vector<Stock::news,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=Stock::news
-          ]
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(32,26): warning C4251: 'Stock::candles': class 'std::vector<float,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Stock'
-          with
-          [
-              _Ty=float
-          ]
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(32): message : see declaration of 'std::vector<float,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=float
-          ]
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(33,28): warning C4251: 'Stock::candleTimes': class 'std::vector<int,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Stock'
-          with
-          [
-              _Ty=int
-          ]
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(33): message : see declaration of 'std::vector<int,std::allocator<_Ty>>'
-          with
-          [
-              _Ty=int
-          ]
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(37,16): warning C4251: 'Stock::name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(38,20): warning C4251: 'Stock::exchange': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(39,16): warning C4251: 'Stock::logo': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1109,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1148,21): warning C4101: 'ex': unreferenced local variable
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1159,20): warning C4101: 'ex': unreferenced local variable
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1192,20): warning C4018: '<': signed/unsigned mismatch
   TradingPage.cpp
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(24,18): warning C4251: 'Stock::ticker': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
@@ -264,8 +138,9 @@ C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\Turi
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(39,16): warning C4251: 'Stock::logo': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1109,20): warning C4018: '<': signed/unsigned mismatch
-  .NETFramework,Version=v4.5.2.AssemblyAttributes.cpp
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1148,21): warning C4101: 'ex': unreferenced local variable
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1159,20): warning C4101: 'ex': unreferenced local variable
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1192,20): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
   AccountCreationPage.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
      Creating library C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\Debug\AppGUI.lib and object C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\Debug\AppGUI.exp

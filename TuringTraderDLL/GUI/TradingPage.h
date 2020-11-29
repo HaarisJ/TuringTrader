@@ -167,7 +167,6 @@ namespace TradingGUI {
 			// 
 			// FinancialNewsHeader
 			// 
-			this->FinancialNewsHeader->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->FinancialNewsHeader->AutoSize = true;
 			this->FinancialNewsHeader->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->FinancialNewsHeader->Location = System::Drawing::Point(1479, 1268);
@@ -179,7 +178,6 @@ namespace TradingGUI {
 			// 
 			// panel1
 			// 
-			this->panel1->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->panel1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->panel1->Location = System::Drawing::Point(1476, 1334);
@@ -190,7 +188,6 @@ namespace TradingGUI {
 			// 
 			// SandP
 			// 
-			this->SandP->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->SandP->AutoSize = true;
 			this->SandP->BackColor = System::Drawing::Color::DarkRed;
 			this->SandP->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -205,7 +202,6 @@ namespace TradingGUI {
 			// 
 			// NASDAQ
 			// 
-			this->NASDAQ->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->NASDAQ->AutoSize = true;
 			this->NASDAQ->BackColor = System::Drawing::Color::LimeGreen;
 			this->NASDAQ->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -220,7 +216,6 @@ namespace TradingGUI {
 			// 
 			// DowJones
 			// 
-			this->DowJones->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->DowJones->AutoSize = true;
 			this->DowJones->BackColor = System::Drawing::Color::LimeGreen;
 			this->DowJones->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -235,7 +230,6 @@ namespace TradingGUI {
 			// 
 			// searchBox
 			// 
-			this->searchBox->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->searchBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->searchBox->Location = System::Drawing::Point(88, 188);
@@ -246,7 +240,6 @@ namespace TradingGUI {
 			// 
 			// IndexesHeader
 			// 
-			this->IndexesHeader->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->IndexesHeader->AutoSize = true;
 			this->IndexesHeader->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->IndexesHeader->Location = System::Drawing::Point(80, 1400);
@@ -258,7 +251,6 @@ namespace TradingGUI {
 			// 
 			// searchLabel
 			// 
-			this->searchLabel->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->searchLabel->AutoSize = true;
 			this->searchLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -271,7 +263,6 @@ namespace TradingGUI {
 			// 
 			// Owned4
 			// 
-			this->Owned4->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->Owned4->AutoSize = true;
 			this->Owned4->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -283,10 +274,11 @@ namespace TradingGUI {
 			this->Owned4->Size = System::Drawing::Size(196, 138);
 			this->Owned4->TabIndex = 52;
 			this->Owned4->Text = L"TSLA:\r\n28,129.90\r\n+0.07%";
+			this->Owned4->Visible = false;
+
 			// 
 			// Owned3
 			// 
-			this->Owned3->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->Owned3->AutoSize = true;
 			this->Owned3->BackColor = System::Drawing::Color::DarkRed;
 			this->Owned3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -298,10 +290,12 @@ namespace TradingGUI {
 			this->Owned3->Size = System::Drawing::Size(196, 138);
 			this->Owned3->TabIndex = 51;
 			this->Owned3->Text = L"GM:\r\n28,129.90\r\n-0.07%";
+			this->Owned3->Visible = false;
+		
+
 			// 
 			// Owned6
 			// 
-			this->Owned6->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->Owned6->AutoSize = true;
 			this->Owned6->BackColor = System::Drawing::Color::DarkRed;
 			this->Owned6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -313,10 +307,10 @@ namespace TradingGUI {
 			this->Owned6->Size = System::Drawing::Size(174, 138);
 			this->Owned6->TabIndex = 50;
 			this->Owned6->Text = L"BUD:\r\n3,408.54\r\n-0.51%";
+			this->Owned6->Visible = false;
 			// 
 			// Owned2
 			// 
-			this->Owned2->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->Owned2->AutoSize = true;
 			this->Owned2->BackColor = System::Drawing::Color::DarkRed;
 			this->Owned2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -328,10 +322,10 @@ namespace TradingGUI {
 			this->Owned2->Size = System::Drawing::Size(174, 138);
 			this->Owned2->TabIndex = 49;
 			this->Owned2->Text = L"F:\r\n3,408.54\r\n-0.51%";
+			this->Owned2->Visible = false;
 			// 
 			// Owned5
 			// 
-			this->Owned5->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->Owned5->AutoSize = true;
 			this->Owned5->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -343,10 +337,10 @@ namespace TradingGUI {
 			this->Owned5->Size = System::Drawing::Size(196, 138);
 			this->Owned5->TabIndex = 48;
 			this->Owned5->Text = L"NVDA:\r\n28,129.90\r\n+0.07%";
+			this->Owned5->Visible = false;
 			// 
 			// Owned1
 			// 
-			this->Owned1->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->Owned1->AutoSize = true;
 			this->Owned1->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -359,10 +353,10 @@ namespace TradingGUI {
 			this->Owned1->TabIndex = 47;
 			this->Owned1->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			this->Owned1->Click += gcnew System::EventHandler(this, &TradingPage::Owned1_Click);
+			this->Owned1->Visible = false;
 			// 
 			// StocksOwnedHeader
 			// 
-			this->StocksOwnedHeader->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->StocksOwnedHeader->AutoSize = true;
 			this->StocksOwnedHeader->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
@@ -415,7 +409,6 @@ namespace TradingGUI {
 			// 
 			// Owned7
 			// 
-			this->Owned7->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->Owned7->AutoSize = true;
 			this->Owned7->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -427,10 +420,10 @@ namespace TradingGUI {
 			this->Owned7->Size = System::Drawing::Size(196, 138);
 			this->Owned7->TabIndex = 66;
 			this->Owned7->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned7->Visible = false;
 			// 
 			// Owned8
 			// 
-			this->Owned8->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->Owned8->AutoSize = true;
 			this->Owned8->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -442,10 +435,11 @@ namespace TradingGUI {
 			this->Owned8->Size = System::Drawing::Size(196, 138);
 			this->Owned8->TabIndex = 67;
 			this->Owned8->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned8->Visible = false;
+
 			// 
 			// Owned9
 			// 
-			this->Owned9->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->Owned9->AutoSize = true;
 			this->Owned9->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -457,10 +451,10 @@ namespace TradingGUI {
 			this->Owned9->Size = System::Drawing::Size(196, 138);
 			this->Owned9->TabIndex = 68;
 			this->Owned9->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned9->Visible = false;
 			// 
 			// Owned10
 			// 
-			this->Owned10->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->Owned10->AutoSize = true;
 			this->Owned10->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -472,10 +466,10 @@ namespace TradingGUI {
 			this->Owned10->Size = System::Drawing::Size(196, 138);
 			this->Owned10->TabIndex = 69;
 			this->Owned10->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned10->Visible = false;
 			// 
 			// Owned11
 			// 
-			this->Owned11->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->Owned11->AutoSize = true;
 			this->Owned11->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -487,10 +481,10 @@ namespace TradingGUI {
 			this->Owned11->Size = System::Drawing::Size(196, 138);
 			this->Owned11->TabIndex = 70;
 			this->Owned11->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned11->Visible = false;
 			// 
 			// Owned12
 			// 
-			this->Owned12->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->Owned12->AutoSize = true;
 			this->Owned12->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -502,10 +496,10 @@ namespace TradingGUI {
 			this->Owned12->Size = System::Drawing::Size(196, 138);
 			this->Owned12->TabIndex = 71;
 			this->Owned12->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned12->Visible = false;
 			// 
 			// Owned13
 			// 
-			this->Owned13->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->Owned13->AutoSize = true;
 			this->Owned13->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -517,10 +511,10 @@ namespace TradingGUI {
 			this->Owned13->Size = System::Drawing::Size(196, 138);
 			this->Owned13->TabIndex = 72;
 			this->Owned13->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned13->Visible = false;
 			// 
 			// Owned17
 			// 
-			this->Owned17->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->Owned17->AutoSize = true;
 			this->Owned17->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -532,10 +526,10 @@ namespace TradingGUI {
 			this->Owned17->Size = System::Drawing::Size(196, 138);
 			this->Owned17->TabIndex = 73;
 			this->Owned17->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned17->Visible = false;
 			// 
 			// Owned20
 			// 
-			this->Owned20->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->Owned20->AutoSize = true;
 			this->Owned20->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -547,10 +541,10 @@ namespace TradingGUI {
 			this->Owned20->Size = System::Drawing::Size(196, 138);
 			this->Owned20->TabIndex = 79;
 			this->Owned20->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned20->Visible = false;
 			// 
 			// Owned19
 			// 
-			this->Owned19->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->Owned19->AutoSize = true;
 			this->Owned19->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -562,10 +556,10 @@ namespace TradingGUI {
 			this->Owned19->Size = System::Drawing::Size(196, 138);
 			this->Owned19->TabIndex = 78;
 			this->Owned19->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned19->Visible = false;
 			// 
 			// Owned18
 			// 
-			this->Owned18->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->Owned18->AutoSize = true;
 			this->Owned18->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -577,10 +571,10 @@ namespace TradingGUI {
 			this->Owned18->Size = System::Drawing::Size(196, 138);
 			this->Owned18->TabIndex = 77;
 			this->Owned18->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned18->Visible = false;
 			// 
 			// Owned16
 			// 
-			this->Owned16->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->Owned16->AutoSize = true;
 			this->Owned16->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -592,10 +586,10 @@ namespace TradingGUI {
 			this->Owned16->Size = System::Drawing::Size(196, 138);
 			this->Owned16->TabIndex = 76;
 			this->Owned16->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned16->Visible = false;
 			// 
 			// Owned15
 			// 
-			this->Owned15->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->Owned15->AutoSize = true;
 			this->Owned15->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -607,10 +601,10 @@ namespace TradingGUI {
 			this->Owned15->Size = System::Drawing::Size(196, 138);
 			this->Owned15->TabIndex = 75;
 			this->Owned15->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned15->Visible = false;
 			// 
 			// Owned14
 			// 
-			this->Owned14->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->Owned14->AutoSize = true;
 			this->Owned14->BackColor = System::Drawing::Color::DarkRed;
 			this->Owned14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -622,6 +616,7 @@ namespace TradingGUI {
 			this->Owned14->Size = System::Drawing::Size(174, 138);
 			this->Owned14->TabIndex = 74;
 			this->Owned14->Text = L"BUD:\r\n3,408.54\r\n-0.51%";
+			this->Owned14->Visible = false;
 			// 
 			// TradingPage
 			// 
@@ -694,27 +689,6 @@ namespace TradingGUI {
 		String^ username;
 		username = marshal_as<String^>(currentUser);
 		int i = 1;
-		List<String^>^ owns = gcnew List<String^>();
-		owns->Add("Owned1");
-		owns->Add("Owned2");
-		owns->Add("Owned3");
-		owns->Add("Owned4");
-		owns->Add("Owned5");
-		owns->Add("Owned6");
-		owns->Add("Owned7");
-		owns->Add("Owned8");
-		owns->Add("Owned9");
-		owns->Add("Owned10");
-		owns->Add("Owned11");
-		owns->Add("Owned12");
-		owns->Add("Owned13");
-		owns->Add("Owned14");
-		owns->Add("Owned15");
-		owns->Add("Owned16");
-		owns->Add("Owned17");
-		owns->Add("Owned18");
-		owns->Add("Owned19");
-		owns->Add("Owned20");
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
@@ -724,7 +698,11 @@ namespace TradingGUI {
 			dr1 = cmd1->ExecuteReader();
 			while (dr1->Read()) {
 				Label^ label = (Label^)this->Controls["Owned" + i.ToString()];
+				String^ text1 = "'" + dr1->GetString(1) + "' \r\n '" + dr1->GetString(0) + "'";
+				label->Text = text1;
+				label->Visible = true;
 				i += 1;
+
 			}
 			dr1->Close();
 		}
