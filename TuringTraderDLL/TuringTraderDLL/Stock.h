@@ -31,7 +31,6 @@ private:
     vector<news> companyNews;
     vector<float> candles;
     vector<int> candleTimes;
-    string unixTimeToHumanReadable(long int seconds);
 
 public:
     string name;
@@ -54,4 +53,5 @@ public:
     vector<float> getCandles();
     vector<int> getCandleTimes();
     vector<news> getNews();
+    string unixTimeToHumanReadable(long int seconds);
 };
