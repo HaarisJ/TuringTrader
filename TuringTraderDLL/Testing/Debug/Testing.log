@@ -1,3 +1,83 @@
-﻿  CompanyTests.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+﻿  CompanyTests.cpp
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(24,18): warning C4251: 'Stock::ticker': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(31,29): warning C4251: 'Stock::companyNews': class 'std::vector<Stock::news,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Stock'
+          with
+          [
+              _Ty=Stock::news
+          ]
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(31): message : see declaration of 'std::vector<Stock::news,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Stock::news
+          ]
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(32,26): warning C4251: 'Stock::candles': class 'std::vector<float,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Stock'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(32): message : see declaration of 'std::vector<float,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(33,28): warning C4251: 'Stock::candleTimes': class 'std::vector<int,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Stock'
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(33): message : see declaration of 'std::vector<int,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(37,16): warning C4251: 'Stock::name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(38,20): warning C4251: 'Stock::exchange': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(39,16): warning C4251: 'Stock::logo': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  StockTests.cpp
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(24,18): warning C4251: 'Stock::ticker': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(31,29): warning C4251: 'Stock::companyNews': class 'std::vector<Stock::news,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Stock'
+          with
+          [
+              _Ty=Stock::news
+          ]
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(31): message : see declaration of 'std::vector<Stock::news,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Stock::news
+          ]
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(32,26): warning C4251: 'Stock::candles': class 'std::vector<float,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Stock'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(32): message : see declaration of 'std::vector<float,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(33,28): warning C4251: 'Stock::candleTimes': class 'std::vector<int,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Stock'
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(33): message : see declaration of 'std::vector<int,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(37,16): warning C4251: 'Stock::name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(38,20): warning C4251: 'Stock::exchange': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(39,16): warning C4251: 'Stock::logo': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  .NETFramework,Version=v4.5.2.AssemblyAttributes.cpp
+  Generating Code...
+  CompanyTests.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
      Creating library C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\Debug\Testing.lib and object C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\Debug\Testing.exp
   Testing.vcxproj -> C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\Debug\Testing.exe
