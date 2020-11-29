@@ -275,7 +275,7 @@ namespace TradingGUI {
 			this->Owned4->TabIndex = 52;
 			this->Owned4->Text = L"TSLA:\r\n28,129.90\r\n+0.07%";
 			this->Owned4->Visible = false;
-
+			this->Owned4->Click += gcnew System::EventHandler(this, &TradingPage::Owned4_Click);
 			// 
 			// Owned3
 			// 
@@ -291,8 +291,7 @@ namespace TradingGUI {
 			this->Owned3->TabIndex = 51;
 			this->Owned3->Text = L"GM:\r\n28,129.90\r\n-0.07%";
 			this->Owned3->Visible = false;
-		
-
+			this->Owned3->Click += gcnew System::EventHandler(this, &TradingPage::Owned3_Click);
 			// 
 			// Owned6
 			// 
@@ -308,6 +307,7 @@ namespace TradingGUI {
 			this->Owned6->TabIndex = 50;
 			this->Owned6->Text = L"BUD:\r\n3,408.54\r\n-0.51%";
 			this->Owned6->Visible = false;
+			this->Owned6->Click += gcnew System::EventHandler(this, &TradingPage::Owned6_Click);
 			// 
 			// Owned2
 			// 
@@ -323,6 +323,7 @@ namespace TradingGUI {
 			this->Owned2->TabIndex = 49;
 			this->Owned2->Text = L"F:\r\n3,408.54\r\n-0.51%";
 			this->Owned2->Visible = false;
+			this->Owned2->Click += gcnew System::EventHandler(this, &TradingPage::Owned2_Click);
 			// 
 			// Owned5
 			// 
@@ -338,6 +339,7 @@ namespace TradingGUI {
 			this->Owned5->TabIndex = 48;
 			this->Owned5->Text = L"NVDA:\r\n28,129.90\r\n+0.07%";
 			this->Owned5->Visible = false;
+			this->Owned5->Click += gcnew System::EventHandler(this, &TradingPage::Owned5_Click);
 			// 
 			// Owned1
 			// 
@@ -352,8 +354,8 @@ namespace TradingGUI {
 			this->Owned1->Size = System::Drawing::Size(196, 138);
 			this->Owned1->TabIndex = 47;
 			this->Owned1->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
-			this->Owned1->Click += gcnew System::EventHandler(this, &TradingPage::Owned1_Click);
 			this->Owned1->Visible = false;
+			this->Owned1->Click += gcnew System::EventHandler(this, &TradingPage::Owned1_Click);
 			// 
 			// StocksOwnedHeader
 			// 
@@ -421,6 +423,7 @@ namespace TradingGUI {
 			this->Owned7->TabIndex = 66;
 			this->Owned7->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			this->Owned7->Visible = false;
+			this->Owned7->Click += gcnew System::EventHandler(this, &TradingPage::Owned7_Click);
 			// 
 			// Owned8
 			// 
@@ -436,7 +439,7 @@ namespace TradingGUI {
 			this->Owned8->TabIndex = 67;
 			this->Owned8->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			this->Owned8->Visible = false;
-
+			this->Owned8->Click += gcnew System::EventHandler(this, &TradingPage::Owned8_Click);
 			// 
 			// Owned9
 			// 
@@ -452,6 +455,7 @@ namespace TradingGUI {
 			this->Owned9->TabIndex = 68;
 			this->Owned9->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			this->Owned9->Visible = false;
+			this->Owned9->Click += gcnew System::EventHandler(this, &TradingPage::Owned9_Click);
 			// 
 			// Owned10
 			// 
@@ -467,6 +471,7 @@ namespace TradingGUI {
 			this->Owned10->TabIndex = 69;
 			this->Owned10->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			this->Owned10->Visible = false;
+			this->Owned10->Click += gcnew System::EventHandler(this, &TradingPage::Owned10_Click);
 			// 
 			// Owned11
 			// 
@@ -482,6 +487,7 @@ namespace TradingGUI {
 			this->Owned11->TabIndex = 70;
 			this->Owned11->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			this->Owned11->Visible = false;
+			this->Owned11->Click += gcnew System::EventHandler(this, &TradingPage::Owned11_Click);
 			// 
 			// Owned12
 			// 
@@ -497,6 +503,7 @@ namespace TradingGUI {
 			this->Owned12->TabIndex = 71;
 			this->Owned12->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			this->Owned12->Visible = false;
+			this->Owned12->Click += gcnew System::EventHandler(this, &TradingPage::Owned12_Click);
 			// 
 			// Owned13
 			// 
@@ -512,6 +519,7 @@ namespace TradingGUI {
 			this->Owned13->TabIndex = 72;
 			this->Owned13->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			this->Owned13->Visible = false;
+			this->Owned13->Click += gcnew System::EventHandler(this, &TradingPage::Owned13_Click);
 			// 
 			// Owned17
 			// 
@@ -527,6 +535,7 @@ namespace TradingGUI {
 			this->Owned17->TabIndex = 73;
 			this->Owned17->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			this->Owned17->Visible = false;
+			this->Owned17->Click += gcnew System::EventHandler(this, &TradingPage::Owned17_Click);
 			// 
 			// Owned20
 			// 
@@ -542,6 +551,7 @@ namespace TradingGUI {
 			this->Owned20->TabIndex = 79;
 			this->Owned20->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			this->Owned20->Visible = false;
+			this->Owned20->Click += gcnew System::EventHandler(this, &TradingPage::Owned20_Click);
 			// 
 			// Owned19
 			// 
@@ -557,6 +567,7 @@ namespace TradingGUI {
 			this->Owned19->TabIndex = 78;
 			this->Owned19->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			this->Owned19->Visible = false;
+			this->Owned19->Click += gcnew System::EventHandler(this, &TradingPage::Owned19_Click);
 			// 
 			// Owned18
 			// 
@@ -572,6 +583,7 @@ namespace TradingGUI {
 			this->Owned18->TabIndex = 77;
 			this->Owned18->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			this->Owned18->Visible = false;
+			this->Owned18->Click += gcnew System::EventHandler(this, &TradingPage::Owned18_Click);
 			// 
 			// Owned16
 			// 
@@ -587,6 +599,7 @@ namespace TradingGUI {
 			this->Owned16->TabIndex = 76;
 			this->Owned16->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			this->Owned16->Visible = false;
+			this->Owned16->Click += gcnew System::EventHandler(this, &TradingPage::Owned16_Click);
 			// 
 			// Owned15
 			// 
@@ -602,6 +615,7 @@ namespace TradingGUI {
 			this->Owned15->TabIndex = 75;
 			this->Owned15->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			this->Owned15->Visible = false;
+			this->Owned15->Click += gcnew System::EventHandler(this, &TradingPage::Owned15_Click);
 			// 
 			// Owned14
 			// 
@@ -617,6 +631,7 @@ namespace TradingGUI {
 			this->Owned14->TabIndex = 74;
 			this->Owned14->Text = L"BUD:\r\n3,408.54\r\n-0.51%";
 			this->Owned14->Visible = false;
+			this->Owned14->Click += gcnew System::EventHandler(this, &TradingPage::Owned14_Click);
 			// 
 			// TradingPage
 			// 
@@ -679,8 +694,31 @@ namespace TradingGUI {
 		childForm->Show();
 	}
 	private: System::Void Owned1_Click(System::Object^ sender, System::EventArgs^ e) {
-		CompanyPage^ companyPage = gcnew CompanyPage();
-		openChildForm(companyPage);
+		if (Owned1->Visible == true) {
+			String^ username;
+			username = marshal_as<String^>(currentUser);
+			int i = 1;
+			int box = 2;
+			String^ ticker;
+			try {
+				String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+				MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+				MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+				MySqlDataReader^ dr1;
+				connection->Open();
+				dr1 = cmd1->ExecuteReader();
+				while (dr1->Read() && i < 2) {
+					ticker = dr1->GetString(1);
+					i += 1;
+				}
+				dr1->Close();
+				// CompanyPage^ companyPage = gcnew CompanyPage();
+				// openChildForm(companyPage);
+			}
+			catch (Exception^ ex) {
+				MessageBox::Show(ex->Message);
+			}
+		}
 	}
 	private: System::Void searchButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ s = searchBox->Text;
@@ -710,5 +748,518 @@ namespace TradingGUI {
 			MessageBox::Show(ex->Message);
 		}
 	}
-	};
+	private: System::Void Owned2_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (Owned2->Visible == true) {
+			String^ username;
+			username = marshal_as<String^>(currentUser);
+			int i = 1;
+			int box = 3;
+			String^ ticker;
+			try {
+				String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+				MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+				MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+				MySqlDataReader^ dr1;
+				connection->Open();
+				dr1 = cmd1->ExecuteReader();
+				while (dr1->Read() && i < box) {
+					ticker = dr1->GetString(1);
+					i += 1;
+				}
+				dr1->Close();
+				CompanyPage^ companyPage = gcnew CompanyPage();
+				openChildForm(companyPage);
+			}
+			catch (Exception^ ex) {
+				MessageBox::Show(ex->Message);
+			}
+		}
+	}
+private: System::Void Owned19_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (Owned19->Visible == true) {
+		String^ username;
+		username = marshal_as<String^>(currentUser);
+		int i = 1;
+		int box = 20;
+		String^ ticker;
+		try {
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlDataReader^ dr1;
+			connection->Open();
+			dr1 = cmd1->ExecuteReader();
+			while (dr1->Read() && i < box) {
+				ticker = dr1->GetString(1);
+				i += 1;
+			}
+			dr1->Close();
+			CompanyPage^ companyPage = gcnew CompanyPage();
+			openChildForm(companyPage);
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+	}
+}
+private: System::Void Owned20_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (Owned20->Visible == true) {
+		String^ username;
+		username = marshal_as<String^>(currentUser);
+		int i = 1;
+		int box = 21;
+		String^ ticker;
+		try {
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlDataReader^ dr1;
+			connection->Open();
+			dr1 = cmd1->ExecuteReader();
+			while (dr1->Read() && i < box) {
+				ticker = dr1->GetString(1);
+				i += 1;
+			}
+			dr1->Close();
+			CompanyPage^ companyPage = gcnew CompanyPage();
+			openChildForm(companyPage);
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+	}
+}
+private: System::Void Owned18_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (Owned19->Visible == true) {
+		String^ username;
+		username = marshal_as<String^>(currentUser);
+		int i = 1;
+		int box = 19;
+		String^ ticker;
+		try {
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlDataReader^ dr1;
+			connection->Open();
+			dr1 = cmd1->ExecuteReader();
+			while (dr1->Read() && i < box) {
+				ticker = dr1->GetString(1);
+				i += 1;
+			}
+			dr1->Close();
+			CompanyPage^ companyPage = gcnew CompanyPage();
+			openChildForm(companyPage);
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+	}
+}
+private: System::Void Owned16_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (Owned16->Visible == true) {
+		String^ username;
+		username = marshal_as<String^>(currentUser);
+		int i = 1;
+		int box = 17;
+		String^ ticker;
+		try {
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlDataReader^ dr1;
+			connection->Open();
+			dr1 = cmd1->ExecuteReader();
+			while (dr1->Read() && i < box) {
+				ticker = dr1->GetString(1);
+				i += 1;
+			}
+			dr1->Close();
+			CompanyPage^ companyPage = gcnew CompanyPage();
+			openChildForm(companyPage);
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+	}
+}
+private: System::Void Owned15_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (Owned15->Visible == true) {
+		String^ username;
+		username = marshal_as<String^>(currentUser);
+		int i = 1;
+		int box = 16;
+		String^ ticker;
+		try {
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlDataReader^ dr1;
+			connection->Open();
+			dr1 = cmd1->ExecuteReader();
+			while (dr1->Read() && i < box) {
+				ticker = dr1->GetString(1);
+				i += 1;
+			}
+			dr1->Close();
+			CompanyPage^ companyPage = gcnew CompanyPage();
+			openChildForm(companyPage);
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+	}
+}
+private: System::Void Owned14_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (Owned14->Visible == true) {
+		String^ username;
+		username = marshal_as<String^>(currentUser);
+		int i = 1;
+		int box = 15;
+		String^ ticker;
+		try {
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlDataReader^ dr1;
+			connection->Open();
+			dr1 = cmd1->ExecuteReader();
+			while (dr1->Read() && i < box) {
+				ticker = dr1->GetString(1);
+				i += 1;
+			}
+			dr1->Close();
+			CompanyPage^ companyPage = gcnew CompanyPage();
+			openChildForm(companyPage);
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+	}
+}
+private: System::Void Owned17_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (Owned17->Visible == true) {
+		String^ username;
+		username = marshal_as<String^>(currentUser);
+		int i = 1;
+		int box = 18;
+		String^ ticker;
+		try {
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlDataReader^ dr1;
+			connection->Open();
+			dr1 = cmd1->ExecuteReader();
+			while (dr1->Read() && i < box) {
+				ticker = dr1->GetString(1);
+				i += 1;
+			}
+			dr1->Close();
+			CompanyPage^ companyPage = gcnew CompanyPage();
+			openChildForm(companyPage);
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+	}
+}
+private: System::Void Owned13_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (Owned13->Visible == true) {
+		String^ username;
+		username = marshal_as<String^>(currentUser);
+		int i = 1;
+		int box = 14;
+		String^ ticker;
+		try {
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlDataReader^ dr1;
+			connection->Open();
+			dr1 = cmd1->ExecuteReader();
+			while (dr1->Read() && i < box) {
+				ticker = dr1->GetString(1);
+				i += 1;
+			}
+			dr1->Close();
+			CompanyPage^ companyPage = gcnew CompanyPage();
+			openChildForm(companyPage);
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+	}
+}
+private: System::Void Owned12_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (Owned12->Visible == true) {
+		String^ username;
+		username = marshal_as<String^>(currentUser);
+		int i = 1;
+		int box = 13;
+		String^ ticker;
+		try {
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlDataReader^ dr1;
+			connection->Open();
+			dr1 = cmd1->ExecuteReader();
+			while (dr1->Read() && i < box) {
+				ticker = dr1->GetString(1);
+				i += 1;
+			}
+			dr1->Close();
+			CompanyPage^ companyPage = gcnew CompanyPage();
+			openChildForm(companyPage);
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+	}
+}
+private: System::Void Owned11_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (Owned11->Visible == true) {
+		String^ username;
+		username = marshal_as<String^>(currentUser);
+		int i = 1;
+		int box = 12;
+		String^ ticker;
+		try {
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlDataReader^ dr1;
+			connection->Open();
+			dr1 = cmd1->ExecuteReader();
+			while (dr1->Read() && i < box) {
+				ticker = dr1->GetString(1);
+				i += 1;
+			}
+			dr1->Close();
+			CompanyPage^ companyPage = gcnew CompanyPage();
+			openChildForm(companyPage);
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+	}
+}
+private: System::Void Owned10_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (Owned10->Visible == true) {
+		String^ username;
+		username = marshal_as<String^>(currentUser);
+		int i = 1;
+		int box = 11;
+		String^ ticker;
+		try {
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlDataReader^ dr1;
+			connection->Open();
+			dr1 = cmd1->ExecuteReader();
+			while (dr1->Read() && i < box) {
+				ticker = dr1->GetString(1);
+				i += 1;
+			}
+			dr1->Close();
+			CompanyPage^ companyPage = gcnew CompanyPage();
+			openChildForm(companyPage);
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+	}
+}
+private: System::Void Owned9_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (Owned9->Visible == true) {
+		String^ username;
+		username = marshal_as<String^>(currentUser);
+		int i = 1;
+		int box = 10;
+		String^ ticker;
+		try {
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlDataReader^ dr1;
+			connection->Open();
+			dr1 = cmd1->ExecuteReader();
+			while (dr1->Read() && i < box) {
+				ticker = dr1->GetString(1);
+				i += 1;
+			}
+			dr1->Close();
+			CompanyPage^ companyPage = gcnew CompanyPage();
+			openChildForm(companyPage);
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+	}
+}
+private: System::Void Owned8_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (Owned8->Visible == true) {
+		String^ username;
+		username = marshal_as<String^>(currentUser);
+		int i = 1;
+		int box = 9;
+		String^ ticker;
+		try {
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlDataReader^ dr1;
+			connection->Open();
+			dr1 = cmd1->ExecuteReader();
+			while (dr1->Read() && i < box) {
+				ticker = dr1->GetString(1);
+				i += 1;
+			}
+			dr1->Close();
+			CompanyPage^ companyPage = gcnew CompanyPage();
+			openChildForm(companyPage);
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+	}
+}
+private: System::Void Owned7_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (Owned7->Visible == true) {
+		String^ username;
+		username = marshal_as<String^>(currentUser);
+		int i = 1;
+		int box = 8;
+		String^ ticker;
+		try {
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlDataReader^ dr1;
+			connection->Open();
+			dr1 = cmd1->ExecuteReader();
+			while (dr1->Read() && i < box) {
+				ticker = dr1->GetString(1);
+				i += 1;
+			}
+			dr1->Close();
+			CompanyPage^ companyPage = gcnew CompanyPage();
+			openChildForm(companyPage);
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+	}
+}
+private: System::Void Owned4_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (Owned4->Visible == true) {
+		String^ username;
+		username = marshal_as<String^>(currentUser);
+		int i = 1;
+		int box = 5;
+		String^ ticker;
+		try {
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlDataReader^ dr1;
+			connection->Open();
+			dr1 = cmd1->ExecuteReader();
+			while (dr1->Read() && i < box) {
+				ticker = dr1->GetString(1);
+				i += 1;
+			}
+			dr1->Close();
+			CompanyPage^ companyPage = gcnew CompanyPage();
+			openChildForm(companyPage);
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+	}
+}
+private: System::Void Owned3_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (Owned3->Visible == true) {
+		String^ username;
+		username = marshal_as<String^>(currentUser);
+		int i = 1;
+		int box = 4;
+		String^ ticker;
+		try {
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlDataReader^ dr1;
+			connection->Open();
+			dr1 = cmd1->ExecuteReader();
+			while (dr1->Read() && i < box) {
+				ticker = dr1->GetString(1);
+				i += 1;
+			}
+			dr1->Close();
+			CompanyPage^ companyPage = gcnew CompanyPage();
+			openChildForm(companyPage);
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+	}
+}
+private: System::Void Owned6_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (Owned6->Visible == true) {
+		String^ username;
+		username = marshal_as<String^>(currentUser);
+		int i = 1;
+		int box = 7;
+		String^ ticker;
+		try {
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlDataReader^ dr1;
+			connection->Open();
+			dr1 = cmd1->ExecuteReader();
+			while (dr1->Read() && i < box) {
+				ticker = dr1->GetString(1);
+				i += 1;
+			}
+			dr1->Close();
+			CompanyPage^ companyPage = gcnew CompanyPage();
+			openChildForm(companyPage);
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+	}
+}
+private: System::Void Owned5_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (Owned5->Visible == true) {
+		String^ username;
+		username = marshal_as<String^>(currentUser);
+		int i = 1;
+		int box = 6;
+		String^ ticker;
+		try {
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlDataReader^ dr1;
+			connection->Open();
+			dr1 = cmd1->ExecuteReader();
+			while (dr1->Read() && i < box) {
+				ticker = dr1->GetString(1);
+				i += 1;
+			}
+			dr1->Close();
+			CompanyPage^ companyPage = gcnew CompanyPage();
+			openChildForm(companyPage);
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+	}
+}
+};
 }
