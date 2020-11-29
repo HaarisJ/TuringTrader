@@ -1,6 +1,7 @@
 #pragma once
 #include "CompanyPage.h"
 #include <msclr\marshal_cppstd.h>
+#include <vector>
 
 extern std::string currentUser;
 
@@ -8,12 +9,16 @@ extern std::string currentUser;
 namespace TradingGUI {
 
 	using namespace CompanyPageGUI;
+	using namespace std;
+	using namespace msclr::interop; // This namespace is used for marshalling between string and String^
+	using namespace MySql::Data::MySqlClient;
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Collections::Generic;
 
 
 	/// <summary>
@@ -41,43 +46,75 @@ namespace TradingGUI {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ label28;
+	private: System::Windows::Forms::Label^ FinancialNewsHeader;
+	protected:
+
 	protected:
 	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::Label^ label27;
-	private: System::Windows::Forms::Label^ label26;
-	private: System::Windows::Forms::Label^ label25;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::Label^ label24;
-	private: System::Windows::Forms::Label^ label23;
+	private: System::Windows::Forms::Label^ SandP;
+	private: System::Windows::Forms::Label^ NASDAQ;
+	private: System::Windows::Forms::Label^ DowJones;
+	private: System::Windows::Forms::TextBox^ searchBox;
 
 
 
-	private: System::Windows::Forms::Label^ label16;
-	private: System::Windows::Forms::Label^ label17;
-	private: System::Windows::Forms::Label^ label18;
-	private: System::Windows::Forms::Label^ label19;
-	private: System::Windows::Forms::Label^ label20;
-	private: System::Windows::Forms::Label^ label21;
-	private: System::Windows::Forms::Label^ label22;
-	private: System::Windows::Forms::Button^ button1;
+
+	private: System::Windows::Forms::Label^ IndexesHeader;
+	private: System::Windows::Forms::Label^ searchLabel;
+
+
+
+	private: System::Windows::Forms::Label^ Owned4;
+
+
+
+
+	private: System::Windows::Forms::Label^ Owned3;
+	private: System::Windows::Forms::Label^ Owned6;
+
+
+	private: System::Windows::Forms::Label^ Owned2;
+	private: System::Windows::Forms::Label^ Owned5;
+
+
+	private: System::Windows::Forms::Label^ Owned1;
+	private: System::Windows::Forms::Label^ StocksOwnedHeader;
+	private: System::Windows::Forms::Button^ searchButton;
+
+
+
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Ticker;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Company;
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::Label^ label9;
-	private: System::Windows::Forms::Label^ label10;
-	private: System::Windows::Forms::Label^ label11;
-	private: System::Windows::Forms::Label^ label12;
-	private: System::Windows::Forms::Label^ label13;
-	private: System::Windows::Forms::Label^ label14;
+	private: System::Windows::Forms::Label^ Owned7;
+	private: System::Windows::Forms::Label^ Owned8;
+	private: System::Windows::Forms::Label^ Owned9;
+	private: System::Windows::Forms::Label^ Owned10;
+	private: System::Windows::Forms::Label^ Owned11;
+	private: System::Windows::Forms::Label^ Owned12;
+	private: System::Windows::Forms::Label^ Owned13;
+	private: System::Windows::Forms::Label^ Owned17;
+	private: System::Windows::Forms::Label^ Owned20;
+
+
+
+
+
+
+
+
+
+
+	private: System::Windows::Forms::Label^ Owned19;
+
+	private: System::Windows::Forms::Label^ Owned18;
+
+	private: System::Windows::Forms::Label^ Owned16;
+
+	private: System::Windows::Forms::Label^ Owned15;
+
+	private: System::Windows::Forms::Label^ Owned14;
+
 
 	private:
 		/// <summary>
@@ -92,53 +129,53 @@ namespace TradingGUI {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->label28 = (gcnew System::Windows::Forms::Label());
+			this->FinancialNewsHeader = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->label27 = (gcnew System::Windows::Forms::Label());
-			this->label26 = (gcnew System::Windows::Forms::Label());
-			this->label25 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->label24 = (gcnew System::Windows::Forms::Label());
-			this->label23 = (gcnew System::Windows::Forms::Label());
-			this->label16 = (gcnew System::Windows::Forms::Label());
-			this->label17 = (gcnew System::Windows::Forms::Label());
-			this->label18 = (gcnew System::Windows::Forms::Label());
-			this->label19 = (gcnew System::Windows::Forms::Label());
-			this->label20 = (gcnew System::Windows::Forms::Label());
-			this->label21 = (gcnew System::Windows::Forms::Label());
-			this->label22 = (gcnew System::Windows::Forms::Label());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->SandP = (gcnew System::Windows::Forms::Label());
+			this->NASDAQ = (gcnew System::Windows::Forms::Label());
+			this->DowJones = (gcnew System::Windows::Forms::Label());
+			this->searchBox = (gcnew System::Windows::Forms::TextBox());
+			this->IndexesHeader = (gcnew System::Windows::Forms::Label());
+			this->searchLabel = (gcnew System::Windows::Forms::Label());
+			this->Owned4 = (gcnew System::Windows::Forms::Label());
+			this->Owned3 = (gcnew System::Windows::Forms::Label());
+			this->Owned6 = (gcnew System::Windows::Forms::Label());
+			this->Owned2 = (gcnew System::Windows::Forms::Label());
+			this->Owned5 = (gcnew System::Windows::Forms::Label());
+			this->Owned1 = (gcnew System::Windows::Forms::Label());
+			this->StocksOwnedHeader = (gcnew System::Windows::Forms::Label());
+			this->searchButton = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->Ticker = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Company = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->label13 = (gcnew System::Windows::Forms::Label());
-			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->Owned7 = (gcnew System::Windows::Forms::Label());
+			this->Owned8 = (gcnew System::Windows::Forms::Label());
+			this->Owned9 = (gcnew System::Windows::Forms::Label());
+			this->Owned10 = (gcnew System::Windows::Forms::Label());
+			this->Owned11 = (gcnew System::Windows::Forms::Label());
+			this->Owned12 = (gcnew System::Windows::Forms::Label());
+			this->Owned13 = (gcnew System::Windows::Forms::Label());
+			this->Owned17 = (gcnew System::Windows::Forms::Label());
+			this->Owned20 = (gcnew System::Windows::Forms::Label());
+			this->Owned19 = (gcnew System::Windows::Forms::Label());
+			this->Owned18 = (gcnew System::Windows::Forms::Label());
+			this->Owned16 = (gcnew System::Windows::Forms::Label());
+			this->Owned15 = (gcnew System::Windows::Forms::Label());
+			this->Owned14 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// label28
+			// FinancialNewsHeader
 			// 
-			this->label28->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->label28->AutoSize = true;
-			this->label28->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			this->label28->Location = System::Drawing::Point(1479, 1268);
-			this->label28->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label28->Name = L"label28";
-			this->label28->Size = System::Drawing::Size(410, 46);
-			this->label28->TabIndex = 63;
-			this->label28->Text = L"Latest Financial News";
+			this->FinancialNewsHeader->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->FinancialNewsHeader->AutoSize = true;
+			this->FinancialNewsHeader->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->FinancialNewsHeader->Location = System::Drawing::Point(1479, 1268);
+			this->FinancialNewsHeader->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->FinancialNewsHeader->Name = L"FinancialNewsHeader";
+			this->FinancialNewsHeader->Size = System::Drawing::Size(410, 46);
+			this->FinancialNewsHeader->TabIndex = 63;
+			this->FinancialNewsHeader->Text = L"Latest Financial News";
 			// 
 			// panel1
 			// 
@@ -151,200 +188,200 @@ namespace TradingGUI {
 			this->panel1->Size = System::Drawing::Size(931, 282);
 			this->panel1->TabIndex = 62;
 			// 
-			// label27
+			// SandP
 			// 
-			this->label27->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->label27->AutoSize = true;
-			this->label27->BackColor = System::Drawing::Color::DarkRed;
-			this->label27->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->SandP->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->SandP->AutoSize = true;
+			this->SandP->BackColor = System::Drawing::Color::DarkRed;
+			this->SandP->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label27->ForeColor = System::Drawing::Color::Lavender;
-			this->label27->Location = System::Drawing::Point(104, 1478);
-			this->label27->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label27->Name = L"label27";
-			this->label27->Size = System::Drawing::Size(189, 138);
-			this->label27->TabIndex = 61;
-			this->label27->Text = L"S&&P 500:\r\n3,408.54\r\n-0.51%";
+			this->SandP->ForeColor = System::Drawing::Color::Lavender;
+			this->SandP->Location = System::Drawing::Point(104, 1478);
+			this->SandP->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->SandP->Name = L"SandP";
+			this->SandP->Size = System::Drawing::Size(189, 138);
+			this->SandP->TabIndex = 61;
+			this->SandP->Text = L"S&&P 500:\r\n3,408.54\r\n-0.51%";
 			// 
-			// label26
+			// NASDAQ
 			// 
-			this->label26->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->label26->AutoSize = true;
-			this->label26->BackColor = System::Drawing::Color::LimeGreen;
-			this->label26->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->NASDAQ->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->NASDAQ->AutoSize = true;
+			this->NASDAQ->BackColor = System::Drawing::Color::LimeGreen;
+			this->NASDAQ->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label26->ForeColor = System::Drawing::Color::Lavender;
-			this->label26->Location = System::Drawing::Point(462, 1478);
-			this->label26->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label26->Name = L"label26";
-			this->label26->Size = System::Drawing::Size(201, 138);
-			this->label26->TabIndex = 60;
-			this->label26->Text = L"NASDAQ:\r\n11,329.95\r\n+1.24%";
+			this->NASDAQ->ForeColor = System::Drawing::Color::Lavender;
+			this->NASDAQ->Location = System::Drawing::Point(462, 1478);
+			this->NASDAQ->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->NASDAQ->Name = L"NASDAQ";
+			this->NASDAQ->Size = System::Drawing::Size(201, 138);
+			this->NASDAQ->TabIndex = 60;
+			this->NASDAQ->Text = L"NASDAQ:\r\n11,329.95\r\n+1.24%";
 			// 
-			// label25
+			// DowJones
 			// 
-			this->label25->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->label25->AutoSize = true;
-			this->label25->BackColor = System::Drawing::Color::LimeGreen;
-			this->label25->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->DowJones->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->DowJones->AutoSize = true;
+			this->DowJones->BackColor = System::Drawing::Color::LimeGreen;
+			this->DowJones->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label25->ForeColor = System::Drawing::Color::Lavender;
-			this->label25->Location = System::Drawing::Point(853, 1483);
-			this->label25->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label25->Name = L"label25";
-			this->label25->Size = System::Drawing::Size(196, 138);
-			this->label25->TabIndex = 59;
-			this->label25->Text = L"DJIA:\r\n28,129.90\r\n+0.07%";
+			this->DowJones->ForeColor = System::Drawing::Color::Lavender;
+			this->DowJones->Location = System::Drawing::Point(853, 1483);
+			this->DowJones->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->DowJones->Name = L"DowJones";
+			this->DowJones->Size = System::Drawing::Size(196, 138);
+			this->DowJones->TabIndex = 59;
+			this->DowJones->Text = L"DJIA:\r\n28,129.90\r\n+0.07%";
 			// 
-			// textBox1
+			// searchBox
 			// 
-			this->textBox1->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->searchBox->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->searchBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(88, 188);
-			this->textBox1->Margin = System::Windows::Forms::Padding(6, 4, 6, 4);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(597, 53);
-			this->textBox1->TabIndex = 58;
+			this->searchBox->Location = System::Drawing::Point(88, 188);
+			this->searchBox->Margin = System::Windows::Forms::Padding(6, 4, 6, 4);
+			this->searchBox->Name = L"searchBox";
+			this->searchBox->Size = System::Drawing::Size(597, 53);
+			this->searchBox->TabIndex = 58;
 			// 
-			// label24
+			// IndexesHeader
 			// 
-			this->label24->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->label24->AutoSize = true;
-			this->label24->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			this->label24->Location = System::Drawing::Point(80, 1400);
-			this->label24->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label24->Name = L"label24";
-			this->label24->Size = System::Drawing::Size(960, 46);
-			this->label24->TabIndex = 57;
-			this->label24->Text = L"Major Index Performance Since Last Market Opening";
+			this->IndexesHeader->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->IndexesHeader->AutoSize = true;
+			this->IndexesHeader->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->IndexesHeader->Location = System::Drawing::Point(80, 1400);
+			this->IndexesHeader->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->IndexesHeader->Name = L"IndexesHeader";
+			this->IndexesHeader->Size = System::Drawing::Size(960, 46);
+			this->IndexesHeader->TabIndex = 57;
+			this->IndexesHeader->Text = L"Major Index Performance Since Last Market Opening";
 			// 
-			// label23
+			// searchLabel
 			// 
-			this->label23->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->label23->AutoSize = true;
-			this->label23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->searchLabel->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->searchLabel->AutoSize = true;
+			this->searchLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label23->Location = System::Drawing::Point(85, 117);
-			this->label23->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(867, 46);
-			this->label23->TabIndex = 56;
-			this->label23->Text = L"Search for a company by name or ticker symbol";
+			this->searchLabel->Location = System::Drawing::Point(85, 117);
+			this->searchLabel->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->searchLabel->Name = L"searchLabel";
+			this->searchLabel->Size = System::Drawing::Size(867, 46);
+			this->searchLabel->TabIndex = 56;
+			this->searchLabel->Text = L"Search for a company by name or ticker symbol";
 			// 
-			// label16
+			// Owned4
 			// 
-			this->label16->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
-			this->label16->AutoSize = true;
-			this->label16->BackColor = System::Drawing::Color::LimeGreen;
-			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Owned4->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->Owned4->AutoSize = true;
+			this->Owned4->BackColor = System::Drawing::Color::LimeGreen;
+			this->Owned4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label16->ForeColor = System::Drawing::Color::Lavender;
-			this->label16->Location = System::Drawing::Point(2602, 262);
-			this->label16->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(196, 138);
-			this->label16->TabIndex = 52;
-			this->label16->Text = L"TSLA:\r\n28,129.90\r\n+0.07%";
+			this->Owned4->ForeColor = System::Drawing::Color::Lavender;
+			this->Owned4->Location = System::Drawing::Point(2602, 262);
+			this->Owned4->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Owned4->Name = L"Owned4";
+			this->Owned4->Size = System::Drawing::Size(196, 138);
+			this->Owned4->TabIndex = 52;
+			this->Owned4->Text = L"TSLA:\r\n28,129.90\r\n+0.07%";
 			// 
-			// label17
+			// Owned3
 			// 
-			this->label17->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
-			this->label17->AutoSize = true;
-			this->label17->BackColor = System::Drawing::Color::DarkRed;
-			this->label17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Owned3->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->Owned3->AutoSize = true;
+			this->Owned3->BackColor = System::Drawing::Color::DarkRed;
+			this->Owned3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label17->ForeColor = System::Drawing::Color::Lavender;
-			this->label17->Location = System::Drawing::Point(2120, 262);
-			this->label17->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(196, 138);
-			this->label17->TabIndex = 51;
-			this->label17->Text = L"GM:\r\n28,129.90\r\n-0.07%";
+			this->Owned3->ForeColor = System::Drawing::Color::Lavender;
+			this->Owned3->Location = System::Drawing::Point(2120, 262);
+			this->Owned3->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Owned3->Name = L"Owned3";
+			this->Owned3->Size = System::Drawing::Size(196, 138);
+			this->Owned3->TabIndex = 51;
+			this->Owned3->Text = L"GM:\r\n28,129.90\r\n-0.07%";
 			// 
-			// label18
+			// Owned6
 			// 
-			this->label18->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
-			this->label18->AutoSize = true;
-			this->label18->BackColor = System::Drawing::Color::DarkRed;
-			this->label18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Owned6->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->Owned6->AutoSize = true;
+			this->Owned6->BackColor = System::Drawing::Color::DarkRed;
+			this->Owned6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label18->ForeColor = System::Drawing::Color::Lavender;
-			this->label18->Location = System::Drawing::Point(1642, 457);
-			this->label18->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label18->Name = L"label18";
-			this->label18->Size = System::Drawing::Size(174, 138);
-			this->label18->TabIndex = 50;
-			this->label18->Text = L"BUD:\r\n3,408.54\r\n-0.51%";
+			this->Owned6->ForeColor = System::Drawing::Color::Lavender;
+			this->Owned6->Location = System::Drawing::Point(1642, 457);
+			this->Owned6->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Owned6->Name = L"Owned6";
+			this->Owned6->Size = System::Drawing::Size(174, 138);
+			this->Owned6->TabIndex = 50;
+			this->Owned6->Text = L"BUD:\r\n3,408.54\r\n-0.51%";
 			// 
-			// label19
+			// Owned2
 			// 
-			this->label19->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
-			this->label19->AutoSize = true;
-			this->label19->BackColor = System::Drawing::Color::DarkRed;
-			this->label19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Owned2->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->Owned2->AutoSize = true;
+			this->Owned2->BackColor = System::Drawing::Color::DarkRed;
+			this->Owned2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label19->ForeColor = System::Drawing::Color::Lavender;
-			this->label19->Location = System::Drawing::Point(1642, 262);
-			this->label19->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label19->Name = L"label19";
-			this->label19->Size = System::Drawing::Size(174, 138);
-			this->label19->TabIndex = 49;
-			this->label19->Text = L"F:\r\n3,408.54\r\n-0.51%";
+			this->Owned2->ForeColor = System::Drawing::Color::Lavender;
+			this->Owned2->Location = System::Drawing::Point(1642, 262);
+			this->Owned2->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Owned2->Name = L"Owned2";
+			this->Owned2->Size = System::Drawing::Size(174, 138);
+			this->Owned2->TabIndex = 49;
+			this->Owned2->Text = L"F:\r\n3,408.54\r\n-0.51%";
 			// 
-			// label20
+			// Owned5
 			// 
-			this->label20->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
-			this->label20->AutoSize = true;
-			this->label20->BackColor = System::Drawing::Color::LimeGreen;
-			this->label20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Owned5->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->Owned5->AutoSize = true;
+			this->Owned5->BackColor = System::Drawing::Color::LimeGreen;
+			this->Owned5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label20->ForeColor = System::Drawing::Color::Lavender;
-			this->label20->Location = System::Drawing::Point(1208, 457);
-			this->label20->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label20->Name = L"label20";
-			this->label20->Size = System::Drawing::Size(196, 138);
-			this->label20->TabIndex = 48;
-			this->label20->Text = L"NVDA:\r\n28,129.90\r\n+0.07%";
+			this->Owned5->ForeColor = System::Drawing::Color::Lavender;
+			this->Owned5->Location = System::Drawing::Point(1208, 457);
+			this->Owned5->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Owned5->Name = L"Owned5";
+			this->Owned5->Size = System::Drawing::Size(196, 138);
+			this->Owned5->TabIndex = 48;
+			this->Owned5->Text = L"NVDA:\r\n28,129.90\r\n+0.07%";
 			// 
-			// label21
+			// Owned1
 			// 
-			this->label21->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
-			this->label21->AutoSize = true;
-			this->label21->BackColor = System::Drawing::Color::LimeGreen;
-			this->label21->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Owned1->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->Owned1->AutoSize = true;
+			this->Owned1->BackColor = System::Drawing::Color::LimeGreen;
+			this->Owned1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label21->ForeColor = System::Drawing::Color::Lavender;
-			this->label21->Location = System::Drawing::Point(1208, 262);
-			this->label21->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label21->Name = L"label21";
-			this->label21->Size = System::Drawing::Size(196, 138);
-			this->label21->TabIndex = 47;
-			this->label21->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
-			this->label21->Click += gcnew System::EventHandler(this, &TradingPage::label21_Click);
+			this->Owned1->ForeColor = System::Drawing::Color::Lavender;
+			this->Owned1->Location = System::Drawing::Point(1208, 262);
+			this->Owned1->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Owned1->Name = L"Owned1";
+			this->Owned1->Size = System::Drawing::Size(196, 138);
+			this->Owned1->TabIndex = 47;
+			this->Owned1->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned1->Click += gcnew System::EventHandler(this, &TradingPage::Owned1_Click);
 			// 
-			// label22
+			// StocksOwnedHeader
 			// 
-			this->label22->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
-			this->label22->AutoSize = true;
-			this->label22->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label22->Location = System::Drawing::Point(1395, 117);
-			this->label22->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label22->Name = L"label22";
-			this->label22->Size = System::Drawing::Size(1233, 54);
-			this->label22->TabIndex = 46;
-			this->label22->Text = L"Performance of Stocks Owned Since Last Market Opening";
+			this->StocksOwnedHeader->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->StocksOwnedHeader->AutoSize = true;
+			this->StocksOwnedHeader->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->StocksOwnedHeader->Location = System::Drawing::Point(1395, 117);
+			this->StocksOwnedHeader->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->StocksOwnedHeader->Name = L"StocksOwnedHeader";
+			this->StocksOwnedHeader->Size = System::Drawing::Size(1233, 54);
+			this->StocksOwnedHeader->TabIndex = 46;
+			this->StocksOwnedHeader->Text = L"Performance of Stocks Owned Since Last Market Opening";
 			// 
-			// button1
+			// searchButton
 			// 
-			this->button1->Location = System::Drawing::Point(720, 195);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(232, 44);
-			this->button1->TabIndex = 64;
-			this->button1->Text = L"Search";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &TradingPage::button1_Click);
+			this->searchButton->Location = System::Drawing::Point(720, 195);
+			this->searchButton->Name = L"searchButton";
+			this->searchButton->Size = System::Drawing::Size(232, 44);
+			this->searchButton->TabIndex = 64;
+			this->searchButton->Text = L"Search";
+			this->searchButton->UseVisualStyleBackColor = true;
+			this->searchButton->Click += gcnew System::EventHandler(this, &TradingPage::searchButton_Click);
 			// 
 			// dataGridView1
 			// 
@@ -376,252 +413,252 @@ namespace TradingGUI {
 			this->Company->ReadOnly = true;
 			this->Company->Width = 250;
 			// 
-			// label1
+			// Owned7
 			// 
-			this->label1->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::Color::LimeGreen;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Owned7->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->Owned7->AutoSize = true;
+			this->Owned7->BackColor = System::Drawing::Color::LimeGreen;
+			this->Owned7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::Color::Lavender;
-			this->label1->Location = System::Drawing::Point(2120, 457);
-			this->label1->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(196, 138);
-			this->label1->TabIndex = 66;
-			this->label1->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned7->ForeColor = System::Drawing::Color::Lavender;
+			this->Owned7->Location = System::Drawing::Point(2120, 457);
+			this->Owned7->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Owned7->Name = L"Owned7";
+			this->Owned7->Size = System::Drawing::Size(196, 138);
+			this->Owned7->TabIndex = 66;
+			this->Owned7->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			// 
-			// label2
+			// Owned8
 			// 
-			this->label2->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
-			this->label2->AutoSize = true;
-			this->label2->BackColor = System::Drawing::Color::LimeGreen;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Owned8->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->Owned8->AutoSize = true;
+			this->Owned8->BackColor = System::Drawing::Color::LimeGreen;
+			this->Owned8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::Color::Lavender;
-			this->label2->Location = System::Drawing::Point(2602, 457);
-			this->label2->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(196, 138);
-			this->label2->TabIndex = 67;
-			this->label2->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned8->ForeColor = System::Drawing::Color::Lavender;
+			this->Owned8->Location = System::Drawing::Point(2602, 457);
+			this->Owned8->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Owned8->Name = L"Owned8";
+			this->Owned8->Size = System::Drawing::Size(196, 138);
+			this->Owned8->TabIndex = 67;
+			this->Owned8->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			// 
-			// label3
+			// Owned9
 			// 
-			this->label3->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
-			this->label3->AutoSize = true;
-			this->label3->BackColor = System::Drawing::Color::LimeGreen;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Owned9->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->Owned9->AutoSize = true;
+			this->Owned9->BackColor = System::Drawing::Color::LimeGreen;
+			this->Owned9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->ForeColor = System::Drawing::Color::Lavender;
-			this->label3->Location = System::Drawing::Point(1208, 672);
-			this->label3->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(196, 138);
-			this->label3->TabIndex = 68;
-			this->label3->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned9->ForeColor = System::Drawing::Color::Lavender;
+			this->Owned9->Location = System::Drawing::Point(1208, 672);
+			this->Owned9->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Owned9->Name = L"Owned9";
+			this->Owned9->Size = System::Drawing::Size(196, 138);
+			this->Owned9->TabIndex = 68;
+			this->Owned9->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			// 
-			// label4
+			// Owned10
 			// 
-			this->label4->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
-			this->label4->AutoSize = true;
-			this->label4->BackColor = System::Drawing::Color::LimeGreen;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Owned10->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->Owned10->AutoSize = true;
+			this->Owned10->BackColor = System::Drawing::Color::LimeGreen;
+			this->Owned10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->ForeColor = System::Drawing::Color::Lavender;
-			this->label4->Location = System::Drawing::Point(1642, 672);
-			this->label4->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(196, 138);
-			this->label4->TabIndex = 69;
-			this->label4->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned10->ForeColor = System::Drawing::Color::Lavender;
+			this->Owned10->Location = System::Drawing::Point(1642, 672);
+			this->Owned10->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Owned10->Name = L"Owned10";
+			this->Owned10->Size = System::Drawing::Size(196, 138);
+			this->Owned10->TabIndex = 69;
+			this->Owned10->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			// 
-			// label5
+			// Owned11
 			// 
-			this->label5->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
-			this->label5->AutoSize = true;
-			this->label5->BackColor = System::Drawing::Color::LimeGreen;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Owned11->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->Owned11->AutoSize = true;
+			this->Owned11->BackColor = System::Drawing::Color::LimeGreen;
+			this->Owned11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->ForeColor = System::Drawing::Color::Lavender;
-			this->label5->Location = System::Drawing::Point(2120, 672);
-			this->label5->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(196, 138);
-			this->label5->TabIndex = 70;
-			this->label5->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned11->ForeColor = System::Drawing::Color::Lavender;
+			this->Owned11->Location = System::Drawing::Point(2120, 672);
+			this->Owned11->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Owned11->Name = L"Owned11";
+			this->Owned11->Size = System::Drawing::Size(196, 138);
+			this->Owned11->TabIndex = 70;
+			this->Owned11->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			// 
-			// label6
+			// Owned12
 			// 
-			this->label6->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
-			this->label6->AutoSize = true;
-			this->label6->BackColor = System::Drawing::Color::LimeGreen;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Owned12->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->Owned12->AutoSize = true;
+			this->Owned12->BackColor = System::Drawing::Color::LimeGreen;
+			this->Owned12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->ForeColor = System::Drawing::Color::Lavender;
-			this->label6->Location = System::Drawing::Point(2602, 672);
-			this->label6->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(196, 138);
-			this->label6->TabIndex = 71;
-			this->label6->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned12->ForeColor = System::Drawing::Color::Lavender;
+			this->Owned12->Location = System::Drawing::Point(2602, 672);
+			this->Owned12->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Owned12->Name = L"Owned12";
+			this->Owned12->Size = System::Drawing::Size(196, 138);
+			this->Owned12->TabIndex = 71;
+			this->Owned12->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			// 
-			// label7
+			// Owned13
 			// 
-			this->label7->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
-			this->label7->AutoSize = true;
-			this->label7->BackColor = System::Drawing::Color::LimeGreen;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Owned13->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->Owned13->AutoSize = true;
+			this->Owned13->BackColor = System::Drawing::Color::LimeGreen;
+			this->Owned13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->ForeColor = System::Drawing::Color::Lavender;
-			this->label7->Location = System::Drawing::Point(1208, 878);
-			this->label7->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(196, 138);
-			this->label7->TabIndex = 72;
-			this->label7->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned13->ForeColor = System::Drawing::Color::Lavender;
+			this->Owned13->Location = System::Drawing::Point(1208, 878);
+			this->Owned13->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Owned13->Name = L"Owned13";
+			this->Owned13->Size = System::Drawing::Size(196, 138);
+			this->Owned13->TabIndex = 72;
+			this->Owned13->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			// 
-			// label8
+			// Owned17
 			// 
-			this->label8->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
-			this->label8->AutoSize = true;
-			this->label8->BackColor = System::Drawing::Color::LimeGreen;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Owned17->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->Owned17->AutoSize = true;
+			this->Owned17->BackColor = System::Drawing::Color::LimeGreen;
+			this->Owned17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label8->ForeColor = System::Drawing::Color::Lavender;
-			this->label8->Location = System::Drawing::Point(1208, 1085);
-			this->label8->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(196, 138);
-			this->label8->TabIndex = 73;
-			this->label8->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned17->ForeColor = System::Drawing::Color::Lavender;
+			this->Owned17->Location = System::Drawing::Point(1208, 1085);
+			this->Owned17->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Owned17->Name = L"Owned17";
+			this->Owned17->Size = System::Drawing::Size(196, 138);
+			this->Owned17->TabIndex = 73;
+			this->Owned17->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			// 
-			// label9
+			// Owned20
 			// 
-			this->label9->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
-			this->label9->AutoSize = true;
-			this->label9->BackColor = System::Drawing::Color::LimeGreen;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Owned20->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->Owned20->AutoSize = true;
+			this->Owned20->BackColor = System::Drawing::Color::LimeGreen;
+			this->Owned20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label9->ForeColor = System::Drawing::Color::Lavender;
-			this->label9->Location = System::Drawing::Point(2602, 1085);
-			this->label9->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(196, 138);
-			this->label9->TabIndex = 79;
-			this->label9->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned20->ForeColor = System::Drawing::Color::Lavender;
+			this->Owned20->Location = System::Drawing::Point(2602, 1085);
+			this->Owned20->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Owned20->Name = L"Owned20";
+			this->Owned20->Size = System::Drawing::Size(196, 138);
+			this->Owned20->TabIndex = 79;
+			this->Owned20->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			// 
-			// label10
+			// Owned19
 			// 
-			this->label10->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
-			this->label10->AutoSize = true;
-			this->label10->BackColor = System::Drawing::Color::LimeGreen;
-			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Owned19->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->Owned19->AutoSize = true;
+			this->Owned19->BackColor = System::Drawing::Color::LimeGreen;
+			this->Owned19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label10->ForeColor = System::Drawing::Color::Lavender;
-			this->label10->Location = System::Drawing::Point(2120, 1085);
-			this->label10->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(196, 138);
-			this->label10->TabIndex = 78;
-			this->label10->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned19->ForeColor = System::Drawing::Color::Lavender;
+			this->Owned19->Location = System::Drawing::Point(2120, 1085);
+			this->Owned19->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Owned19->Name = L"Owned19";
+			this->Owned19->Size = System::Drawing::Size(196, 138);
+			this->Owned19->TabIndex = 78;
+			this->Owned19->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			// 
-			// label11
+			// Owned18
 			// 
-			this->label11->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
-			this->label11->AutoSize = true;
-			this->label11->BackColor = System::Drawing::Color::LimeGreen;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Owned18->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->Owned18->AutoSize = true;
+			this->Owned18->BackColor = System::Drawing::Color::LimeGreen;
+			this->Owned18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label11->ForeColor = System::Drawing::Color::Lavender;
-			this->label11->Location = System::Drawing::Point(1642, 1085);
-			this->label11->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(196, 138);
-			this->label11->TabIndex = 77;
-			this->label11->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned18->ForeColor = System::Drawing::Color::Lavender;
+			this->Owned18->Location = System::Drawing::Point(1642, 1085);
+			this->Owned18->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Owned18->Name = L"Owned18";
+			this->Owned18->Size = System::Drawing::Size(196, 138);
+			this->Owned18->TabIndex = 77;
+			this->Owned18->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			// 
-			// label12
+			// Owned16
 			// 
-			this->label12->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
-			this->label12->AutoSize = true;
-			this->label12->BackColor = System::Drawing::Color::LimeGreen;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Owned16->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->Owned16->AutoSize = true;
+			this->Owned16->BackColor = System::Drawing::Color::LimeGreen;
+			this->Owned16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label12->ForeColor = System::Drawing::Color::Lavender;
-			this->label12->Location = System::Drawing::Point(2602, 870);
-			this->label12->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(196, 138);
-			this->label12->TabIndex = 76;
-			this->label12->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned16->ForeColor = System::Drawing::Color::Lavender;
+			this->Owned16->Location = System::Drawing::Point(2602, 870);
+			this->Owned16->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Owned16->Name = L"Owned16";
+			this->Owned16->Size = System::Drawing::Size(196, 138);
+			this->Owned16->TabIndex = 76;
+			this->Owned16->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			// 
-			// label13
+			// Owned15
 			// 
-			this->label13->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
-			this->label13->AutoSize = true;
-			this->label13->BackColor = System::Drawing::Color::LimeGreen;
-			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Owned15->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->Owned15->AutoSize = true;
+			this->Owned15->BackColor = System::Drawing::Color::LimeGreen;
+			this->Owned15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label13->ForeColor = System::Drawing::Color::Lavender;
-			this->label13->Location = System::Drawing::Point(2120, 870);
-			this->label13->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(196, 138);
-			this->label13->TabIndex = 75;
-			this->label13->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
+			this->Owned15->ForeColor = System::Drawing::Color::Lavender;
+			this->Owned15->Location = System::Drawing::Point(2120, 870);
+			this->Owned15->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Owned15->Name = L"Owned15";
+			this->Owned15->Size = System::Drawing::Size(196, 138);
+			this->Owned15->TabIndex = 75;
+			this->Owned15->Text = L"AAPL:\r\n28,129.90\r\n+0.07%";
 			// 
-			// label14
+			// Owned14
 			// 
-			this->label14->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
-			this->label14->AutoSize = true;
-			this->label14->BackColor = System::Drawing::Color::DarkRed;
-			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Owned14->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->Owned14->AutoSize = true;
+			this->Owned14->BackColor = System::Drawing::Color::DarkRed;
+			this->Owned14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label14->ForeColor = System::Drawing::Color::Lavender;
-			this->label14->Location = System::Drawing::Point(1642, 870);
-			this->label14->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(174, 138);
-			this->label14->TabIndex = 74;
-			this->label14->Text = L"BUD:\r\n3,408.54\r\n-0.51%";
+			this->Owned14->ForeColor = System::Drawing::Color::Lavender;
+			this->Owned14->Location = System::Drawing::Point(1642, 870);
+			this->Owned14->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Owned14->Name = L"Owned14";
+			this->Owned14->Size = System::Drawing::Size(174, 138);
+			this->Owned14->TabIndex = 74;
+			this->Owned14->Text = L"BUD:\r\n3,408.54\r\n-0.51%";
 			// 
 			// TradingPage
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(16, 31);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(3204, 1750);
-			this->Controls->Add(this->label9);
-			this->Controls->Add(this->label10);
-			this->Controls->Add(this->label11);
-			this->Controls->Add(this->label12);
-			this->Controls->Add(this->label13);
-			this->Controls->Add(this->label14);
-			this->Controls->Add(this->label8);
-			this->Controls->Add(this->label7);
-			this->Controls->Add(this->label6);
-			this->Controls->Add(this->label5);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
+			this->Controls->Add(this->Owned20);
+			this->Controls->Add(this->Owned19);
+			this->Controls->Add(this->Owned18);
+			this->Controls->Add(this->Owned16);
+			this->Controls->Add(this->Owned15);
+			this->Controls->Add(this->Owned14);
+			this->Controls->Add(this->Owned17);
+			this->Controls->Add(this->Owned13);
+			this->Controls->Add(this->Owned12);
+			this->Controls->Add(this->Owned11);
+			this->Controls->Add(this->Owned10);
+			this->Controls->Add(this->Owned9);
+			this->Controls->Add(this->Owned8);
+			this->Controls->Add(this->Owned7);
 			this->Controls->Add(this->dataGridView1);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->label28);
+			this->Controls->Add(this->searchButton);
+			this->Controls->Add(this->FinancialNewsHeader);
 			this->Controls->Add(this->panel1);
-			this->Controls->Add(this->label27);
-			this->Controls->Add(this->label26);
-			this->Controls->Add(this->label25);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->label24);
-			this->Controls->Add(this->label23);
-			this->Controls->Add(this->label16);
-			this->Controls->Add(this->label17);
-			this->Controls->Add(this->label18);
-			this->Controls->Add(this->label19);
-			this->Controls->Add(this->label20);
-			this->Controls->Add(this->label21);
-			this->Controls->Add(this->label22);
+			this->Controls->Add(this->SandP);
+			this->Controls->Add(this->NASDAQ);
+			this->Controls->Add(this->DowJones);
+			this->Controls->Add(this->searchBox);
+			this->Controls->Add(this->IndexesHeader);
+			this->Controls->Add(this->searchLabel);
+			this->Controls->Add(this->Owned4);
+			this->Controls->Add(this->Owned3);
+			this->Controls->Add(this->Owned6);
+			this->Controls->Add(this->Owned2);
+			this->Controls->Add(this->Owned5);
+			this->Controls->Add(this->Owned1);
+			this->Controls->Add(this->StocksOwnedHeader);
 			this->Margin = System::Windows::Forms::Padding(6);
 			this->Name = L"TradingPage";
 			this->Text = L"TradingPage";
@@ -646,14 +683,53 @@ namespace TradingGUI {
 		childForm->BringToFront();
 		childForm->Show();
 	}
-	private: System::Void label21_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void Owned1_Click(System::Object^ sender, System::EventArgs^ e) {
 		CompanyPage^ companyPage = gcnew CompanyPage();
 		openChildForm(companyPage);
 	}
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ s = textBox1->Text;
+	private: System::Void searchButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ s = searchBox->Text;
 	}
 	private: System::Void TradingPage_Load(System::Object^ sender, System::EventArgs^ e) {
+		String^ username;
+		username = marshal_as<String^>(currentUser);
+		int i = 1;
+		List<String^>^ owns = gcnew List<String^>();
+		owns->Add("Owned1");
+		owns->Add("Owned2");
+		owns->Add("Owned3");
+		owns->Add("Owned4");
+		owns->Add("Owned5");
+		owns->Add("Owned6");
+		owns->Add("Owned7");
+		owns->Add("Owned8");
+		owns->Add("Owned9");
+		owns->Add("Owned10");
+		owns->Add("Owned11");
+		owns->Add("Owned12");
+		owns->Add("Owned13");
+		owns->Add("Owned14");
+		owns->Add("Owned15");
+		owns->Add("Owned16");
+		owns->Add("Owned17");
+		owns->Add("Owned18");
+		owns->Add("Owned19");
+		owns->Add("Owned20");
+		try {
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE username='" + username + "'", connection);
+			MySqlDataReader^ dr1;
+			connection->Open();
+			dr1 = cmd1->ExecuteReader();
+			while (dr1->Read()) {
+				Label^ label = (Label^)this->Controls["Owned" + i.ToString()];
+			}
+			dr1->Close();
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
 	}
 	};
 }
