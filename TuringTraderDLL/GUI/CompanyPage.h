@@ -243,8 +243,7 @@ namespace CompanyPageGUI {
 			// button3
 			// 
 			this->button3->BackColor = System::Drawing::Color::MediumSeaGreen;
-			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
 			this->button3->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->button3->Location = System::Drawing::Point(399, 86);
 			this->button3->Margin = System::Windows::Forms::Padding(2);
@@ -960,6 +959,32 @@ namespace CompanyPageGUI {
 		
 		// MAKE DB CALL TO SEE IF TICKER IS IN USER WATCHLIST
 		// SET WATCHLIST BUTTON TEXT AND COLOUR
+		extern std::string currentUser;
+		String^ username = msclr::interop::marshal_as<String^>(currentUser);
+		bool watching = false;
+		MySqlConnection^ connection;
+
+		try {
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd = gcnew MySqlCommand("SELECT ticker FROM watches WHERE person='" + username + "'", connection);
+
+			MySqlDataReader^ dr;
+			connection->Open();
+			dr = cmd->ExecuteReader();
+			while (dr->Read()) {
+				if (dr->GetString(0) == tickerM) {
+					watching = true;
+					button3->BackColor = System::Drawing::Color::Crimson;
+					button3->Text = "Remove from Watchlist";
+				}
+			}
+			dr->Close();
+			connection->Close();
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
 
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1057,6 +1082,64 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	// ADD TO WATCHLIST HERE OR REMOVE IF ITS ALREADY IN IT
+	extern std::string currentUser;
+	String^ username = msclr::interop::marshal_as<String^>(currentUser);
+	bool watching = false;
+	MySqlConnection^ connection;
+	System::String^ tickerM = "TSLA";
+
+	try {
+		String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+		connection = gcnew MySqlConnection(connection_str);
+		MySqlCommand^ cmd = gcnew MySqlCommand("SELECT ticker FROM watches WHERE person='" + username + "'" + " AND ticker='" + tickerM + "'", connection);
+
+		MySqlDataReader^ dr;
+		connection->Open();
+		dr = cmd->ExecuteReader();
+		try {
+			String^ test;
+			while (dr->Read()) {
+				test = dr->GetString(0);
+			}
+			dr->Close();
+			if (test == tickerM) {
+				// Used to be in DB, now Remove from DB
+				MySqlCommand^ cmd2 = gcnew MySqlCommand("DELETE FROM watches WHERE person='" + username + "'" + " AND ticker='" + tickerM + "'", connection);
+				MySqlDataReader^ dr2 = cmd2->ExecuteReader();
+				dr2->Close();
+				watching = false;
+				button3->BackColor = System::Drawing::Color::MediumSeaGreen;
+				button3->Text = "Add to Watchlist";
+			}
+			else {
+				// Not found in DB, add it
+				watching = true;
+				MySqlCommand^ cmd2 = gcnew MySqlCommand("INSERT INTO watches (person, ticker) VALUES (" + username + ", " + tickerM + ")", connection);
+				MySqlDataReader^ dr2 = cmd2->ExecuteReader();
+				dr2->Close();
+				button3->BackColor = System::Drawing::Color::Crimson;
+				button3->Text = "Remove from Watchlist";
+			}
+		}
+		catch (Exception^ ex) {
+			dr->Close();
+			watching = true;
+			MySqlCommand^ cmd2 = gcnew MySqlCommand("INSERT INTO watches (person, ticker) VALUES ('" + username + "', '" + tickerM + "')", connection);
+			MySqlDataReader^ dr2 = cmd2->ExecuteReader();
+			dr2->Close();
+			button3->BackColor = System::Drawing::Color::Crimson;
+			button3->Text = "Remove from Watchlist";
+		}
+		connection->Close();
+	}
+	catch (Exception^ ex) {
+		watching = true;
+		MySqlCommand^ cmd2 = gcnew MySqlCommand("INSERT INTO watches (person, ticker) VALUES ('" + username + "', '" + tickerM + "')", connection);
+		MySqlDataReader^ dr2 = cmd2->ExecuteReader();
+		dr2->Close();
+		button3->BackColor = System::Drawing::Color::Crimson;
+		button3->Text = "Remove from Watchlist";
+	}
 }
 private: System::Void chart1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -1065,7 +1148,7 @@ private: System::Void initChart(Stock& company) {
 	chart1->Series["Candles"]->Points->Clear();
 
 	if (radioButton1->Checked) {
-		company.updateCandles("D");
+		company.updateCandles("W");
 	}
 	else if (radioButton2->Checked) {
 		company.updateCandles("W");
