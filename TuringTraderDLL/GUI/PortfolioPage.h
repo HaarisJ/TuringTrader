@@ -1,7 +1,16 @@
 #pragma once
 
+#include "Stock.h"
+#include "Holding.h"
+#include "CompanyPage.h"
+#include <msclr\marshal_cppstd.h>
+#include <vector>
+
+extern std::string currentUser;
+
 namespace PortfolioGUI {
 
+	using namespace msclr::interop; // This namespace is used for marshalling between string and String^
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -36,9 +45,9 @@ namespace PortfolioGUI {
 		}
 	private: System::Windows::Forms::Label^ label72;
 	protected:
-	private: System::Windows::Forms::Label^ label71;
+
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
-	private: System::Windows::Forms::PictureBox^ pictureBox2;
+
 	private: System::Windows::Forms::Label^ equityChartTitle;
 	private: System::Windows::Forms::Label^ equityCashRatio;
 
@@ -68,6 +77,9 @@ namespace PortfolioGUI {
 	private: System::Windows::Forms::Label^ holding1;
 
 	private: System::Windows::Forms::Label^ holdingsLabel;
+	private: System::Windows::Forms::Label^ label71;
+	private: System::Windows::Forms::PictureBox^ pictureBox2;
+
 
 
 
@@ -85,9 +97,7 @@ namespace PortfolioGUI {
 		void InitializeComponent(void)
 		{
 			this->label72 = (gcnew System::Windows::Forms::Label());
-			this->label71 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->equityChartTitle = (gcnew System::Windows::Forms::Label());
 			this->equityCashRatio = (gcnew System::Windows::Forms::Label());
 			this->percentageReturn = (gcnew System::Windows::Forms::Label());
@@ -103,6 +113,8 @@ namespace PortfolioGUI {
 			this->holding5 = (gcnew System::Windows::Forms::Label());
 			this->holding1 = (gcnew System::Windows::Forms::Label());
 			this->holdingsLabel = (gcnew System::Windows::Forms::Label());
+			this->label71 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
@@ -117,15 +129,6 @@ namespace PortfolioGUI {
 			this->label72->TabIndex = 59;
 			this->label72->Text = L"Chart Unavailable";
 			// 
-			// label71
-			// 
-			this->label71->AutoSize = true;
-			this->label71->Location = System::Drawing::Point(276, 246);
-			this->label71->Name = L"label71";
-			this->label71->Size = System::Drawing::Size(120, 17);
-			this->label71->TabIndex = 58;
-			this->label71->Text = L"Chart Unavailable";
-			// 
 			// pictureBox3
 			// 
 			this->pictureBox3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
@@ -135,15 +138,6 @@ namespace PortfolioGUI {
 			this->pictureBox3->Size = System::Drawing::Size(269, 263);
 			this->pictureBox3->TabIndex = 57;
 			this->pictureBox3->TabStop = false;
-			// 
-			// pictureBox2
-			// 
-			this->pictureBox2->Location = System::Drawing::Point(52, 110);
-			this->pictureBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(651, 310);
-			this->pictureBox2->TabIndex = 56;
-			this->pictureBox2->TabStop = false;
 			// 
 			// equityChartTitle
 			// 
@@ -341,6 +335,24 @@ namespace PortfolioGUI {
 			this->holdingsLabel->TabIndex = 60;
 			this->holdingsLabel->Text = L"Performance of Stocks Owned Since Last Market Opening";
 			// 
+			// label71
+			// 
+			this->label71->AutoSize = true;
+			this->label71->Location = System::Drawing::Point(276, 246);
+			this->label71->Name = L"label71";
+			this->label71->Size = System::Drawing::Size(120, 17);
+			this->label71->TabIndex = 58;
+			this->label71->Text = L"Chart Unavailable";
+			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->Location = System::Drawing::Point(52, 110);
+			this->pictureBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(651, 310);
+			this->pictureBox2->TabIndex = 56;
+			this->pictureBox2->TabStop = false;
+			// 
 			// PortfolioPage
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -367,6 +379,7 @@ namespace PortfolioGUI {
 			this->Controls->Add(this->chartTitle);
 			this->Name = L"PortfolioPage";
 			this->Text = L"PortfolioPage";
+			this->Load += gcnew System::EventHandler(this, &PortfolioPage::PortfolioPage_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->ResumeLayout(false);
@@ -374,5 +387,69 @@ namespace PortfolioGUI {
 
 		}
 #pragma endregion
-	};
+	private: System::Void PortfolioPage_Load(System::Object^ sender, System::EventArgs^ e) {
+		vector<Holding> userHoldings;
+		vector<Stock> companies;
+		float totalEquity = 0;
+		float totalPortfolioValue = 0;
+
+		try {
+			String^ user;
+			user = marshal_as<String^>(currentUser);
+			
+
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			//using this cmd line, query the username.
+			MySqlCommand^ cmd = gcnew MySqlCommand("SELECT ticker, numShares, totalCost FROM TuringTrader.holdings where person='" + user + "'", connection);
+			MySqlDataReader^ dr;
+			connection->Open();
+			dr = cmd->ExecuteReader();
+
+			while (dr->Read()) {
+				string symbol = marshal_as<std::string>(dr->GetString(0));
+				string strShares = marshal_as<std::string>(dr->GetString(1));
+				string strCosts = marshal_as<std::string>(dr->GetString(2));
+				Holding currentHolding(symbol, stoi(strShares), stod(strCosts));
+				userHoldings.push_back(currentHolding);
+			}
+
+			for (int i = 0; i < userHoldings.size(); i++) {
+				std::string ticker = userHoldings[i].getTicker();
+				Stock company = Stock(ticker);
+				companies.push_back(company);
+				company.updateMarketVals();
+				totalEquity += (company.getCurrentPrice() * userHoldings[i].getQty());
+			}
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show("something has gone wrong");
+		}
+		try {
+			String^ user;
+			user = marshal_as<String^>(currentUser);
+
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			//using this cmd line, query the username.
+			MySqlCommand^ cmd = gcnew MySqlCommand("SELECT accountBalance FROM TuringTrader.users where username='" + user + "'", connection);
+			MySqlDataReader^ dr;
+			connection->Open();
+			dr = cmd->ExecuteReader();
+
+			while (dr->Read()) {
+				string accountValue = marshal_as<std::string>(dr->GetString(0));
+				totalPortfolioValue = stod(accountValue) + totalEquity;
+			}
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show("something has gone wrong");
+		}
+		portfolioVal->Text = "Current Portfolio Value: $" + totalPortfolioValue;
+		int percentageReturnValue = ((totalPortfolioValue / 100000) * 100);
+		percentageReturn->Text = "Percentage Return: " + percentageReturnValue + "%";
+		int percentageEquity = (totalEquity / totalPortfolioValue) * 100;
+		equityCashRatio->Text = "Equity/Cash Balance: " + percentageEquity + "/" + (100 - percentageEquity);
+	}
+};
 }
