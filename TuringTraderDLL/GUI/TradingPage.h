@@ -718,12 +718,13 @@ namespace TradingGUI {
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE username='" + username + "'", connection);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
 			MySqlDataReader^ dr1;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
 			while (dr1->Read()) {
 				Label^ label = (Label^)this->Controls["Owned" + i.ToString()];
+				i += 1;
 			}
 			dr1->Close();
 		}
