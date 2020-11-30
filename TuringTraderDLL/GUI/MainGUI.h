@@ -97,8 +97,9 @@ namespace MainAppGUI {
 			this->panel1->Controls->Add(this->turingLogo);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel1->Location = System::Drawing::Point(0, 0);
+			this->panel1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(1602, 70);
+			this->panel1->Size = System::Drawing::Size(1202, 57);
 			this->panel1->TabIndex = 0;
 			// 
 			// profileButton
@@ -109,9 +110,10 @@ namespace MainAppGUI {
 			this->profileButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->profileButton->ForeColor = System::Drawing::SystemColors::ButtonShadow;
-			this->profileButton->Location = System::Drawing::Point(1276, 0);
+			this->profileButton->Location = System::Drawing::Point(958, 0);
+			this->profileButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->profileButton->Name = L"profileButton";
-			this->profileButton->Size = System::Drawing::Size(150, 70);
+			this->profileButton->Size = System::Drawing::Size(112, 57);
 			this->profileButton->TabIndex = 7;
 			this->profileButton->Text = L"Profile";
 			this->profileButton->UseVisualStyleBackColor = true;
@@ -125,9 +127,10 @@ namespace MainAppGUI {
 			this->logoutButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->logoutButton->ForeColor = System::Drawing::SystemColors::ButtonShadow;
-			this->logoutButton->Location = System::Drawing::Point(1426, 0);
+			this->logoutButton->Location = System::Drawing::Point(1070, 0);
+			this->logoutButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->logoutButton->Name = L"logoutButton";
-			this->logoutButton->Size = System::Drawing::Size(176, 70);
+			this->logoutButton->Size = System::Drawing::Size(132, 57);
 			this->logoutButton->TabIndex = 6;
 			this->logoutButton->Text = L"Logout";
 			this->logoutButton->UseVisualStyleBackColor = true;
@@ -141,9 +144,10 @@ namespace MainAppGUI {
 			this->groupsButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->groupsButton->ForeColor = System::Drawing::SystemColors::ButtonShadow;
-			this->groupsButton->Location = System::Drawing::Point(541, 0);
+			this->groupsButton->Location = System::Drawing::Point(405, 0);
+			this->groupsButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->groupsButton->Name = L"groupsButton";
-			this->groupsButton->Size = System::Drawing::Size(150, 70);
+			this->groupsButton->Size = System::Drawing::Size(112, 57);
 			this->groupsButton->TabIndex = 5;
 			this->groupsButton->Text = L"Groups";
 			this->groupsButton->UseVisualStyleBackColor = true;
@@ -157,9 +161,10 @@ namespace MainAppGUI {
 			this->tradingButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->tradingButton->ForeColor = System::Drawing::SystemColors::ButtonShadow;
-			this->tradingButton->Location = System::Drawing::Point(391, 0);
+			this->tradingButton->Location = System::Drawing::Point(293, 0);
+			this->tradingButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->tradingButton->Name = L"tradingButton";
-			this->tradingButton->Size = System::Drawing::Size(150, 70);
+			this->tradingButton->Size = System::Drawing::Size(112, 57);
 			this->tradingButton->TabIndex = 4;
 			this->tradingButton->Text = L"Trading";
 			this->tradingButton->UseVisualStyleBackColor = true;
@@ -173,9 +178,10 @@ namespace MainAppGUI {
 			this->portfolioButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->portfolioButton->ForeColor = System::Drawing::SystemColors::ButtonShadow;
-			this->portfolioButton->Location = System::Drawing::Point(241, 0);
+			this->portfolioButton->Location = System::Drawing::Point(181, 0);
+			this->portfolioButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->portfolioButton->Name = L"portfolioButton";
-			this->portfolioButton->Size = System::Drawing::Size(150, 70);
+			this->portfolioButton->Size = System::Drawing::Size(112, 57);
 			this->portfolioButton->TabIndex = 3;
 			this->portfolioButton->Text = L"Portfolio";
 			this->portfolioButton->UseVisualStyleBackColor = true;
@@ -191,8 +197,9 @@ namespace MainAppGUI {
 				static_cast<System::Byte>(0)));
 			this->turingLogo->ForeColor = System::Drawing::SystemColors::ButtonShadow;
 			this->turingLogo->Location = System::Drawing::Point(0, 0);
+			this->turingLogo->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->turingLogo->Name = L"turingLogo";
-			this->turingLogo->Size = System::Drawing::Size(241, 70);
+			this->turingLogo->Size = System::Drawing::Size(181, 57);
 			this->turingLogo->TabIndex = 2;
 			this->turingLogo->Text = L"TuringTrader";
 			this->turingLogo->UseVisualStyleBackColor = true;
@@ -200,21 +207,24 @@ namespace MainAppGUI {
 			// contentPanel
 			// 
 			this->contentPanel->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->contentPanel->Location = System::Drawing::Point(0, 70);
+			this->contentPanel->Location = System::Drawing::Point(0, 57);
+			this->contentPanel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->contentPanel->Name = L"contentPanel";
-			this->contentPanel->Size = System::Drawing::Size(1602, 983);
+			this->contentPanel->Size = System::Drawing::Size(1202, 799);
 			this->contentPanel->TabIndex = 1;
 			// 
 			// MainGUI
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1602, 1053);
+			this->ClientSize = System::Drawing::Size(1202, 856);
 			this->Controls->Add(this->contentPanel);
 			this->Controls->Add(this->panel1);
-			this->MinimumSize = System::Drawing::Size(1400, 800);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->MinimumSize = System::Drawing::Size(1054, 657);
 			this->Name = L"MainGUI";
 			this->Text = L"MainGUI";
+			this->Load += gcnew System::EventHandler(this, &MainGUI::MainGUI_Load);
 			this->panel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 
@@ -264,6 +274,10 @@ private: System::Void profileButton_Click(System::Object^ sender, System::EventA
 }
 private: System::Void logoutButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
+}
+private: System::Void MainGUI_Load(System::Object^ sender, System::EventArgs^ e) {
+	PortfolioPage^ portfolioPage = gcnew PortfolioPage();
+	openChildForm(portfolioPage);
 }
 };
 }

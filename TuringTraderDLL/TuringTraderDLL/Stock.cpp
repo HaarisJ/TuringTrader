@@ -304,21 +304,21 @@ STOCKDLL string Stock::unixTimeToHumanReadable(long int seconds) {
     }
 
     //// Calculating HH:MM:YYYY
-    //hours = extraTime / 3600;
-    //minutes = (extraTime % 3600) / 60;
-    //secondss = (extraTime % 3600) % 60;
+    hours = extraTime / 3600;
+    minutes = (extraTime % 3600) / 60;
+    secondss = (extraTime % 3600) % 60;
 
     ans += to_string(date);
     ans += "/";
     ans += to_string(month);
     ans += "/";
     ans += to_string(currYear);
-    //ans += " ";
-    //ans += to_string(hours);
-    //ans += ":";
-    //ans += to_string(minutes);
-    //ans += ":";
-    //ans += to_string(secondss);
+    ans += " ";
+    ans += to_string(hours);
+    ans += ":";
+    ans += to_string(minutes);
+    ans += ":";
+    ans += to_string(secondss);
 
     // Return the time
     return ans;

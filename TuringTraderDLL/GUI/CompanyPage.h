@@ -3,6 +3,8 @@
 #include "OrderDlg.h"
 #include <msclr\marshal_cppstd.h>
 #include <algorithm>
+#include <chrono>
+#include <ctime>    
 
 extern std::string currentUser;
 using namespace MySql::Data::MySqlClient;
@@ -30,6 +32,14 @@ namespace CompanyPageGUI {
 			InitializeComponent();
 			this->tickerM = tickerM;
 		}
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel6;
+	public:
+	private: System::Windows::Forms::Label^ label28;
+	private: System::Windows::Forms::Label^ label29;
+	private: System::Windows::Forms::Label^ label30;
+	private: System::Windows::Forms::Label^ label31;
+	private: System::Windows::Forms::Label^ label32;
+	private: System::Windows::Forms::Label^ label33;
 
 	private: System::String^ tickerM;
 	protected:
@@ -119,9 +129,9 @@ namespace CompanyPageGUI {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea6 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend6 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series6 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -172,6 +182,13 @@ namespace CompanyPageGUI {
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->radioButton3 = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton2 = (gcnew System::Windows::Forms::RadioButton());
+			this->tableLayoutPanel6 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->label28 = (gcnew System::Windows::Forms::Label());
+			this->label29 = (gcnew System::Windows::Forms::Label());
+			this->label30 = (gcnew System::Windows::Forms::Label());
+			this->label31 = (gcnew System::Windows::Forms::Label());
+			this->label32 = (gcnew System::Windows::Forms::Label());
+			this->label33 = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->tableLayoutPanel2->SuspendLayout();
@@ -184,6 +201,7 @@ namespace CompanyPageGUI {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			this->groupBox1->SuspendLayout();
+			this->tableLayoutPanel6->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -192,7 +210,7 @@ namespace CompanyPageGUI {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F));
 			this->button1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->button1->Location = System::Drawing::Point(26, 17);
-			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 34);
 			this->button1->TabIndex = 0;
@@ -231,7 +249,7 @@ namespace CompanyPageGUI {
 				static_cast<System::Byte>(0)));
 			this->button2->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->button2->Location = System::Drawing::Point(333, 86);
-			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button2->Margin = System::Windows::Forms::Padding(2);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(62, 29);
 			this->button2->TabIndex = 4;
@@ -245,7 +263,7 @@ namespace CompanyPageGUI {
 			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
 			this->button3->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->button3->Location = System::Drawing::Point(399, 86);
-			this->button3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button3->Margin = System::Windows::Forms::Padding(2);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(154, 29);
 			this->button3->TabIndex = 5;
@@ -317,7 +335,7 @@ namespace CompanyPageGUI {
 			// 
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->textBox1->Location = System::Drawing::Point(595, 117);
-			this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2);
 			this->textBox1->MaxLength = 30;
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(216, 27);
@@ -331,7 +349,7 @@ namespace CompanyPageGUI {
 				static_cast<System::Byte>(0)));
 			this->button4->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->button4->Location = System::Drawing::Point(595, 148);
-			this->button4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button4->Margin = System::Windows::Forms::Padding(2);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(91, 39);
 			this->button4->TabIndex = 12;
@@ -346,7 +364,7 @@ namespace CompanyPageGUI {
 				static_cast<System::Byte>(0)));
 			this->button5->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->button5->Location = System::Drawing::Point(717, 148);
-			this->button5->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button5->Margin = System::Windows::Forms::Padding(2);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(96, 39);
 			this->button5->TabIndex = 13;
@@ -373,8 +391,8 @@ namespace CompanyPageGUI {
 			this->tableLayoutPanel1->Controls->Add(this->label12, 1, 1);
 			this->tableLayoutPanel1->Controls->Add(this->label13, 0, 4);
 			this->tableLayoutPanel1->Controls->Add(this->label14, 1, 4);
-			this->tableLayoutPanel1->Location = System::Drawing::Point(26, 467);
-			this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->tableLayoutPanel1->Location = System::Drawing::Point(26, 490);
+			this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(2);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 5;
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 33.33333F)));
@@ -762,19 +780,19 @@ namespace CompanyPageGUI {
 			// 
 			// chart1
 			// 
-			chartArea1->Name = L"ChartArea1";
-			this->chart1->ChartAreas->Add(chartArea1);
-			legend1->Enabled = false;
-			legend1->Name = L"Legend1";
-			this->chart1->Legends->Add(legend1);
+			chartArea6->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea6);
+			legend6->Enabled = false;
+			legend6->Name = L"Legend1";
+			this->chart1->Legends->Add(legend6);
 			this->chart1->Location = System::Drawing::Point(26, 219);
 			this->chart1->Name = L"chart1";
-			series1->ChartArea = L"ChartArea1";
-			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series1->IsVisibleInLegend = false;
-			series1->Legend = L"Legend1";
-			series1->Name = L"Candles";
-			this->chart1->Series->Add(series1);
+			series6->ChartArea = L"ChartArea1";
+			series6->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series6->IsVisibleInLegend = false;
+			series6->Legend = L"Legend1";
+			series6->Name = L"Candles";
+			this->chart1->Series->Add(series6);
 			this->chart1->Size = System::Drawing::Size(527, 243);
 			this->chart1->TabIndex = 37;
 			this->chart1->Text = L"chart1";
@@ -824,11 +842,97 @@ namespace CompanyPageGUI {
 			this->radioButton2->Text = L"Week";
 			this->radioButton2->UseVisualStyleBackColor = true;
 			// 
+			// tableLayoutPanel6
+			// 
+			this->tableLayoutPanel6->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->tableLayoutPanel6->ColumnCount = 7;
+			this->tableLayoutPanel6->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				52.11267F)));
+			this->tableLayoutPanel6->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				47.88733F)));
+			this->tableLayoutPanel6->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				69)));
+			this->tableLayoutPanel6->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				74)));
+			this->tableLayoutPanel6->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				73)));
+			this->tableLayoutPanel6->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				78)));
+			this->tableLayoutPanel6->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				90)));
+			this->tableLayoutPanel6->Controls->Add(this->label32, 5, 0);
+			this->tableLayoutPanel6->Controls->Add(this->label31, 4, 0);
+			this->tableLayoutPanel6->Controls->Add(this->label30, 3, 0);
+			this->tableLayoutPanel6->Controls->Add(this->label29, 2, 0);
+			this->tableLayoutPanel6->Controls->Add(this->label28, 1, 0);
+			this->tableLayoutPanel6->Controls->Add(this->label33, 6, 0);
+			this->tableLayoutPanel6->Location = System::Drawing::Point(26, 455);
+			this->tableLayoutPanel6->Name = L"tableLayoutPanel6";
+			this->tableLayoutPanel6->RowCount = 1;
+			this->tableLayoutPanel6->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel6->Size = System::Drawing::Size(527, 30);
+			this->tableLayoutPanel6->TabIndex = 40;
+			// 
+			// label28
+			// 
+			this->label28->AutoSize = true;
+			this->label28->Location = System::Drawing::Point(77, 0);
+			this->label28->Name = L"label28";
+			this->label28->Size = System::Drawing::Size(41, 13);
+			this->label28->TabIndex = 0;
+			this->label28->Text = L"label28";
+			// 
+			// label29
+			// 
+			this->label29->AutoSize = true;
+			this->label29->Location = System::Drawing::Point(145, 0);
+			this->label29->Name = L"label29";
+			this->label29->Size = System::Drawing::Size(41, 13);
+			this->label29->TabIndex = 1;
+			this->label29->Text = L"label29";
+			// 
+			// label30
+			// 
+			this->label30->AutoSize = true;
+			this->label30->Location = System::Drawing::Point(214, 0);
+			this->label30->Name = L"label30";
+			this->label30->Size = System::Drawing::Size(41, 13);
+			this->label30->TabIndex = 2;
+			this->label30->Text = L"label30";
+			// 
+			// label31
+			// 
+			this->label31->AutoSize = true;
+			this->label31->Location = System::Drawing::Point(288, 0);
+			this->label31->Name = L"label31";
+			this->label31->Size = System::Drawing::Size(41, 13);
+			this->label31->TabIndex = 3;
+			this->label31->Text = L"label31";
+			// 
+			// label32
+			// 
+			this->label32->AutoSize = true;
+			this->label32->Location = System::Drawing::Point(361, 0);
+			this->label32->Name = L"label32";
+			this->label32->Size = System::Drawing::Size(41, 13);
+			this->label32->TabIndex = 4;
+			this->label32->Text = L"label32";
+			// 
+			// label33
+			// 
+			this->label33->AutoSize = true;
+			this->label33->Location = System::Drawing::Point(439, 0);
+			this->label33->Name = L"label33";
+			this->label33->Size = System::Drawing::Size(41, 13);
+			this->label33->TabIndex = 5;
+			this->label33->Text = L"label33";
+			// 
 			// CompanyPage
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1022, 573);
+			this->ClientSize = System::Drawing::Size(1134, 657);
+			this->Controls->Add(this->tableLayoutPanel6);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->chart1);
 			this->Controls->Add(this->pictureBox5);
@@ -854,7 +958,7 @@ namespace CompanyPageGUI {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->button1);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"CompanyPage";
 			this->Text = L"Apple Inc.";
 			this->Load += gcnew System::EventHandler(this, &CompanyPage::CompanyPage_Load);
@@ -876,6 +980,8 @@ namespace CompanyPageGUI {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
+			this->tableLayoutPanel6->ResumeLayout(false);
+			this->tableLayoutPanel6->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -1149,14 +1255,27 @@ namespace CompanyPageGUI {
 	private: System::Void initChart(Stock& company) {
 		chart1->Series["Candles"]->Points->Clear();
 
+		bool day = false;
+		bool week = false;
+		bool month = false;
+
 		if (radioButton1->Checked) {
 			company.updateCandles("W");
+			day = true;
+			week = false;
+			month = false;
 		}
 		else if (radioButton2->Checked) {
 			company.updateCandles("W");
+			day = false;
+			week = true;
+			month = false;
 		}
 		else if (radioButton3->Checked) {
 			company.updateCandles("M");
+			day = false;
+			week = false;
+			month = true;
 		}
 
 		// INIT CANDLE CHART
@@ -1173,9 +1292,34 @@ namespace CompanyPageGUI {
 		chart1->ChartAreas[0]->AxisY->Minimum = minCan - 0.1 * diff;
 		chart1->ChartAreas[0]->AxisY->Maximum = maxCan + 0.1 * diff;
 		chart1->ChartAreas[0]->AxisY->LabelStyle->Format = "0.00";
+		chart1->ChartAreas[0]->AxisX->LabelStyle->Enabled = false;
+
+
+		string now = company.unixTimeToHumanReadable(candleTimes[candleTimes.size()-1]);
+		string start = company.unixTimeToHumanReadable(candleTimes[0]);
+		String^ Now = msclr::interop::marshal_as<String^>(now);
+		String^ Start = msclr::interop::marshal_as<String^>(start);
+		int interval = int((candleTimes.size() - 1) / 5);
+		string second = company.unixTimeToHumanReadable(candleTimes[interval*2]);
+		string third = company.unixTimeToHumanReadable(candleTimes[interval*3]);
+		string fourth = company.unixTimeToHumanReadable(candleTimes[interval*4]);
+		string fifth = company.unixTimeToHumanReadable(candleTimes[interval*5]);
+		String^ Second = msclr::interop::marshal_as<String^>(second);
+		String^ Third = msclr::interop::marshal_as<String^>(third);
+		String^ Fourth = msclr::interop::marshal_as<String^>(fourth);
+		String^ Fifth = msclr::interop::marshal_as<String^>(fifth);
+		label28->Text = Start;
+		label29->Text = Second;
+		label30->Text = Third;
+		label31->Text = Fourth;
+		label32->Text = Fifth;
+		label33->Text = Now;
+
+
+
 	}
 	private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
-		//CompanyPage::initChart();
+		CompanyPage::CompanyPage_Load(sender, e);
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		CompanyPage::CompanyPage_Load(sender, e);
