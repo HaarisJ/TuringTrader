@@ -1,1 +1,4 @@
-﻿  TuringTraderDLL.vcxproj -> C:\Users\markl\source\repos\turing\TuringTraderDLL\Debug\TuringTraderDLL.dll
+﻿  News.cpp
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\News.h(24,28): warning C4251: 'News::newsVector': class 'std::vector<News::news,std::allocator<News::news>>' needs to have dll-interface to be used by clients of class 'News'
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\News.h(24): message : see declaration of 'std::vector<News::news,std::allocator<News::news>>'
+  TuringTraderDLL.vcxproj -> C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\Debug\TuringTraderDLL.dll

@@ -7,6 +7,9 @@
 #include <cmath>
 #include <sstream>
 #include <iomanip>
+#include <algorithm>
+#include <chrono>
+#include <random>
 
 
 extern std::string currentUser;
@@ -706,7 +709,6 @@ private: System::Windows::Forms::Label^ label8;
 			this->newsArticle2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 48)));
 			this->newsArticle2->Size = System::Drawing::Size(771, 181);
 			this->newsArticle2->TabIndex = 85;
-			this->newsArticle2->Visible = false;
 			// 
 			// headline2
 			// 
@@ -760,7 +762,6 @@ private: System::Windows::Forms::Label^ label8;
 			this->newsArticle1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 48)));
 			this->newsArticle1->Size = System::Drawing::Size(771, 193);
 			this->newsArticle1->TabIndex = 84;
-			this->newsArticle1->Visible = false;
 			// 
 			// headline1
 			// 
@@ -834,7 +835,6 @@ private: System::Windows::Forms::Label^ label8;
 			this->newsArticle4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 48)));
 			this->newsArticle4->Size = System::Drawing::Size(771, 181);
 			this->newsArticle4->TabIndex = 91;
-			this->newsArticle4->Visible = false;
 			// 
 			// headline4
 			// 
@@ -888,7 +888,6 @@ private: System::Windows::Forms::Label^ label8;
 			this->newsArticle3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 48)));
 			this->newsArticle3->Size = System::Drawing::Size(771, 193);
 			this->newsArticle3->TabIndex = 90;
-			this->newsArticle3->Visible = false;
 			// 
 			// headline3
 			// 
@@ -932,9 +931,9 @@ private: System::Windows::Forms::Label^ label8;
 			this->label8->Location = System::Drawing::Point(1125, 1177);
 			this->label8->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(385, 54);
+			this->label8->Size = System::Drawing::Size(297, 54);
 			this->label8->TabIndex = 94;
-			this->label8->Text = L"Dow Jones News";
+			this->label8->Text = L"Market News";
 			// 
 			// TradingPage
 			// 
@@ -1207,23 +1206,54 @@ private: System::Windows::Forms::Label^ label8;
 
 			// Populating news panel
 
-			News finNews= News();
 
-			vector<News::news> cNews = finNews.getNews();
-			while(j<4&&j<cNews.size()){
-				Label^ headline = (Label^)this->Controls["headline" + (j+1).ToString()];
-				Label^ date = (Label^)this->Controls["date" + (j + 1).ToString()];
-				Label^ source = (Label^)this->Controls["source" + (j + 1).ToString()];
-				PictureBox^ image = (PictureBox^)this->Controls["newsImage" + (j + 1).ToString()];
-				TableLayoutPanel^ article = (TableLayoutPanel^)this->Controls["newsArticle" + (j + 1).ToString()];
-				headline->Text = gcnew String(cNews[j].headline.c_str());
-				date->Text = gcnew String(cNews[0].date.c_str());
-				source->Text = gcnew String(cNews[0].source.c_str());
-				image->ImageLocation = gcnew String(cNews[0].image.c_str());
-				article->Visible = true;
+			Stock news1= Stock("DJIA");
+			news1.updateNews();
+			vector<Stock::news> cNews = news1.getNews();
+			Stock news2 = Stock("AAPL");
+			news2.updateNews();
+			vector<Stock::news> aNews = news2.getNews();
+			cNews.insert(cNews.end(), aNews.begin(), aNews.end());
+			Stock news3 = Stock("MSFT");
+			news3.updateNews();
+			vector<Stock::news> bNews = news3.getNews();
+			cNews.insert(cNews.end(), bNews.begin(), bNews.end());
+			Stock news4 = Stock("FB");
+			news4.updateNews();
+			vector<Stock::news> dNews = news4.getNews();
+			cNews.insert(cNews.end(), dNews.begin(), dNews.end());
+			Stock news5 = Stock("GOOGL");
+			news5.updateNews();
+			vector<Stock::news> eNews = news5.getNews();
+			cNews.insert(cNews.end(), eNews.begin(), eNews.end());
+			Stock news6 = Stock("TSLA");
+			news6.updateNews();
+			vector<Stock::news> fNews = news6.getNews();
+			cNews.insert(cNews.end(), fNews.begin(), fNews.end());
+			unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+			std::shuffle(cNews.begin(), cNews.end(), std::default_random_engine(seed));
 
-			
-			}
+
+
+			headline1->Text = gcnew String(cNews[0].headline.c_str());
+			date1->Text = gcnew String(cNews[0].date.c_str());
+			source1->Text = gcnew String(cNews[0].source.c_str());
+			newsImage1->ImageLocation = gcnew String(cNews[0].image.c_str());
+
+			headline2->Text = gcnew String(cNews[1].headline.c_str());
+			date2->Text = gcnew String(cNews[1].date.c_str());
+			source2->Text = gcnew String(cNews[1].source.c_str());
+			newsImage2->ImageLocation = gcnew String(cNews[1].image.c_str());
+
+			headline3->Text = gcnew String(cNews[2].headline.c_str());
+			date3->Text = gcnew String(cNews[2].date.c_str());
+			source3->Text = gcnew String(cNews[2].source.c_str());
+			newsImage3->ImageLocation = gcnew String(cNews[2].image.c_str());
+
+			headline4->Text = gcnew String(cNews[3].headline.c_str());
+			date4->Text = gcnew String(cNews[3].date.c_str());
+			source4->Text = gcnew String(cNews[3].source.c_str());
+			newsImage4->ImageLocation = gcnew String(cNews[3].image.c_str());
 		}
 		catch (Exception^ ex) {
 			MessageBox::Show(ex->Message);

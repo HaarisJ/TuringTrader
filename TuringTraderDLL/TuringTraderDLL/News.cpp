@@ -36,7 +36,7 @@ NEWSDLL void News::updateNews() {
     std::string yday = std::string(&buf2[0], &buf2[10]);
 
     cpr::AsyncResponse fr = cpr::GetAsync(cpr::Url{ "https://finnhub.io/api/v1/news" },
-        cpr::Parameters{ {"categories", "general"},  {"token", "bu4gihf48v6p8t6gh4bg"} });
+        cpr::Parameters{ {"category", "general"},  {"token", "bu4gihf48v6p8t6gh4bg"} });
 
     cpr::Response r = fr.get();
     const char* text = r.text.c_str();
