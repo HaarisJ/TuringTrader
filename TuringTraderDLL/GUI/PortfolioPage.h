@@ -85,6 +85,8 @@ namespace PortfolioGUI {
 	private: System::Windows::Forms::Label^ holding9;
 	private: System::Windows::Forms::Label^ holding12;
 	private: System::Windows::Forms::Label^ holding11;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label2;
 
 
 
@@ -130,6 +132,8 @@ namespace PortfolioGUI {
 			this->holding9 = (gcnew System::Windows::Forms::Label());
 			this->holding12 = (gcnew System::Windows::Forms::Label());
 			this->holding11 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->BeginInit();
 			this->SuspendLayout();
@@ -151,7 +155,7 @@ namespace PortfolioGUI {
 			this->equityCashRatio->AutoSize = true;
 			this->equityCashRatio->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->equityCashRatio->Location = System::Drawing::Point(852, 302);
+			this->equityCashRatio->Location = System::Drawing::Point(856, 270);
 			this->equityCashRatio->Name = L"equityCashRatio";
 			this->equityCashRatio->Size = System::Drawing::Size(195, 75);
 			this->equityCashRatio->TabIndex = 54;
@@ -163,7 +167,7 @@ namespace PortfolioGUI {
 			this->percentageReturn->AutoSize = true;
 			this->percentageReturn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->percentageReturn->Location = System::Drawing::Point(856, 203);
+			this->percentageReturn->Location = System::Drawing::Point(856, 184);
 			this->percentageReturn->Name = L"percentageReturn";
 			this->percentageReturn->Size = System::Drawing::Size(174, 50);
 			this->percentageReturn->TabIndex = 53;
@@ -433,11 +437,35 @@ namespace PortfolioGUI {
 			this->holding11->Visible = false;
 			this->holding11->Click += gcnew System::EventHandler(this, &PortfolioPage::holding11_Click);
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(857, 362);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(70, 25);
+			this->label1->TabIndex = 76;
+			this->label1->Text = L"Cash: ";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(857, 419);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(72, 25);
+			this->label2->TabIndex = 77;
+			this->label2->Text = L"Equity:";
+			// 
 			// PortfolioPage
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1602, 903);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->holding12);
 			this->Controls->Add(this->holding11);
 			this->Controls->Add(this->holding10);
@@ -546,7 +574,7 @@ namespace PortfolioGUI {
 		catch (Exception^ ex) {
 			MessageBox::Show("something has gone wrong");
 		}
-		portfolioVal->Text = "Current Portfolio Value: $" + " \r\n " + totalPortfolioValue;
+		portfolioVal->Text = "Current Portfolio Value: " + " \r\n " + totalPortfolioValue.ToString(L"c");
 		int percentageReturnValue = (totalPortfolioValue-100000) / 100000;
 		percentageReturn->Text = "Percentage Return: " + " \r\n " + percentageReturnValue.ToString(L"p");
 		int percentageEquity = (totalEquity / totalPortfolioValue) * 100;
@@ -556,6 +584,8 @@ namespace PortfolioGUI {
 		chart2->Series["Series1"]->Points[0]->LegendText = "Equity";
 		chart2->Series["Series1"]->Points[1]->LegendText = "Cash";
 
+		label1->Text = "Cash: " + (totalPortfolioValue - totalEquity).ToString(L"c");
+		label2->Text = "Equity: " + " \r\n " + totalEquity.ToString(L"c");
 	}
 private: System::Void chart2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
