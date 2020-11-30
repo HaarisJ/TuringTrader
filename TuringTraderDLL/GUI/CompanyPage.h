@@ -1260,7 +1260,7 @@ namespace CompanyPageGUI {
 		bool month = false;
 
 		if (radioButton1->Checked) {
-			company.updateCandles("W");
+			company.updateCandles("D");
 			day = true;
 			week = false;
 			month = false;

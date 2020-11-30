@@ -105,7 +105,7 @@ STOCKDLL void Stock::updateNews() {
     std::tm bt{};
     std::tm bt2{};
     time_t now = time(0);
-    time_t yd = time(0) - 86400;
+    time_t yd = time(0) - 4*86400;
 
     localtime_s(&bt, &now);
     localtime_s(&bt2, &yd);
@@ -135,7 +135,7 @@ STOCKDLL void Stock::updateNews() {
 
     assert(doc.IsArray()); // attributes is an array
     for (rapidjson::Value::ConstValueIterator itr = doc.Begin(); itr != doc.End(); ++itr) {
-        if (iter == 5) break;
+        if (iter == 4) break;
         const rapidjson::Value& newsItem = *itr;
         assert(newsItem.IsObject()); // each attribute is an object
         for (rapidjson::Value::ConstMemberIterator itr2 = newsItem.MemberBegin(); itr2 != newsItem.MemberEnd(); ++itr2) {
