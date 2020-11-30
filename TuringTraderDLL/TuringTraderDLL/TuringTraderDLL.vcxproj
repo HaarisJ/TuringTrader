@@ -154,6 +154,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="Group.h" />
     <ClInclude Include="Holding.h" />
+    <ClInclude Include="News.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Portfolio.h" />
     <ClInclude Include="Profile.h" />
@@ -164,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Group.cpp" />
+    <ClCompile Include="News.cpp" />
     <ClCompile Include="Portfolio.cpp" />
     <ClCompile Include="Profile.cpp" />
     <ClCompile Include="Trading.cpp" />

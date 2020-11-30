@@ -1,5 +1,6 @@
 #pragma once
 #include "CompanyPage.h"
+#include "News.h"
 #include <msclr\marshal_cppstd.h>
 #include <vector>
 #include "Stock.h"
@@ -51,11 +52,11 @@ namespace TradingGUI {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ FinancialNewsHeader;
+
 	protected:
 
 	protected:
-	private: System::Windows::Forms::Panel^ panel1;
+
 	private: System::Windows::Forms::Label^ Apple;
 
 	private: System::Windows::Forms::Label^ McLeod;
@@ -123,6 +124,56 @@ namespace TradingGUI {
 
 	private: System::Windows::Forms::Label^ Owned14;
 	private: System::Windows::Forms::Label^ Microsoft;
+	private: System::Windows::Forms::PictureBox^ newsImage2;
+
+	private: System::Windows::Forms::PictureBox^ newsImage1;
+
+	private: System::Windows::Forms::TableLayoutPanel^ newsArticle2;
+	private: System::Windows::Forms::Label^ headline2;
+	private: System::Windows::Forms::Label^ date2;
+	private: System::Windows::Forms::Label^ source2;
+
+
+
+
+	private: System::Windows::Forms::TableLayoutPanel^ newsArticle1;
+private: System::Windows::Forms::Label^ headline1;
+private: System::Windows::Forms::Label^ date1;
+private: System::Windows::Forms::Label^ source1;
+
+
+
+
+private: System::Windows::Forms::PictureBox^ newsImage4;
+
+private: System::Windows::Forms::PictureBox^ newsImage3;
+
+private: System::Windows::Forms::TableLayoutPanel^ newsArticle4;
+private: System::Windows::Forms::Label^ headline4;
+private: System::Windows::Forms::Label^ date4;
+private: System::Windows::Forms::Label^ source4;
+
+
+
+
+private: System::Windows::Forms::TableLayoutPanel^ newsArticle3;
+private: System::Windows::Forms::Label^ headline3;
+private: System::Windows::Forms::Label^ date3;
+private: System::Windows::Forms::Label^ source3;
+
+
+
+
+
+private: System::Windows::Forms::Label^ label8;
+
+
+
+
+
+
+
+
 
 
 
@@ -139,8 +190,6 @@ namespace TradingGUI {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->FinancialNewsHeader = (gcnew System::Windows::Forms::Label());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->Apple = (gcnew System::Windows::Forms::Label());
 			this->McLeod = (gcnew System::Windows::Forms::Label());
 			this->DowJones = (gcnew System::Windows::Forms::Label());
@@ -173,36 +222,44 @@ namespace TradingGUI {
 			this->Owned15 = (gcnew System::Windows::Forms::Label());
 			this->Owned14 = (gcnew System::Windows::Forms::Label());
 			this->Microsoft = (gcnew System::Windows::Forms::Label());
+			this->newsImage2 = (gcnew System::Windows::Forms::PictureBox());
+			this->newsImage1 = (gcnew System::Windows::Forms::PictureBox());
+			this->newsArticle2 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->headline2 = (gcnew System::Windows::Forms::Label());
+			this->date2 = (gcnew System::Windows::Forms::Label());
+			this->source2 = (gcnew System::Windows::Forms::Label());
+			this->newsArticle1 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->headline1 = (gcnew System::Windows::Forms::Label());
+			this->date1 = (gcnew System::Windows::Forms::Label());
+			this->source1 = (gcnew System::Windows::Forms::Label());
+			this->newsImage4 = (gcnew System::Windows::Forms::PictureBox());
+			this->newsImage3 = (gcnew System::Windows::Forms::PictureBox());
+			this->newsArticle4 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->headline4 = (gcnew System::Windows::Forms::Label());
+			this->date4 = (gcnew System::Windows::Forms::Label());
+			this->source4 = (gcnew System::Windows::Forms::Label());
+			this->newsArticle3 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->headline3 = (gcnew System::Windows::Forms::Label());
+			this->date3 = (gcnew System::Windows::Forms::Label());
+			this->source3 = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newsImage2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newsImage1))->BeginInit();
+			this->newsArticle2->SuspendLayout();
+			this->newsArticle1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newsImage4))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newsImage3))->BeginInit();
+			this->newsArticle4->SuspendLayout();
+			this->newsArticle3->SuspendLayout();
 			this->SuspendLayout();
-			// 
-			// FinancialNewsHeader
-			// 
-			this->FinancialNewsHeader->AutoSize = true;
-			this->FinancialNewsHeader->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			this->FinancialNewsHeader->Location = System::Drawing::Point(1479, 1268);
-			this->FinancialNewsHeader->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->FinancialNewsHeader->Name = L"FinancialNewsHeader";
-			this->FinancialNewsHeader->Size = System::Drawing::Size(410, 46);
-			this->FinancialNewsHeader->TabIndex = 63;
-			this->FinancialNewsHeader->Text = L"Latest Financial News";
-			// 
-			// panel1
-			// 
-			this->panel1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->panel1->Location = System::Drawing::Point(1476, 1334);
-			this->panel1->Margin = System::Windows::Forms::Padding(6, 4, 6, 4);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(931, 282);
-			this->panel1->TabIndex = 62;
 			// 
 			// Apple
 			// 
 			this->Apple->BackColor = System::Drawing::Color::DarkRed;
 			this->Apple->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Apple->ForeColor = System::Drawing::Color::Lavender;
-			this->Apple->Location = System::Drawing::Point(177, 1478);
+			this->Apple->Location = System::Drawing::Point(86, 1530);
 			this->Apple->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->Apple->Name = L"Apple";
 			this->Apple->Size = System::Drawing::Size(196, 138);
@@ -214,7 +271,7 @@ namespace TradingGUI {
 			this->McLeod->BackColor = System::Drawing::Color::LimeGreen;
 			this->McLeod->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->McLeod->ForeColor = System::Drawing::Color::Lavender;
-			this->McLeod->Location = System::Drawing::Point(576, 1238);
+			this->McLeod->Location = System::Drawing::Point(489, 1285);
 			this->McLeod->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->McLeod->Name = L"McLeod";
 			this->McLeod->Size = System::Drawing::Size(196, 138);
@@ -226,7 +283,7 @@ namespace TradingGUI {
 			this->DowJones->BackColor = System::Drawing::Color::LimeGreen;
 			this->DowJones->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->DowJones->ForeColor = System::Drawing::Color::Lavender;
-			this->DowJones->Location = System::Drawing::Point(177, 1238);
+			this->DowJones->Location = System::Drawing::Point(86, 1285);
 			this->DowJones->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->DowJones->Name = L"DowJones";
 			this->DowJones->Size = System::Drawing::Size(196, 138);
@@ -247,12 +304,12 @@ namespace TradingGUI {
 			// 
 			this->IndexesHeader->AutoSize = true;
 			this->IndexesHeader->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			this->IndexesHeader->Location = System::Drawing::Point(85, 1159);
+			this->IndexesHeader->Location = System::Drawing::Point(149, 1139);
 			this->IndexesHeader->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->IndexesHeader->Name = L"IndexesHeader";
-			this->IndexesHeader->Size = System::Drawing::Size(960, 46);
+			this->IndexesHeader->Size = System::Drawing::Size(500, 92);
 			this->IndexesHeader->TabIndex = 57;
-			this->IndexesHeader->Text = L"Major Index Performance Since Last Market Opening";
+			this->IndexesHeader->Text = L"Major Index Performance \r\nSince Last Market Opening";
 			// 
 			// searchLabel
 			// 
@@ -383,7 +440,7 @@ namespace TradingGUI {
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 50;
 			this->dataGridView1->RowTemplate->Height = 40;
-			this->dataGridView1->Size = System::Drawing::Size(855, 720);
+			this->dataGridView1->Size = System::Drawing::Size(871, 652);
 			this->dataGridView1->TabIndex = 65;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &TradingPage::dataGridView1_CellContentClick);
 			// 
@@ -436,7 +493,7 @@ namespace TradingGUI {
 			this->Owned9->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned9->ForeColor = System::Drawing::Color::Lavender;
-			this->Owned9->Location = System::Drawing::Point(1208, 672);
+			this->Owned9->Location = System::Drawing::Point(1208, 639);
 			this->Owned9->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->Owned9->Name = L"Owned9";
 			this->Owned9->Size = System::Drawing::Size(196, 138);
@@ -450,7 +507,7 @@ namespace TradingGUI {
 			this->Owned10->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned10->ForeColor = System::Drawing::Color::Lavender;
-			this->Owned10->Location = System::Drawing::Point(1642, 672);
+			this->Owned10->Location = System::Drawing::Point(1642, 639);
 			this->Owned10->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->Owned10->Name = L"Owned10";
 			this->Owned10->Size = System::Drawing::Size(196, 138);
@@ -464,7 +521,7 @@ namespace TradingGUI {
 			this->Owned11->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned11->ForeColor = System::Drawing::Color::Lavender;
-			this->Owned11->Location = System::Drawing::Point(2120, 672);
+			this->Owned11->Location = System::Drawing::Point(2120, 639);
 			this->Owned11->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->Owned11->Name = L"Owned11";
 			this->Owned11->Size = System::Drawing::Size(196, 138);
@@ -478,7 +535,7 @@ namespace TradingGUI {
 			this->Owned12->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned12->ForeColor = System::Drawing::Color::Lavender;
-			this->Owned12->Location = System::Drawing::Point(2602, 672);
+			this->Owned12->Location = System::Drawing::Point(2602, 639);
 			this->Owned12->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->Owned12->Name = L"Owned12";
 			this->Owned12->Size = System::Drawing::Size(196, 138);
@@ -492,7 +549,7 @@ namespace TradingGUI {
 			this->Owned13->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned13->ForeColor = System::Drawing::Color::Lavender;
-			this->Owned13->Location = System::Drawing::Point(1208, 878);
+			this->Owned13->Location = System::Drawing::Point(1208, 826);
 			this->Owned13->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->Owned13->Name = L"Owned13";
 			this->Owned13->Size = System::Drawing::Size(196, 138);
@@ -506,7 +563,7 @@ namespace TradingGUI {
 			this->Owned17->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned17->ForeColor = System::Drawing::Color::Lavender;
-			this->Owned17->Location = System::Drawing::Point(1208, 1085);
+			this->Owned17->Location = System::Drawing::Point(1208, 1002);
 			this->Owned17->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->Owned17->Name = L"Owned17";
 			this->Owned17->Size = System::Drawing::Size(196, 138);
@@ -520,7 +577,7 @@ namespace TradingGUI {
 			this->Owned20->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned20->ForeColor = System::Drawing::Color::Lavender;
-			this->Owned20->Location = System::Drawing::Point(2602, 1085);
+			this->Owned20->Location = System::Drawing::Point(2602, 1002);
 			this->Owned20->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->Owned20->Name = L"Owned20";
 			this->Owned20->Size = System::Drawing::Size(196, 138);
@@ -534,7 +591,7 @@ namespace TradingGUI {
 			this->Owned19->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned19->ForeColor = System::Drawing::Color::Lavender;
-			this->Owned19->Location = System::Drawing::Point(2120, 1085);
+			this->Owned19->Location = System::Drawing::Point(2120, 1002);
 			this->Owned19->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->Owned19->Name = L"Owned19";
 			this->Owned19->Size = System::Drawing::Size(196, 138);
@@ -548,7 +605,7 @@ namespace TradingGUI {
 			this->Owned18->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned18->ForeColor = System::Drawing::Color::Lavender;
-			this->Owned18->Location = System::Drawing::Point(1642, 1085);
+			this->Owned18->Location = System::Drawing::Point(1642, 1002);
 			this->Owned18->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->Owned18->Name = L"Owned18";
 			this->Owned18->Size = System::Drawing::Size(196, 138);
@@ -562,7 +619,7 @@ namespace TradingGUI {
 			this->Owned16->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned16->ForeColor = System::Drawing::Color::Lavender;
-			this->Owned16->Location = System::Drawing::Point(2602, 870);
+			this->Owned16->Location = System::Drawing::Point(2602, 818);
 			this->Owned16->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->Owned16->Name = L"Owned16";
 			this->Owned16->Size = System::Drawing::Size(196, 138);
@@ -576,7 +633,7 @@ namespace TradingGUI {
 			this->Owned15->BackColor = System::Drawing::Color::LimeGreen;
 			this->Owned15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned15->ForeColor = System::Drawing::Color::Lavender;
-			this->Owned15->Location = System::Drawing::Point(2120, 870);
+			this->Owned15->Location = System::Drawing::Point(2120, 818);
 			this->Owned15->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->Owned15->Name = L"Owned15";
 			this->Owned15->Size = System::Drawing::Size(196, 138);
@@ -590,7 +647,7 @@ namespace TradingGUI {
 			this->Owned14->BackColor = System::Drawing::Color::DarkRed;
 			this->Owned14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned14->ForeColor = System::Drawing::Color::Lavender;
-			this->Owned14->Location = System::Drawing::Point(1642, 870);
+			this->Owned14->Location = System::Drawing::Point(1642, 818);
 			this->Owned14->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->Owned14->Name = L"Owned14";
 			this->Owned14->Size = System::Drawing::Size(196, 138);
@@ -604,18 +661,295 @@ namespace TradingGUI {
 			this->Microsoft->BackColor = System::Drawing::Color::DarkRed;
 			this->Microsoft->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Microsoft->ForeColor = System::Drawing::Color::Lavender;
-			this->Microsoft->Location = System::Drawing::Point(576, 1478);
+			this->Microsoft->Location = System::Drawing::Point(489, 1530);
 			this->Microsoft->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->Microsoft->Name = L"Microsoft";
 			this->Microsoft->Size = System::Drawing::Size(196, 138);
 			this->Microsoft->TabIndex = 80;
 			this->Microsoft->Text = L"S&&P 500:\r\n3,408.54\r\n-0.51%";
 			// 
+			// newsImage2
+			// 
+			this->newsImage2->Location = System::Drawing::Point(806, 1530);
+			this->newsImage2->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
+			this->newsImage2->Name = L"newsImage2";
+			this->newsImage2->Size = System::Drawing::Size(267, 181);
+			this->newsImage2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->newsImage2->TabIndex = 89;
+			this->newsImage2->TabStop = false;
+			// 
+			// newsImage1
+			// 
+			this->newsImage1->Location = System::Drawing::Point(806, 1292);
+			this->newsImage1->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
+			this->newsImage1->Name = L"newsImage1";
+			this->newsImage1->Size = System::Drawing::Size(267, 193);
+			this->newsImage1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->newsImage1->TabIndex = 88;
+			this->newsImage1->TabStop = false;
+			// 
+			// newsArticle2
+			// 
+			this->newsArticle2->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->newsArticle2->ColumnCount = 1;
+			this->newsArticle2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->newsArticle2->Controls->Add(this->headline2, 0, 0);
+			this->newsArticle2->Controls->Add(this->date2, 0, 1);
+			this->newsArticle2->Controls->Add(this->source2, 0, 2);
+			this->newsArticle2->Location = System::Drawing::Point(1120, 1530);
+			this->newsArticle2->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
+			this->newsArticle2->Name = L"newsArticle2";
+			this->newsArticle2->RowCount = 3;
+			this->newsArticle2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->newsArticle2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 41)));
+			this->newsArticle2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 38)));
+			this->newsArticle2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 48)));
+			this->newsArticle2->Size = System::Drawing::Size(771, 181);
+			this->newsArticle2->TabIndex = 85;
+			this->newsArticle2->Visible = false;
+			// 
+			// headline2
+			// 
+			this->headline2->Anchor = System::Windows::Forms::AnchorStyles::Left;
+			this->headline2->AutoSize = true;
+			this->headline2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11));
+			this->headline2->Location = System::Drawing::Point(5, 30);
+			this->headline2->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->headline2->Name = L"headline2";
+			this->headline2->Size = System::Drawing::Size(197, 42);
+			this->headline2->TabIndex = 19;
+			this->headline2->Text = L"Headline 2";
+			// 
+			// date2
+			// 
+			this->date2->Anchor = System::Windows::Forms::AnchorStyles::Left;
+			this->date2->AutoSize = true;
+			this->date2->Location = System::Drawing::Point(8, 106);
+			this->date2->Margin = System::Windows::Forms::Padding(8, 0, 8, 0);
+			this->date2->Name = L"date2";
+			this->date2->Size = System::Drawing::Size(98, 32);
+			this->date2->TabIndex = 27;
+			this->date2->Text = L"Date 2";
+			// 
+			// source2
+			// 
+			this->source2->Anchor = System::Windows::Forms::AnchorStyles::Left;
+			this->source2->AutoSize = true;
+			this->source2->Location = System::Drawing::Point(8, 146);
+			this->source2->Margin = System::Windows::Forms::Padding(8, 0, 8, 0);
+			this->source2->Name = L"source2";
+			this->source2->Size = System::Drawing::Size(128, 32);
+			this->source2->TabIndex = 28;
+			this->source2->Text = L"Source 2";
+			// 
+			// newsArticle1
+			// 
+			this->newsArticle1->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->newsArticle1->ColumnCount = 1;
+			this->newsArticle1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->newsArticle1->Controls->Add(this->headline1, 0, 0);
+			this->newsArticle1->Controls->Add(this->date1, 0, 1);
+			this->newsArticle1->Controls->Add(this->source1, 0, 2);
+			this->newsArticle1->Location = System::Drawing::Point(1120, 1292);
+			this->newsArticle1->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
+			this->newsArticle1->Name = L"newsArticle1";
+			this->newsArticle1->RowCount = 3;
+			this->newsArticle1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->newsArticle1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 45)));
+			this->newsArticle1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 38)));
+			this->newsArticle1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 48)));
+			this->newsArticle1->Size = System::Drawing::Size(771, 193);
+			this->newsArticle1->TabIndex = 84;
+			this->newsArticle1->Visible = false;
+			// 
+			// headline1
+			// 
+			this->headline1->Anchor = System::Windows::Forms::AnchorStyles::Left;
+			this->headline1->AutoSize = true;
+			this->headline1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11));
+			this->headline1->Location = System::Drawing::Point(5, 34);
+			this->headline1->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->headline1->Name = L"headline1";
+			this->headline1->Size = System::Drawing::Size(197, 42);
+			this->headline1->TabIndex = 9;
+			this->headline1->Text = L"Headline 1";
+			// 
+			// date1
+			// 
+			this->date1->Anchor = System::Windows::Forms::AnchorStyles::Left;
+			this->date1->AutoSize = true;
+			this->date1->Location = System::Drawing::Point(8, 116);
+			this->date1->Margin = System::Windows::Forms::Padding(8, 0, 8, 0);
+			this->date1->Name = L"date1";
+			this->date1->Size = System::Drawing::Size(98, 32);
+			this->date1->TabIndex = 25;
+			this->date1->Text = L"Date 1";
+			// 
+			// source1
+			// 
+			this->source1->Anchor = System::Windows::Forms::AnchorStyles::Left;
+			this->source1->AutoSize = true;
+			this->source1->Location = System::Drawing::Point(8, 158);
+			this->source1->Margin = System::Windows::Forms::Padding(8, 0, 8, 0);
+			this->source1->Name = L"source1";
+			this->source1->Size = System::Drawing::Size(128, 32);
+			this->source1->TabIndex = 26;
+			this->source1->Text = L"Source 1";
+			// 
+			// newsImage4
+			// 
+			this->newsImage4->Location = System::Drawing::Point(1927, 1530);
+			this->newsImage4->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
+			this->newsImage4->Name = L"newsImage4";
+			this->newsImage4->Size = System::Drawing::Size(267, 181);
+			this->newsImage4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->newsImage4->TabIndex = 93;
+			this->newsImage4->TabStop = false;
+			// 
+			// newsImage3
+			// 
+			this->newsImage3->Location = System::Drawing::Point(1927, 1292);
+			this->newsImage3->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
+			this->newsImage3->Name = L"newsImage3";
+			this->newsImage3->Size = System::Drawing::Size(267, 193);
+			this->newsImage3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->newsImage3->TabIndex = 92;
+			this->newsImage3->TabStop = false;
+			// 
+			// newsArticle4
+			// 
+			this->newsArticle4->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->newsArticle4->ColumnCount = 1;
+			this->newsArticle4->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->newsArticle4->Controls->Add(this->headline4, 0, 0);
+			this->newsArticle4->Controls->Add(this->date4, 0, 1);
+			this->newsArticle4->Controls->Add(this->source4, 0, 2);
+			this->newsArticle4->Location = System::Drawing::Point(2236, 1530);
+			this->newsArticle4->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
+			this->newsArticle4->Name = L"newsArticle4";
+			this->newsArticle4->RowCount = 3;
+			this->newsArticle4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->newsArticle4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 41)));
+			this->newsArticle4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 38)));
+			this->newsArticle4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 48)));
+			this->newsArticle4->Size = System::Drawing::Size(771, 181);
+			this->newsArticle4->TabIndex = 91;
+			this->newsArticle4->Visible = false;
+			// 
+			// headline4
+			// 
+			this->headline4->Anchor = System::Windows::Forms::AnchorStyles::Left;
+			this->headline4->AutoSize = true;
+			this->headline4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11));
+			this->headline4->Location = System::Drawing::Point(5, 30);
+			this->headline4->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->headline4->Name = L"headline4";
+			this->headline4->Size = System::Drawing::Size(197, 42);
+			this->headline4->TabIndex = 19;
+			this->headline4->Text = L"Headline 4";
+			// 
+			// date4
+			// 
+			this->date4->Anchor = System::Windows::Forms::AnchorStyles::Left;
+			this->date4->AutoSize = true;
+			this->date4->Location = System::Drawing::Point(8, 106);
+			this->date4->Margin = System::Windows::Forms::Padding(8, 0, 8, 0);
+			this->date4->Name = L"date4";
+			this->date4->Size = System::Drawing::Size(98, 32);
+			this->date4->TabIndex = 27;
+			this->date4->Text = L"Date 4";
+			// 
+			// source4
+			// 
+			this->source4->Anchor = System::Windows::Forms::AnchorStyles::Left;
+			this->source4->AutoSize = true;
+			this->source4->Location = System::Drawing::Point(8, 146);
+			this->source4->Margin = System::Windows::Forms::Padding(8, 0, 8, 0);
+			this->source4->Name = L"source4";
+			this->source4->Size = System::Drawing::Size(128, 32);
+			this->source4->TabIndex = 28;
+			this->source4->Text = L"Source 4";
+			// 
+			// newsArticle3
+			// 
+			this->newsArticle3->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->newsArticle3->ColumnCount = 1;
+			this->newsArticle3->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->newsArticle3->Controls->Add(this->headline3, 0, 0);
+			this->newsArticle3->Controls->Add(this->date3, 0, 1);
+			this->newsArticle3->Controls->Add(this->source3, 0, 2);
+			this->newsArticle3->Location = System::Drawing::Point(2236, 1292);
+			this->newsArticle3->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
+			this->newsArticle3->Name = L"newsArticle3";
+			this->newsArticle3->RowCount = 3;
+			this->newsArticle3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->newsArticle3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 45)));
+			this->newsArticle3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 38)));
+			this->newsArticle3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 48)));
+			this->newsArticle3->Size = System::Drawing::Size(771, 193);
+			this->newsArticle3->TabIndex = 90;
+			this->newsArticle3->Visible = false;
+			// 
+			// headline3
+			// 
+			this->headline3->Anchor = System::Windows::Forms::AnchorStyles::Left;
+			this->headline3->AutoSize = true;
+			this->headline3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11));
+			this->headline3->Location = System::Drawing::Point(5, 34);
+			this->headline3->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->headline3->Name = L"headline3";
+			this->headline3->Size = System::Drawing::Size(197, 42);
+			this->headline3->TabIndex = 9;
+			this->headline3->Text = L"Headline 3";
+			// 
+			// date3
+			// 
+			this->date3->Anchor = System::Windows::Forms::AnchorStyles::Left;
+			this->date3->AutoSize = true;
+			this->date3->Location = System::Drawing::Point(8, 116);
+			this->date3->Margin = System::Windows::Forms::Padding(8, 0, 8, 0);
+			this->date3->Name = L"date3";
+			this->date3->Size = System::Drawing::Size(98, 32);
+			this->date3->TabIndex = 25;
+			this->date3->Text = L"Date 3";
+			// 
+			// source3
+			// 
+			this->source3->Anchor = System::Windows::Forms::AnchorStyles::Left;
+			this->source3->AutoSize = true;
+			this->source3->Location = System::Drawing::Point(8, 158);
+			this->source3->Margin = System::Windows::Forms::Padding(8, 0, 8, 0);
+			this->source3->Name = L"source3";
+			this->source3->Size = System::Drawing::Size(128, 32);
+			this->source3->TabIndex = 26;
+			this->source3->Text = L"Source 3";
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label8->Location = System::Drawing::Point(1125, 1177);
+			this->label8->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(385, 54);
+			this->label8->TabIndex = 94;
+			this->label8->Text = L"Dow Jones News";
+			// 
 			// TradingPage
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(16, 31);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(3204, 1750);
+			this->Controls->Add(this->label8);
+			this->Controls->Add(this->newsImage4);
+			this->Controls->Add(this->newsImage3);
+			this->Controls->Add(this->newsArticle4);
+			this->Controls->Add(this->newsArticle3);
+			this->Controls->Add(this->newsImage2);
+			this->Controls->Add(this->newsImage1);
+			this->Controls->Add(this->newsArticle2);
+			this->Controls->Add(this->newsArticle1);
 			this->Controls->Add(this->Microsoft);
 			this->Controls->Add(this->Owned20);
 			this->Controls->Add(this->Owned19);
@@ -633,8 +967,6 @@ namespace TradingGUI {
 			this->Controls->Add(this->Owned7);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->searchButton);
-			this->Controls->Add(this->FinancialNewsHeader);
-			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->Apple);
 			this->Controls->Add(this->McLeod);
 			this->Controls->Add(this->DowJones);
@@ -653,6 +985,18 @@ namespace TradingGUI {
 			this->Text = L"TradingPage";
 			this->Load += gcnew System::EventHandler(this, &TradingPage::TradingPage_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newsImage2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newsImage1))->EndInit();
+			this->newsArticle2->ResumeLayout(false);
+			this->newsArticle2->PerformLayout();
+			this->newsArticle1->ResumeLayout(false);
+			this->newsArticle1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newsImage4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newsImage3))->EndInit();
+			this->newsArticle4->ResumeLayout(false);
+			this->newsArticle4->PerformLayout();
+			this->newsArticle3->ResumeLayout(false);
+			this->newsArticle3->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -727,6 +1071,7 @@ namespace TradingGUI {
 		String^ username;
 		username = marshal_as<String^>(currentUser);
 		int i = 1;
+		int j = 0;
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
@@ -763,6 +1108,8 @@ namespace TradingGUI {
 
 			}
 			dr1->Close();
+
+			// Dow Jones Label
 			Stock dowJones = Stock("DJD");
 			dowJones.updateMarketVals();
 			float cp = dowJones.getCurrentPrice();
@@ -780,6 +1127,8 @@ namespace TradingGUI {
 				DowJones->BackColor = System::Drawing::Color::LimeGreen;
 			else
 				DowJones->BackColor = System::Drawing::Color::DarkRed;
+
+			// Apple Stock Label
 			Stock apple = Stock("AAPL");
 			apple.updateMarketVals();
 			cp = apple.getCurrentPrice();
@@ -797,6 +1146,8 @@ namespace TradingGUI {
 				Apple->BackColor = System::Drawing::Color::LimeGreen;
 			else
 				Apple->BackColor = System::Drawing::Color::DarkRed;
+
+			// Microsoft Stock Label
 			Stock ms = Stock("MSFT");
 			ms.updateMarketVals();
 			cp = ms.getCurrentPrice();
@@ -814,13 +1165,13 @@ namespace TradingGUI {
 				Microsoft->BackColor = System::Drawing::Color::LimeGreen;
 			else
 				Microsoft->BackColor = System::Drawing::Color::DarkRed;
+
+			// McLeod Label
 			text1 = "McLeod's Teaching \r\n $69,420 \r\n 69% \r\n ";
 			McLeod->Text = text1;
 			McLeod->BackColor = System::Drawing::Color::LimeGreen;
 
-
-
-
+			// Populating Search DataGridView with default stocks
 			dataGridView1->Rows->Add("XOM","Exxon Mobile");
 			dataGridView1->Rows->Add("AAPL", "Apple");
 			dataGridView1->Rows->Add("MSFT", "Microsoft");
@@ -854,7 +1205,25 @@ namespace TradingGUI {
 			dataGridView1->Rows->Add("SQ", "Square");
 
 
+			// Populating news panel
 
+			News finNews= News();
+
+			vector<News::news> cNews = finNews.getNews();
+			while(j<4&&j<cNews.size()){
+				Label^ headline = (Label^)this->Controls["headline" + (j+1).ToString()];
+				Label^ date = (Label^)this->Controls["date" + (j + 1).ToString()];
+				Label^ source = (Label^)this->Controls["source" + (j + 1).ToString()];
+				PictureBox^ image = (PictureBox^)this->Controls["newsImage" + (j + 1).ToString()];
+				TableLayoutPanel^ article = (TableLayoutPanel^)this->Controls["newsArticle" + (j + 1).ToString()];
+				headline->Text = gcnew String(cNews[j].headline.c_str());
+				date->Text = gcnew String(cNews[0].date.c_str());
+				source->Text = gcnew String(cNews[0].source.c_str());
+				image->ImageLocation = gcnew String(cNews[0].image.c_str());
+				article->Visible = true;
+
+			
+			}
 		}
 		catch (Exception^ ex) {
 			MessageBox::Show(ex->Message);

@@ -153,6 +153,9 @@ Class GroupsGUI.GroupsPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldIni
 Class AppGUI.testGUI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class PortfolioDetailsGUI.PortfolioDetails: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(Int32, Single): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class PortfolioGUI.PortfolioPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

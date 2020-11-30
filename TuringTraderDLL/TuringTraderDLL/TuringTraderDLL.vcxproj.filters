@@ -45,6 +45,9 @@
     <ClInclude Include="TTException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="News.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -75,6 +78,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TTException.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="News.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
