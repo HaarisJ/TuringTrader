@@ -47,8 +47,16 @@ C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1192,20): warning C4018: '<': signed/unsigned mismatch
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Holding.h(11,15): warning C4251: 'Holding::ticker': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Holding'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(413,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(417,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(442,46): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(449,29): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(451,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(425,21): warning C4101: 'ex': unreferenced local variable
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(445,21): warning C4101: 'ex': unreferenced local variable
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\GroupsPage.h(338,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\GroupsPage.h(346,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\TradingPage.h(738,21): warning C4101: 'dr2': unreferenced local variable
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\AccountCreationPage.h(302,22): warning C4101: 'ex': unreferenced local variable
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\LoginPage.h(254,11): warning C4101: 'passwordUsing': unreferenced local variable
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\LoginPage.h(272,21): warning C4101: 'ex': unreferenced local variable
@@ -94,11 +102,19 @@ C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\Turi
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Holding.h(11,15): warning C4251: 'Holding::ticker': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Holding'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\GroupsPage.h(338,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\GroupsPage.h(346,22): warning C4018: '<': signed/unsigned mismatch
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1148,21): warning C4101: 'ex': unreferenced local variable
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1159,20): warning C4101: 'ex': unreferenced local variable
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1192,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(413,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(417,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(442,46): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(449,29): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(451,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(425,21): warning C4101: 'ex': unreferenced local variable
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(445,21): warning C4101: 'ex': unreferenced local variable
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\GroupsPage.h(338,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\GroupsPage.h(346,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\TradingPage.h(738,21): warning C4101: 'dr2': unreferenced local variable
   TradingPage.cpp
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\Stock.h(24,18): warning C4251: 'Stock::ticker': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Stock'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
@@ -141,6 +157,7 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.2
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1148,21): warning C4101: 'ex': unreferenced local variable
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1159,20): warning C4101: 'ex': unreferenced local variable
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1192,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\TradingPage.h(738,21): warning C4101: 'dr2': unreferenced local variable
   Generating Code...
   AccountCreationPage.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
      Creating library C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\Debug\AppGUI.lib and object C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\Debug\AppGUI.exp
