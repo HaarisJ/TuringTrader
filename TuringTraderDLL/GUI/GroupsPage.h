@@ -99,10 +99,10 @@ namespace GroupsGUI {
 			// 
 			this->button6->BackColor = System::Drawing::Color::LimeGreen;
 			this->button6->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->button6->Location = System::Drawing::Point(381, 42);
+			this->button6->Location = System::Drawing::Point(339, 34);
 			this->button6->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(170, 49);
+			this->button6->Size = System::Drawing::Size(151, 39);
 			this->button6->TabIndex = 10;
 			this->button6->Text = L"Join Group";
 			this->button6->UseVisualStyleBackColor = false;
@@ -112,10 +112,10 @@ namespace GroupsGUI {
 			// 
 			this->button5->BackColor = System::Drawing::Color::DodgerBlue;
 			this->button5->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->button5->Location = System::Drawing::Point(106, 42);
+			this->button5->Location = System::Drawing::Point(94, 34);
 			this->button5->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(192, 49);
+			this->button5->Size = System::Drawing::Size(171, 39);
 			this->button5->TabIndex = 7;
 			this->button5->Text = L"Create Group";
 			this->button5->UseVisualStyleBackColor = false;
@@ -123,23 +123,21 @@ namespace GroupsGUI {
 			// 
 			// label59
 			// 
-			this->label59->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
 			this->label59->AutoSize = true;
 			this->label59->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label59->Location = System::Drawing::Point(99, 123);
+			this->label59->Location = System::Drawing::Point(88, 98);
 			this->label59->Name = L"label59";
-			this->label59->Size = System::Drawing::Size(203, 38);
+			this->label59->Size = System::Drawing::Size(175, 32);
 			this->label59->TabIndex = 11;
 			this->label59->Text = L"Your Groups";
 			// 
 			// label60
 			// 
 			this->label60->AutoSize = true;
-			this->label60->Location = System::Drawing::Point(343, 0);
+			this->label60->Location = System::Drawing::Point(305, 0);
 			this->label60->Name = L"label60";
-			this->label60->Size = System::Drawing::Size(240, 20);
+			this->label60->Size = System::Drawing::Size(214, 17);
 			this->label60->TabIndex = 1;
 			this->label60->Text = L"Group Code: No Group Selected\r\n";
 			// 
@@ -155,11 +153,12 @@ namespace GroupsGUI {
 				this->Username,
 					this->Holdings, this->PortfolioValue, this->TotalProfitLoss
 			});
-			this->dataGridView1->Location = System::Drawing::Point(347, 64);
+			this->dataGridView1->Location = System::Drawing::Point(308, 51);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 62;
 			this->dataGridView1->RowTemplate->Height = 28;
-			this->dataGridView1->Size = System::Drawing::Size(953, 460);
+			this->dataGridView1->Size = System::Drawing::Size(847, 368);
 			this->dataGridView1->TabIndex = 7;
 			// 
 			// Username
@@ -194,10 +193,10 @@ namespace GroupsGUI {
 			// 
 			this->button7->BackColor = System::Drawing::Color::Crimson;
 			this->button7->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->button7->Location = System::Drawing::Point(1006, 546);
+			this->button7->Location = System::Drawing::Point(894, 437);
 			this->button7->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(294, 49);
+			this->button7->Size = System::Drawing::Size(261, 39);
 			this->button7->TabIndex = 6;
 			this->button7->Text = L"Leave Group";
 			this->button7->UseVisualStyleBackColor = false;
@@ -206,45 +205,44 @@ namespace GroupsGUI {
 			// listBox1
 			// 
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 20;
+			this->listBox1->ItemHeight = 16;
 			this->listBox1->Location = System::Drawing::Point(0, 0);
+			this->listBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(329, 524);
+			this->listBox1->Size = System::Drawing::Size(293, 420);
 			this->listBox1->TabIndex = 8;
 			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &GroupsPage::listBox1_SelectedIndexChanged);
 			// 
 			// panel3
 			// 
-			this->panel3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
 			this->panel3->Controls->Add(this->listBox1);
 			this->panel3->Controls->Add(this->button7);
 			this->panel3->Controls->Add(this->dataGridView1);
 			this->panel3->Controls->Add(this->label60);
-			this->panel3->Location = System::Drawing::Point(99, 193);
+			this->panel3->Location = System::Drawing::Point(88, 154);
 			this->panel3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(1446, 646);
+			this->panel3->Size = System::Drawing::Size(1285, 517);
 			this->panel3->TabIndex = 8;
 			// 
 			// treeView1
 			// 
-			this->treeView1->Location = System::Drawing::Point(37, 645);
+			this->treeView1->Location = System::Drawing::Point(33, 516);
+			this->treeView1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->treeView1->Name = L"treeView1";
-			this->treeView1->Size = System::Drawing::Size(8, 8);
+			this->treeView1->Size = System::Drawing::Size(8, 7);
 			this->treeView1->TabIndex = 12;
 			// 
 			// GroupsPage
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1802, 1129);
+			this->ClientSize = System::Drawing::Size(1602, 844);
 			this->Controls->Add(this->treeView1);
 			this->Controls->Add(this->label59);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->panel3);
-			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"GroupsPage";
 			this->Text = L"GroupsPage";
 			this->Load += gcnew System::EventHandler(this, &GroupsPage::GroupsPage_Load);
