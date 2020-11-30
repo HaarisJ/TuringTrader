@@ -2,6 +2,11 @@
 #include "CompanyPage.h"
 #include <msclr\marshal_cppstd.h>
 #include <vector>
+#include "Stock.h"
+#include <cmath>
+#include <sstream>
+#include <iomanip>
+
 
 extern std::string currentUser;
 
@@ -51,8 +56,11 @@ namespace TradingGUI {
 
 	protected:
 	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::Label^ SandP;
-	private: System::Windows::Forms::Label^ NASDAQ;
+	private: System::Windows::Forms::Label^ Apple;
+
+	private: System::Windows::Forms::Label^ McLeod;
+
+
 	private: System::Windows::Forms::Label^ DowJones;
 	private: System::Windows::Forms::TextBox^ searchBox;
 
@@ -114,6 +122,8 @@ namespace TradingGUI {
 	private: System::Windows::Forms::Label^ Owned15;
 
 	private: System::Windows::Forms::Label^ Owned14;
+	private: System::Windows::Forms::Label^ Microsoft;
+
 
 
 	private:
@@ -131,8 +141,8 @@ namespace TradingGUI {
 		{
 			this->FinancialNewsHeader = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->SandP = (gcnew System::Windows::Forms::Label());
-			this->NASDAQ = (gcnew System::Windows::Forms::Label());
+			this->Apple = (gcnew System::Windows::Forms::Label());
+			this->McLeod = (gcnew System::Windows::Forms::Label());
 			this->DowJones = (gcnew System::Windows::Forms::Label());
 			this->searchBox = (gcnew System::Windows::Forms::TextBox());
 			this->IndexesHeader = (gcnew System::Windows::Forms::Label());
@@ -162,6 +172,7 @@ namespace TradingGUI {
 			this->Owned16 = (gcnew System::Windows::Forms::Label());
 			this->Owned15 = (gcnew System::Windows::Forms::Label());
 			this->Owned14 = (gcnew System::Windows::Forms::Label());
+			this->Microsoft = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -186,42 +197,36 @@ namespace TradingGUI {
 			this->panel1->Size = System::Drawing::Size(931, 282);
 			this->panel1->TabIndex = 62;
 			// 
-			// SandP
+			// Apple
 			// 
-			this->SandP->AutoSize = true;
-			this->SandP->BackColor = System::Drawing::Color::DarkRed;
-			this->SandP->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->SandP->ForeColor = System::Drawing::Color::Lavender;
-			this->SandP->Location = System::Drawing::Point(104, 1478);
-			this->SandP->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->SandP->Name = L"SandP";
-			this->SandP->Size = System::Drawing::Size(189, 138);
-			this->SandP->TabIndex = 61;
-			this->SandP->Text = L"S&&P 500:\r\n3,408.54\r\n-0.51%";
+			this->Apple->BackColor = System::Drawing::Color::DarkRed;
+			this->Apple->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->Apple->ForeColor = System::Drawing::Color::Lavender;
+			this->Apple->Location = System::Drawing::Point(177, 1478);
+			this->Apple->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Apple->Name = L"Apple";
+			this->Apple->Size = System::Drawing::Size(196, 138);
+			this->Apple->TabIndex = 61;
+			this->Apple->Text = L"S&&P 500:\r\n3,408.54\r\n-0.51%";
 			// 
-			// NASDAQ
+			// McLeod
 			// 
-			this->NASDAQ->AutoSize = true;
-			this->NASDAQ->BackColor = System::Drawing::Color::LimeGreen;
-			this->NASDAQ->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->NASDAQ->ForeColor = System::Drawing::Color::Lavender;
-			this->NASDAQ->Location = System::Drawing::Point(462, 1478);
-			this->NASDAQ->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
-			this->NASDAQ->Name = L"NASDAQ";
-			this->NASDAQ->Size = System::Drawing::Size(201, 138);
-			this->NASDAQ->TabIndex = 60;
-			this->NASDAQ->Text = L"NASDAQ:\r\n11,329.95\r\n+1.24%";
+			this->McLeod->BackColor = System::Drawing::Color::LimeGreen;
+			this->McLeod->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->McLeod->ForeColor = System::Drawing::Color::Lavender;
+			this->McLeod->Location = System::Drawing::Point(576, 1238);
+			this->McLeod->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->McLeod->Name = L"McLeod";
+			this->McLeod->Size = System::Drawing::Size(196, 138);
+			this->McLeod->TabIndex = 60;
+			this->McLeod->Text = L"NASDAQ:\r\n11,329.95\r\n+1.24%";
 			// 
 			// DowJones
 			// 
-			this->DowJones->AutoSize = true;
 			this->DowJones->BackColor = System::Drawing::Color::LimeGreen;
-			this->DowJones->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->DowJones->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->DowJones->ForeColor = System::Drawing::Color::Lavender;
-			this->DowJones->Location = System::Drawing::Point(853, 1483);
+			this->DowJones->Location = System::Drawing::Point(177, 1238);
 			this->DowJones->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->DowJones->Name = L"DowJones";
 			this->DowJones->Size = System::Drawing::Size(196, 138);
@@ -242,7 +247,7 @@ namespace TradingGUI {
 			// 
 			this->IndexesHeader->AutoSize = true;
 			this->IndexesHeader->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			this->IndexesHeader->Location = System::Drawing::Point(80, 1400);
+			this->IndexesHeader->Location = System::Drawing::Point(85, 1159);
 			this->IndexesHeader->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->IndexesHeader->Name = L"IndexesHeader";
 			this->IndexesHeader->Size = System::Drawing::Size(960, 46);
@@ -264,8 +269,7 @@ namespace TradingGUI {
 			// Owned4
 			// 
 			this->Owned4->BackColor = System::Drawing::Color::LimeGreen;
-			this->Owned4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Owned4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned4->ForeColor = System::Drawing::Color::Lavender;
 			this->Owned4->Location = System::Drawing::Point(2602, 262);
 			this->Owned4->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
@@ -279,8 +283,7 @@ namespace TradingGUI {
 			// Owned3
 			// 
 			this->Owned3->BackColor = System::Drawing::Color::DarkRed;
-			this->Owned3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Owned3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned3->ForeColor = System::Drawing::Color::Lavender;
 			this->Owned3->Location = System::Drawing::Point(2120, 262);
 			this->Owned3->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
@@ -294,8 +297,7 @@ namespace TradingGUI {
 			// Owned6
 			// 
 			this->Owned6->BackColor = System::Drawing::Color::DarkRed;
-			this->Owned6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Owned6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned6->ForeColor = System::Drawing::Color::Lavender;
 			this->Owned6->Location = System::Drawing::Point(1642, 457);
 			this->Owned6->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
@@ -309,8 +311,7 @@ namespace TradingGUI {
 			// Owned2
 			// 
 			this->Owned2->BackColor = System::Drawing::Color::DarkRed;
-			this->Owned2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Owned2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned2->ForeColor = System::Drawing::Color::Lavender;
 			this->Owned2->Location = System::Drawing::Point(1642, 262);
 			this->Owned2->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
@@ -324,8 +325,7 @@ namespace TradingGUI {
 			// Owned5
 			// 
 			this->Owned5->BackColor = System::Drawing::Color::LimeGreen;
-			this->Owned5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Owned5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned5->ForeColor = System::Drawing::Color::Lavender;
 			this->Owned5->Location = System::Drawing::Point(1208, 457);
 			this->Owned5->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
@@ -339,8 +339,7 @@ namespace TradingGUI {
 			// Owned1
 			// 
 			this->Owned1->BackColor = System::Drawing::Color::LimeGreen;
-			this->Owned1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Owned1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned1->ForeColor = System::Drawing::Color::Lavender;
 			this->Owned1->Location = System::Drawing::Point(1208, 262);
 			this->Owned1->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
@@ -407,8 +406,7 @@ namespace TradingGUI {
 			// Owned7
 			// 
 			this->Owned7->BackColor = System::Drawing::Color::LimeGreen;
-			this->Owned7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Owned7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned7->ForeColor = System::Drawing::Color::Lavender;
 			this->Owned7->Location = System::Drawing::Point(2120, 457);
 			this->Owned7->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
@@ -422,8 +420,7 @@ namespace TradingGUI {
 			// Owned8
 			// 
 			this->Owned8->BackColor = System::Drawing::Color::LimeGreen;
-			this->Owned8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Owned8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned8->ForeColor = System::Drawing::Color::Lavender;
 			this->Owned8->Location = System::Drawing::Point(2602, 457);
 			this->Owned8->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
@@ -437,8 +434,7 @@ namespace TradingGUI {
 			// Owned9
 			// 
 			this->Owned9->BackColor = System::Drawing::Color::LimeGreen;
-			this->Owned9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Owned9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned9->ForeColor = System::Drawing::Color::Lavender;
 			this->Owned9->Location = System::Drawing::Point(1208, 672);
 			this->Owned9->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
@@ -452,8 +448,7 @@ namespace TradingGUI {
 			// Owned10
 			// 
 			this->Owned10->BackColor = System::Drawing::Color::LimeGreen;
-			this->Owned10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Owned10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned10->ForeColor = System::Drawing::Color::Lavender;
 			this->Owned10->Location = System::Drawing::Point(1642, 672);
 			this->Owned10->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
@@ -467,8 +462,7 @@ namespace TradingGUI {
 			// Owned11
 			// 
 			this->Owned11->BackColor = System::Drawing::Color::LimeGreen;
-			this->Owned11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Owned11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned11->ForeColor = System::Drawing::Color::Lavender;
 			this->Owned11->Location = System::Drawing::Point(2120, 672);
 			this->Owned11->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
@@ -482,8 +476,7 @@ namespace TradingGUI {
 			// Owned12
 			// 
 			this->Owned12->BackColor = System::Drawing::Color::LimeGreen;
-			this->Owned12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Owned12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned12->ForeColor = System::Drawing::Color::Lavender;
 			this->Owned12->Location = System::Drawing::Point(2602, 672);
 			this->Owned12->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
@@ -497,8 +490,7 @@ namespace TradingGUI {
 			// Owned13
 			// 
 			this->Owned13->BackColor = System::Drawing::Color::LimeGreen;
-			this->Owned13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Owned13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned13->ForeColor = System::Drawing::Color::Lavender;
 			this->Owned13->Location = System::Drawing::Point(1208, 878);
 			this->Owned13->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
@@ -512,8 +504,7 @@ namespace TradingGUI {
 			// Owned17
 			// 
 			this->Owned17->BackColor = System::Drawing::Color::LimeGreen;
-			this->Owned17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Owned17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned17->ForeColor = System::Drawing::Color::Lavender;
 			this->Owned17->Location = System::Drawing::Point(1208, 1085);
 			this->Owned17->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
@@ -527,8 +518,7 @@ namespace TradingGUI {
 			// Owned20
 			// 
 			this->Owned20->BackColor = System::Drawing::Color::LimeGreen;
-			this->Owned20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Owned20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned20->ForeColor = System::Drawing::Color::Lavender;
 			this->Owned20->Location = System::Drawing::Point(2602, 1085);
 			this->Owned20->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
@@ -542,8 +532,7 @@ namespace TradingGUI {
 			// Owned19
 			// 
 			this->Owned19->BackColor = System::Drawing::Color::LimeGreen;
-			this->Owned19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Owned19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned19->ForeColor = System::Drawing::Color::Lavender;
 			this->Owned19->Location = System::Drawing::Point(2120, 1085);
 			this->Owned19->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
@@ -557,8 +546,7 @@ namespace TradingGUI {
 			// Owned18
 			// 
 			this->Owned18->BackColor = System::Drawing::Color::LimeGreen;
-			this->Owned18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Owned18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned18->ForeColor = System::Drawing::Color::Lavender;
 			this->Owned18->Location = System::Drawing::Point(1642, 1085);
 			this->Owned18->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
@@ -572,8 +560,7 @@ namespace TradingGUI {
 			// Owned16
 			// 
 			this->Owned16->BackColor = System::Drawing::Color::LimeGreen;
-			this->Owned16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Owned16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned16->ForeColor = System::Drawing::Color::Lavender;
 			this->Owned16->Location = System::Drawing::Point(2602, 870);
 			this->Owned16->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
@@ -587,8 +574,7 @@ namespace TradingGUI {
 			// Owned15
 			// 
 			this->Owned15->BackColor = System::Drawing::Color::LimeGreen;
-			this->Owned15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Owned15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned15->ForeColor = System::Drawing::Color::Lavender;
 			this->Owned15->Location = System::Drawing::Point(2120, 870);
 			this->Owned15->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
@@ -602,8 +588,7 @@ namespace TradingGUI {
 			// Owned14
 			// 
 			this->Owned14->BackColor = System::Drawing::Color::DarkRed;
-			this->Owned14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Owned14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->Owned14->ForeColor = System::Drawing::Color::Lavender;
 			this->Owned14->Location = System::Drawing::Point(1642, 870);
 			this->Owned14->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
@@ -614,11 +599,24 @@ namespace TradingGUI {
 			this->Owned14->Visible = false;
 			this->Owned14->Click += gcnew System::EventHandler(this, &TradingPage::Owned14_Click);
 			// 
+			// Microsoft
+			// 
+			this->Microsoft->BackColor = System::Drawing::Color::DarkRed;
+			this->Microsoft->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->Microsoft->ForeColor = System::Drawing::Color::Lavender;
+			this->Microsoft->Location = System::Drawing::Point(576, 1478);
+			this->Microsoft->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->Microsoft->Name = L"Microsoft";
+			this->Microsoft->Size = System::Drawing::Size(196, 138);
+			this->Microsoft->TabIndex = 80;
+			this->Microsoft->Text = L"S&&P 500:\r\n3,408.54\r\n-0.51%";
+			// 
 			// TradingPage
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(16, 31);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(3204, 1750);
+			this->Controls->Add(this->Microsoft);
 			this->Controls->Add(this->Owned20);
 			this->Controls->Add(this->Owned19);
 			this->Controls->Add(this->Owned18);
@@ -637,8 +635,8 @@ namespace TradingGUI {
 			this->Controls->Add(this->searchButton);
 			this->Controls->Add(this->FinancialNewsHeader);
 			this->Controls->Add(this->panel1);
-			this->Controls->Add(this->SandP);
-			this->Controls->Add(this->NASDAQ);
+			this->Controls->Add(this->Apple);
+			this->Controls->Add(this->McLeod);
 			this->Controls->Add(this->DowJones);
 			this->Controls->Add(this->searchBox);
 			this->Controls->Add(this->IndexesHeader);
@@ -684,7 +682,7 @@ namespace TradingGUI {
 			try {
 				String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 				MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-				MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+				MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from watches WHERE person='" + username + "'", connection);
 				MySqlDataReader^ dr1;
 				connection->Open();
 				dr1 = cmd1->ExecuteReader();
@@ -693,7 +691,7 @@ namespace TradingGUI {
 					i += 1;
 				}
 				dr1->Close();
-				CompanyPage^ companyPage = gcnew CompanyPage();
+				CompanyPage^ companyPage = gcnew CompanyPage(ticker);
 				openChildForm(companyPage);
 			}
 			catch (Exception^ ex) {
@@ -729,11 +727,10 @@ namespace TradingGUI {
 		String^ username;
 		username = marshal_as<String^>(currentUser);
 		int i = 1;
-		int j = 0;
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from watches WHERE person='" + username + "'", connection);
 			MySqlCommand^ cmd2 = gcnew MySqlCommand("SELECT * from company", connection);
 			MySqlDataReader^ dr1;
 			MySqlDataReader^ dr2;
@@ -741,13 +738,89 @@ namespace TradingGUI {
 			dr1 = cmd1->ExecuteReader();
 			while (dr1->Read()) {
 				Label^ label = (Label^)this->Controls["Owned" + i.ToString()];
-				String^ text1 = "'" + dr1->GetString(1) + "' \r\n ";
+				String^ ticker = dr1->GetString(1);
+				string stdTicker;
+				stdTicker= marshal_as<string>(ticker);
+				Stock stock = Stock(stdTicker);
+				stock.updateMarketVals();
+				float cp = stock.getCurrentPrice();
+				float op = stock.getOpenPrice();
+				float pnl = stock.getPL();
+				float pc = (pnl / op) * 100;
+				String^ CurrentPrice = cp.ToString(L"c");
+				std::stringstream ss;
+				ss << std::fixed << std::setprecision(2) << pc;
+				std::string stdPC = ss.str();
+				String^ PercentChange= marshal_as<String^>(stdPC);
+				String^ text1 = "" + ticker + " \r\n " + CurrentPrice + " \r\n " + PercentChange + "% \r\n ";
 				label->Text = text1;
 				label->Visible = true;
+				if (pc > 0) 
+					label->BackColor = System::Drawing::Color::LimeGreen;
+				else
+					label->BackColor = System::Drawing::Color::DarkRed;
 				i += 1;
 
 			}
 			dr1->Close();
+			Stock dowJones = Stock("DJD");
+			dowJones.updateMarketVals();
+			float cp = dowJones.getCurrentPrice();
+			float op = dowJones.getOpenPrice();
+			float pnl = dowJones.getPL();
+			float pc = (pnl / op) * 100;
+			String^ CurrentPrice = cp.ToString(L"c");
+			std::stringstream s1;
+			s1 << std::fixed << std::setprecision(2) << pc;
+			std::string stdPC1 = s1.str();
+			String^ PercentChange = marshal_as<String^>(stdPC1);
+			String^ text1 = "Dow Jones \r\n " + CurrentPrice + " \r\n " + PercentChange + "% \r\n ";
+			DowJones->Text = text1;
+			if (pc > 0)
+				DowJones->BackColor = System::Drawing::Color::LimeGreen;
+			else
+				DowJones->BackColor = System::Drawing::Color::DarkRed;
+			Stock apple = Stock("AAPL");
+			apple.updateMarketVals();
+			cp = apple.getCurrentPrice();
+			op = apple.getOpenPrice();
+			pnl = apple.getPL();
+			pc = (pnl / op) * 100;
+			CurrentPrice = cp.ToString(L"c");
+			std::stringstream s2;
+			s2<< std::fixed << std::setprecision(2) << pc;
+			std::string stdPC2 = s2.str();
+			PercentChange = marshal_as<String^>(stdPC2);
+			text1 = "Apple \r\n " + CurrentPrice + " \r\n " + PercentChange + "% \r\n ";
+			Apple->Text = text1;
+			if (pc > 0)
+				Apple->BackColor = System::Drawing::Color::LimeGreen;
+			else
+				Apple->BackColor = System::Drawing::Color::DarkRed;
+			Stock ms = Stock("MSFT");
+			ms.updateMarketVals();
+			cp = ms.getCurrentPrice();
+			op = ms.getOpenPrice();
+			pnl = ms.getPL();
+			pc = (pnl / op) * 100;
+			CurrentPrice = cp.ToString(L"c");
+			std::stringstream s3;
+			s3 << std::fixed << std::setprecision(2) << pc;
+			std::string stdPC3 = s3.str();
+			PercentChange = marshal_as<String^>(stdPC3);
+			text1 = "Microsoft \r\n " + CurrentPrice + " \r\n " + PercentChange + "% \r\n ";
+			Microsoft->Text = text1;
+			if (pc > 0)
+				Microsoft->BackColor = System::Drawing::Color::LimeGreen;
+			else
+				Microsoft->BackColor = System::Drawing::Color::DarkRed;
+			text1 = "McLeod's Teaching \r\n $69,420 \r\n 69% \r\n ";
+			McLeod->Text = text1;
+			McLeod->BackColor = System::Drawing::Color::LimeGreen;
+
+
+
+
 			dataGridView1->Rows->Add("XOM","Exxon Mobile");
 			dataGridView1->Rows->Add("AAPL", "Apple");
 			dataGridView1->Rows->Add("MSFT", "Microsoft");
@@ -778,6 +851,7 @@ namespace TradingGUI {
 			dataGridView1->Rows->Add("SHOP", "Shopify");
 			dataGridView1->Rows->Add("ACB", "Aurora Cannibis");
 			dataGridView1->Rows->Add("TSLA", "Telsa");
+			dataGridView1->Rows->Add("SQ", "Square");
 
 
 
@@ -796,7 +870,7 @@ namespace TradingGUI {
 			try {
 				String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 				MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-				MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+				MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from watches WHERE person='" + username + "'", connection);
 				MySqlDataReader^ dr1;
 				connection->Open();
 				dr1 = cmd1->ExecuteReader();
@@ -805,7 +879,7 @@ namespace TradingGUI {
 					i += 1;
 				}
 				dr1->Close();
-				CompanyPage^ companyPage = gcnew CompanyPage();
+				CompanyPage^ companyPage = gcnew CompanyPage(ticker);
 				openChildForm(companyPage);
 			}
 			catch (Exception^ ex) {
@@ -823,7 +897,7 @@ private: System::Void Owned19_Click(System::Object^ sender, System::EventArgs^ e
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from watches WHERE person='" + username + "'", connection);
 			MySqlDataReader^ dr1;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
@@ -832,7 +906,7 @@ private: System::Void Owned19_Click(System::Object^ sender, System::EventArgs^ e
 				i += 1;
 			}
 			dr1->Close();
-			CompanyPage^ companyPage = gcnew CompanyPage();
+			CompanyPage^ companyPage = gcnew CompanyPage(ticker);
 			openChildForm(companyPage);
 		}
 		catch (Exception^ ex) {
@@ -850,7 +924,7 @@ private: System::Void Owned20_Click(System::Object^ sender, System::EventArgs^ e
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from watches WHERE person='" + username + "'", connection);
 			MySqlDataReader^ dr1;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
@@ -859,7 +933,7 @@ private: System::Void Owned20_Click(System::Object^ sender, System::EventArgs^ e
 				i += 1;
 			}
 			dr1->Close();
-			CompanyPage^ companyPage = gcnew CompanyPage();
+			CompanyPage^ companyPage = gcnew CompanyPage(ticker);
 			openChildForm(companyPage);
 		}
 		catch (Exception^ ex) {
@@ -877,7 +951,7 @@ private: System::Void Owned18_Click(System::Object^ sender, System::EventArgs^ e
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from watches WHERE person='" + username + "'", connection);
 			MySqlDataReader^ dr1;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
@@ -886,7 +960,7 @@ private: System::Void Owned18_Click(System::Object^ sender, System::EventArgs^ e
 				i += 1;
 			}
 			dr1->Close();
-			CompanyPage^ companyPage = gcnew CompanyPage();
+			CompanyPage^ companyPage = gcnew CompanyPage(ticker);
 			openChildForm(companyPage);
 		}
 		catch (Exception^ ex) {
@@ -904,7 +978,7 @@ private: System::Void Owned16_Click(System::Object^ sender, System::EventArgs^ e
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from watches WHERE person='" + username + "'", connection);
 			MySqlDataReader^ dr1;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
@@ -913,7 +987,7 @@ private: System::Void Owned16_Click(System::Object^ sender, System::EventArgs^ e
 				i += 1;
 			}
 			dr1->Close();
-			CompanyPage^ companyPage = gcnew CompanyPage();
+			CompanyPage^ companyPage = gcnew CompanyPage(ticker);
 			openChildForm(companyPage);
 		}
 		catch (Exception^ ex) {
@@ -931,7 +1005,7 @@ private: System::Void Owned15_Click(System::Object^ sender, System::EventArgs^ e
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from watches WHERE person='" + username + "'", connection);
 			MySqlDataReader^ dr1;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
@@ -940,7 +1014,7 @@ private: System::Void Owned15_Click(System::Object^ sender, System::EventArgs^ e
 				i += 1;
 			}
 			dr1->Close();
-			CompanyPage^ companyPage = gcnew CompanyPage();
+			CompanyPage^ companyPage = gcnew CompanyPage(ticker);
 			openChildForm(companyPage);
 		}
 		catch (Exception^ ex) {
@@ -958,7 +1032,7 @@ private: System::Void Owned14_Click(System::Object^ sender, System::EventArgs^ e
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from watches WHERE person='" + username + "'", connection);
 			MySqlDataReader^ dr1;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
@@ -967,7 +1041,7 @@ private: System::Void Owned14_Click(System::Object^ sender, System::EventArgs^ e
 				i += 1;
 			}
 			dr1->Close();
-			CompanyPage^ companyPage = gcnew CompanyPage();
+			CompanyPage^ companyPage = gcnew CompanyPage(ticker);
 			openChildForm(companyPage);
 		}
 		catch (Exception^ ex) {
@@ -985,7 +1059,7 @@ private: System::Void Owned17_Click(System::Object^ sender, System::EventArgs^ e
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from watches WHERE person='" + username + "'", connection);
 			MySqlDataReader^ dr1;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
@@ -994,7 +1068,7 @@ private: System::Void Owned17_Click(System::Object^ sender, System::EventArgs^ e
 				i += 1;
 			}
 			dr1->Close();
-			CompanyPage^ companyPage = gcnew CompanyPage();
+			CompanyPage^ companyPage = gcnew CompanyPage(ticker);
 			openChildForm(companyPage);
 		}
 		catch (Exception^ ex) {
@@ -1012,7 +1086,7 @@ private: System::Void Owned13_Click(System::Object^ sender, System::EventArgs^ e
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from watches WHERE person='" + username + "'", connection);
 			MySqlDataReader^ dr1;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
@@ -1021,7 +1095,7 @@ private: System::Void Owned13_Click(System::Object^ sender, System::EventArgs^ e
 				i += 1;
 			}
 			dr1->Close();
-			CompanyPage^ companyPage = gcnew CompanyPage();
+			CompanyPage^ companyPage = gcnew CompanyPage(ticker);
 			openChildForm(companyPage);
 		}
 		catch (Exception^ ex) {
@@ -1039,7 +1113,7 @@ private: System::Void Owned12_Click(System::Object^ sender, System::EventArgs^ e
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from watches WHERE person='" + username + "'", connection);
 			MySqlDataReader^ dr1;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
@@ -1048,7 +1122,7 @@ private: System::Void Owned12_Click(System::Object^ sender, System::EventArgs^ e
 				i += 1;
 			}
 			dr1->Close();
-			CompanyPage^ companyPage = gcnew CompanyPage();
+			CompanyPage^ companyPage = gcnew CompanyPage(ticker);
 			openChildForm(companyPage);
 		}
 		catch (Exception^ ex) {
@@ -1066,7 +1140,7 @@ private: System::Void Owned11_Click(System::Object^ sender, System::EventArgs^ e
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from watches WHERE person='" + username + "'", connection);
 			MySqlDataReader^ dr1;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
@@ -1075,7 +1149,7 @@ private: System::Void Owned11_Click(System::Object^ sender, System::EventArgs^ e
 				i += 1;
 			}
 			dr1->Close();
-			CompanyPage^ companyPage = gcnew CompanyPage();
+			CompanyPage^ companyPage = gcnew CompanyPage(ticker);
 			openChildForm(companyPage);
 		}
 		catch (Exception^ ex) {
@@ -1093,7 +1167,7 @@ private: System::Void Owned10_Click(System::Object^ sender, System::EventArgs^ e
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from watches WHERE person='" + username + "'", connection);
 			MySqlDataReader^ dr1;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
@@ -1102,7 +1176,7 @@ private: System::Void Owned10_Click(System::Object^ sender, System::EventArgs^ e
 				i += 1;
 			}
 			dr1->Close();
-			CompanyPage^ companyPage = gcnew CompanyPage();
+			CompanyPage^ companyPage = gcnew CompanyPage(ticker);
 			openChildForm(companyPage);
 		}
 		catch (Exception^ ex) {
@@ -1120,7 +1194,7 @@ private: System::Void Owned9_Click(System::Object^ sender, System::EventArgs^ e)
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from watches WHERE person='" + username + "'", connection);
 			MySqlDataReader^ dr1;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
@@ -1129,7 +1203,7 @@ private: System::Void Owned9_Click(System::Object^ sender, System::EventArgs^ e)
 				i += 1;
 			}
 			dr1->Close();
-			CompanyPage^ companyPage = gcnew CompanyPage();
+			CompanyPage^ companyPage = gcnew CompanyPage(ticker);
 			openChildForm(companyPage);
 		}
 		catch (Exception^ ex) {
@@ -1147,7 +1221,7 @@ private: System::Void Owned8_Click(System::Object^ sender, System::EventArgs^ e)
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from watches WHERE person='" + username + "'", connection);
 			MySqlDataReader^ dr1;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
@@ -1156,7 +1230,7 @@ private: System::Void Owned8_Click(System::Object^ sender, System::EventArgs^ e)
 				i += 1;
 			}
 			dr1->Close();
-			CompanyPage^ companyPage = gcnew CompanyPage();
+			CompanyPage^ companyPage = gcnew CompanyPage(ticker);
 			openChildForm(companyPage);
 		}
 		catch (Exception^ ex) {
@@ -1174,7 +1248,7 @@ private: System::Void Owned7_Click(System::Object^ sender, System::EventArgs^ e)
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from watches WHERE person='" + username + "'", connection);
 			MySqlDataReader^ dr1;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
@@ -1183,7 +1257,7 @@ private: System::Void Owned7_Click(System::Object^ sender, System::EventArgs^ e)
 				i += 1;
 			}
 			dr1->Close();
-			CompanyPage^ companyPage = gcnew CompanyPage();
+			CompanyPage^ companyPage = gcnew CompanyPage(ticker);
 			openChildForm(companyPage);
 		}
 		catch (Exception^ ex) {
@@ -1201,7 +1275,7 @@ private: System::Void Owned4_Click(System::Object^ sender, System::EventArgs^ e)
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from watches WHERE person='" + username + "'", connection);
 			MySqlDataReader^ dr1;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
@@ -1210,7 +1284,7 @@ private: System::Void Owned4_Click(System::Object^ sender, System::EventArgs^ e)
 				i += 1;
 			}
 			dr1->Close();
-			CompanyPage^ companyPage = gcnew CompanyPage();
+			CompanyPage^ companyPage = gcnew CompanyPage(ticker);
 			openChildForm(companyPage);
 		}
 		catch (Exception^ ex) {
@@ -1228,7 +1302,7 @@ private: System::Void Owned3_Click(System::Object^ sender, System::EventArgs^ e)
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from watches WHERE person='" + username + "'", connection);
 			MySqlDataReader^ dr1;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
@@ -1237,7 +1311,7 @@ private: System::Void Owned3_Click(System::Object^ sender, System::EventArgs^ e)
 				i += 1;
 			}
 			dr1->Close();
-			CompanyPage^ companyPage = gcnew CompanyPage();
+			CompanyPage^ companyPage = gcnew CompanyPage(ticker);
 			openChildForm(companyPage);
 		}
 		catch (Exception^ ex) {
@@ -1255,7 +1329,7 @@ private: System::Void Owned6_Click(System::Object^ sender, System::EventArgs^ e)
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from watches WHERE person='" + username + "'", connection);
 			MySqlDataReader^ dr1;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
@@ -1264,7 +1338,7 @@ private: System::Void Owned6_Click(System::Object^ sender, System::EventArgs^ e)
 				i += 1;
 			}
 			dr1->Close();
-			CompanyPage^ companyPage = gcnew CompanyPage();
+			CompanyPage^ companyPage = gcnew CompanyPage(ticker);
 			openChildForm(companyPage);
 		}
 		catch (Exception^ ex) {
@@ -1282,7 +1356,7 @@ private: System::Void Owned5_Click(System::Object^ sender, System::EventArgs^ e)
 		try {
 			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
 			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from holdings WHERE person='" + username + "'", connection);
+			MySqlCommand^ cmd1 = gcnew MySqlCommand("SELECT * from watches WHERE person='" + username + "'", connection);
 			MySqlDataReader^ dr1;
 			connection->Open();
 			dr1 = cmd1->ExecuteReader();
@@ -1291,7 +1365,7 @@ private: System::Void Owned5_Click(System::Object^ sender, System::EventArgs^ e)
 				i += 1;
 			}
 			dr1->Close();
-			CompanyPage^ companyPage = gcnew CompanyPage();
+			CompanyPage^ companyPage = gcnew CompanyPage(ticker);
 			openChildForm(companyPage);
 		}
 		catch (Exception^ ex) {
@@ -1303,7 +1377,8 @@ private: System::Void dataGridView1_CellContentClick(System::Object^ sender, Sys
 	String^ str;
 	DataGridViewRow^ row = dataGridView1->Rows[e->RowIndex];
 	str = row->Cells[0]->Value->ToString();
-
+	CompanyPage^ companyPage = gcnew CompanyPage(str);
+	openChildForm(companyPage);
 }
 };
 }
