@@ -226,7 +226,19 @@ namespace ProfileGUI {
 			this->label68->Name = L"label68";
 			this->label68->Size = System::Drawing::Size(1440, 465);
 			this->label68->TabIndex = 31;
-			this->label68->Text = resources->GetString(L"label68.Text");
+			this->label68->Text = L"Welcome to TuringTrader \n \r"
+				L"TuringTrader is a simulated investing application for individuals that are new to finance \r"
+				L"and seeking a consequence - free way to practice investing in stocks alongside an interactive group.\r \n"
+				L"Use our groups page to compete against other users and track your progess in the group.\r"
+				L"If you are interested in joining a group, please head to the group pageand click the join group button!\r"
+				L"To create a group, click the create group button on the groups pageand shares the generated code with all you friends \r \n"
+				L"To begin investing, go to the the trading page. \r"
+				L"On the trading page, you can see stocks you are watching as well as search for stocks \r"
+				L"Unsure of where to start ? Checkout our selection of default stocks! \r"
+				L"Click on a stock to find more information about the company, add it to your watchlist \r"
+				L"or buy and sell shares. \r"
+				L"Once you own stock, you can head over to the porfolio page where you can see your current postions \r"
+				L"as well as the porfolios value over it's lifetime and how it currently stands.";
 			this->label68->Click += gcnew System::EventHandler(this, &ProfilePage::label68_Click);
 			// 
 			// label67
@@ -239,7 +251,15 @@ namespace ProfileGUI {
 			this->label67->Name = L"label67";
 			this->label67->Size = System::Drawing::Size(1459, 310);
 			this->label67->TabIndex = 30;
-			this->label67->Text = resources->GetString(L"label67.Text");
+			this->label67->Text = "Active trading is what an investor who places 10 or more trades per month does. \r"
+				L"Typically, they use a strategy that relies heavily on timing the market,\r"
+				L"trying to take advantage of short - term events(at the company level or based on market fluctuations)\r"
+				L"to turn a profit in the coming weeks or months. \r \n"
+				L"Day trading is the strategy employed by investors who play hot potato with stocks\r"
+				L"— buying, sellingand closing their positions of the same stock in a single trading day,\r"
+				L"caring little about the inner workings of the underlying businesses.\r"
+				L"(Position refers to the amount of a particular stock or fund you own.)\r"
+				L"The aim of the day trader is to make a few bucks in the next few minutes, hours or days based on daily price fluctuations.";
 			this->label67->Click += gcnew System::EventHandler(this, &ProfilePage::label67_Click);
 			// 
 			// label66
