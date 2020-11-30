@@ -287,70 +287,72 @@ namespace GroupsGUI {
 	private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 		// Resetting the groups table
 		dataGridView1->Rows->Clear();
+		if (listBox1->SelectedIndex > -1) {
+			String^ current_group_name = listBox1->SelectedItem->ToString();
+			String^ current_group_code = "";
+			cliext::vector<String^> current_group_members;
 
-		String^ current_group_name = listBox1->SelectedItem->ToString();
-		String^ current_group_code = "";
-		cliext::vector<String^> current_group_members;
-
-		String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
-		MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
-		MySqlCommand^ cmd = gcnew MySqlCommand("SELECT joinCode FROM tradingGroup WHERE groupName='" + current_group_name + "'", connection);
-		MySqlDataReader^ dr;
-		connection->Open();
-		dr = cmd->ExecuteReader();
-		while (dr->Read()) {
-			current_group_code = dr->GetString(0);
-			label60->Text = L"Group Code: " + current_group_code + "\r\nUse this code to invite your friends to your group!\r\n";
-		}
-		dr->Close();
-
-		// Adding usernames of members of current group to a vector and displaying in table
-		MySqlCommand^ cmd2 = gcnew MySqlCommand("SELECT member from groupMember INNER JOIN tradingGroup ON groupMember.groupCode = tradingGroup.joinCode WHERE joinCode='" + current_group_code + "'", connection);
-		MySqlDataReader^ dr2;
-		dr2 = cmd2->ExecuteReader();
-		while (dr2->Read()) {
-			current_group_members.push_back(dr2->GetString(0));
-		}
-		dr2->Close();
-
-		// For each group member, create a holdings object for each of their holdings
-		for (int i = 0; i < current_group_members.size(); i++) {
-			std::vector<Holding> user_portfolio;
-			MySqlCommand^ cmd3 = gcnew MySqlCommand("SELECT ticker, numShares, totalCost FROM holdings WHERE person='" + current_group_members[i] + "'", connection);
-			MySqlDataReader^ dr3;
-			dr3 = cmd3->ExecuteReader();
-			// This loops through each holding possessed by the user
-			while (dr3->Read()) {			
-				std::string ticker = marshal_as<std::string>(dr3->GetString(0));
-				int num_shares = dr3->GetInt32(1);
-				float total_cost = dr3->GetFloat(2);
-				Holding holding(ticker, num_shares, total_cost);
-				user_portfolio.push_back(holding);
+			String^ connection_str = "Server=35.227.90.11;Uid=root;Pwd=password;Database=TuringTrader";
+			MySqlConnection^ connection = gcnew MySqlConnection(connection_str);
+			MySqlCommand^ cmd = gcnew MySqlCommand("SELECT joinCode FROM tradingGroup WHERE groupName='" + current_group_name + "'", connection);
+			MySqlDataReader^ dr;
+			connection->Open();
+			dr = cmd->ExecuteReader();
+			while (dr->Read()) {
+				current_group_code = dr->GetString(0);
+				label60->Text = L"Group Code: " + current_group_code + "\r\nUse this code to invite your friends to your group!\r\n";
 			}
-			dr3->Close();
+			dr->Close();
 
-			// Get user's cash balance
-			MySqlCommand^ cmd4 = gcnew MySqlCommand("SELECT accountBalance FROM users WHERE username='" + current_group_members[i] + "'", connection);
-			MySqlDataReader^ dr4;
-			dr4 = cmd4->ExecuteReader();
-			float user_cash_balance;
-			while (dr4->Read()) {
-				user_cash_balance = dr4->GetInt32(0);
+			// Adding usernames of members of current group to a vector and displaying in table
+			MySqlCommand^ cmd2 = gcnew MySqlCommand("SELECT member from groupMember INNER JOIN tradingGroup ON groupMember.groupCode = tradingGroup.joinCode WHERE joinCode='" + current_group_code + "'", connection);
+			MySqlDataReader^ dr2;
+			dr2 = cmd2->ExecuteReader();
+			while (dr2->Read()) {
+				current_group_members.push_back(dr2->GetString(0));
 			}
+			dr2->Close();
 
-			dr4->Close();
+			// For each group member, create a holdings object for each of their holdings
+			for (int i = 0; i < current_group_members.size(); i++) {
+				std::vector<Holding> user_portfolio;
+				MySqlCommand^ cmd3 = gcnew MySqlCommand("SELECT ticker, numShares, totalCost FROM holdings WHERE person='" + current_group_members[i] + "'", connection);
+				MySqlDataReader^ dr3;
+				dr3 = cmd3->ExecuteReader();
+				// This loops through each holding possessed by the user
+				while (dr3->Read()) {
+					std::string ticker = marshal_as<std::string>(dr3->GetString(0));
+					int num_shares = dr3->GetInt32(1);
+					float total_cost = dr3->GetFloat(2);
+					Holding holding(ticker, num_shares, total_cost);
+					user_portfolio.push_back(holding);
+				}
+				dr3->Close();
 
-			// Add user's stats to the DataGridView
-			float user_portfolio_value = user_cash_balance;
-			float user_portfolio_cost = 0;
-			for (int i = 0; i < user_portfolio.size(); i++) {
-				user_portfolio[i].updateMarketVals();
-				float holding_price = user_portfolio[i].getCurrentPrice();
-				user_portfolio_value += holding_price * (user_portfolio[i].getQty());
-				user_portfolio_cost += user_portfolio[i].getTotalCost();
+				// Get user's cash balance
+				MySqlCommand^ cmd4 = gcnew MySqlCommand("SELECT accountBalance FROM users WHERE username='" + current_group_members[i] + "'", connection);
+				MySqlDataReader^ dr4;
+				dr4 = cmd4->ExecuteReader();
+				float user_cash_balance;
+				while (dr4->Read()) {
+					user_cash_balance = dr4->GetInt32(0);
+				}
+
+				dr4->Close();
+
+				// Add user's stats to the DataGridView
+				float user_portfolio_value = user_cash_balance;
+				float user_portfolio_cost = 0;
+				for (int i = 0; i < user_portfolio.size(); i++) {
+					user_portfolio[i].updateMarketVals();
+					float holding_price = user_portfolio[i].getCurrentPrice();
+					user_portfolio_value += holding_price * (user_portfolio[i].getQty());
+					user_portfolio_cost += user_portfolio[i].getTotalCost();
+				}
+				dataGridView1->Rows->Add(current_group_members[i], user_portfolio.size(), user_portfolio_value, user_portfolio_value - 100000);
 			}
-			dataGridView1->Rows->Add(current_group_members[i], user_portfolio.size(), user_portfolio_value, user_portfolio_value - 100000);
 		}
+		
 	}
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (listBox1->SelectedIndex < 0) {
@@ -377,6 +379,7 @@ private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e
 
 		dr2->Close();
 		listBox1->Items->Remove(listBox1->SelectedItem);
+		label60->Text = L"Group Code: No Group Selected\r\n";
 	}
 }
 };
