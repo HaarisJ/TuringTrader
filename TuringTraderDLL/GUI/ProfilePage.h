@@ -138,6 +138,7 @@ namespace ProfileGUI {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ProfilePage::typeid));
 			this->button12 = (gcnew System::Windows::Forms::Button());
 			this->label70 = (gcnew System::Windows::Forms::Label());
 			this->label69 = (gcnew System::Windows::Forms::Label());
@@ -182,7 +183,7 @@ namespace ProfileGUI {
 			// 
 			// button12
 			// 
-			this->button12->Location = System::Drawing::Point(1868, 1234);
+			this->button12->Location = System::Drawing::Point(405, 1270);
 			this->button12->Margin = System::Windows::Forms::Padding(6, 4, 6, 4);
 			this->button12->Name = L"button12";
 			this->button12->Size = System::Drawing::Size(528, 103);
@@ -194,7 +195,7 @@ namespace ProfileGUI {
 			// label70
 			// 
 			this->label70->AutoSize = true;
-			this->label70->Location = System::Drawing::Point(1732, 953);
+			this->label70->Location = System::Drawing::Point(370, 1022);
 			this->label70->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->label70->Name = L"label70";
 			this->label70->Size = System::Drawing::Size(719, 128);
@@ -207,7 +208,7 @@ namespace ProfileGUI {
 			// 
 			this->label69->AutoSize = true;
 			this->label69->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18));
-			this->label69->Location = System::Drawing::Point(1948, 854);
+			this->label69->Location = System::Drawing::Point(487, 932);
 			this->label69->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->label69->Name = L"label69";
 			this->label69->Size = System::Drawing::Size(418, 69);
@@ -220,13 +221,12 @@ namespace ProfileGUI {
 			this->label68->AutoSize = true;
 			this->label68->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label68->Location = System::Drawing::Point(1748, 642);
+			this->label68->Location = System::Drawing::Point(1732, 685);
 			this->label68->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->label68->Name = L"label68";
-			this->label68->Size = System::Drawing::Size(703, 62);
+			this->label68->Size = System::Drawing::Size(1440, 465);
 			this->label68->TabIndex = 31;
-			this->label68->Text = L"Lorem ipsum dolor sit amet. Ut consequat.\r\nNullam quis est eget eros faucibus vol"
-				L"utpat ut eget dolor. ";
+			this->label68->Text = resources->GetString(L"label68.Text");
 			this->label68->Click += gcnew System::EventHandler(this, &ProfilePage::label68_Click);
 			// 
 			// label67
@@ -234,12 +234,12 @@ namespace ProfileGUI {
 			this->label67->AutoSize = true;
 			this->label67->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label67->Location = System::Drawing::Point(1732, 379);
+			this->label67->Location = System::Drawing::Point(1732, 255);
 			this->label67->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->label67->Name = L"label67";
-			this->label67->Size = System::Drawing::Size(353, 62);
+			this->label67->Size = System::Drawing::Size(1459, 310);
 			this->label67->TabIndex = 30;
-			this->label67->Text = L"Lorem ipsum dolor sit amet. \r\nNullam quis eget dolor. ";
+			this->label67->Text = resources->GetString(L"label67.Text");
 			this->label67->Click += gcnew System::EventHandler(this, &ProfilePage::label67_Click);
 			// 
 			// label66
@@ -247,7 +247,7 @@ namespace ProfileGUI {
 			this->label66->AutoSize = true;
 			this->label66->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label66->Location = System::Drawing::Point(2044, 215);
+			this->label66->Location = System::Drawing::Point(2135, 88);
 			this->label66->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->label66->Name = L"label66";
 			this->label66->Size = System::Drawing::Size(168, 75);
@@ -260,7 +260,7 @@ namespace ProfileGUI {
 			this->label65->AutoSize = true;
 			this->label65->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label65->Location = System::Drawing::Point(538, 215);
+			this->label65->Location = System::Drawing::Point(597, 75);
 			this->label65->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->label65->Name = L"label65";
 			this->label65->Size = System::Drawing::Size(218, 75);
@@ -269,7 +269,7 @@ namespace ProfileGUI {
 			// 
 			// button11
 			// 
-			this->button11->Location = System::Drawing::Point(984, 905);
+			this->button11->Location = System::Drawing::Point(1043, 765);
 			this->button11->Margin = System::Windows::Forms::Padding(6, 4, 6, 4);
 			this->button11->Name = L"button11";
 			this->button11->Size = System::Drawing::Size(382, 93);
@@ -280,7 +280,7 @@ namespace ProfileGUI {
 			// 
 			// button9
 			// 
-			this->button9->Location = System::Drawing::Point(984, 762);
+			this->button9->Location = System::Drawing::Point(1043, 622);
 			this->button9->Margin = System::Windows::Forms::Padding(6, 4, 6, 4);
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(382, 97);
@@ -291,7 +291,7 @@ namespace ProfileGUI {
 			// 
 			// button8
 			// 
-			this->button8->Location = System::Drawing::Point(984, 332);
+			this->button8->Location = System::Drawing::Point(1043, 192);
 			this->button8->Margin = System::Windows::Forms::Padding(6, 4, 6, 4);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(382, 97);
@@ -305,7 +305,7 @@ namespace ProfileGUI {
 			this->label64->AutoSize = true;
 			this->label64->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label64->Location = System::Drawing::Point(42, 905);
+			this->label64->Location = System::Drawing::Point(101, 765);
 			this->label64->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->label64->Name = L"label64";
 			this->label64->Size = System::Drawing::Size(255, 54);
@@ -317,7 +317,7 @@ namespace ProfileGUI {
 			this->label62->AutoSize = true;
 			this->label62->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label62->Location = System::Drawing::Point(42, 762);
+			this->label62->Location = System::Drawing::Point(101, 622);
 			this->label62->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->label62->Name = L"label62";
 			this->label62->Size = System::Drawing::Size(152, 54);
@@ -328,7 +328,7 @@ namespace ProfileGUI {
 			// 
 			this->label61->AutoSize = true;
 			this->label61->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
-			this->label61->Location = System::Drawing::Point(42, 320);
+			this->label61->Location = System::Drawing::Point(101, 180);
 			this->label61->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->label61->Name = L"label61";
 			this->label61->Size = System::Drawing::Size(253, 54);
@@ -337,42 +337,42 @@ namespace ProfileGUI {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(625, 332);
+			this->textBox1->Location = System::Drawing::Point(684, 192);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(337, 38);
 			this->textBox1->TabIndex = 36;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(625, 762);
+			this->textBox2->Location = System::Drawing::Point(684, 622);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(337, 38);
 			this->textBox2->TabIndex = 37;
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(625, 905);
+			this->textBox4->Location = System::Drawing::Point(684, 765);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(337, 38);
 			this->textBox4->TabIndex = 39;
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(625, 960);
+			this->textBox3->Location = System::Drawing::Point(684, 820);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(337, 38);
 			this->textBox3->TabIndex = 40;
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(625, 391);
+			this->textBox5->Location = System::Drawing::Point(684, 251);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(337, 38);
 			this->textBox5->TabIndex = 41;
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(625, 821);
+			this->textBox6->Location = System::Drawing::Point(684, 681);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(337, 38);
 			this->textBox6->TabIndex = 42;
@@ -380,7 +380,7 @@ namespace ProfileGUI {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(311, 966);
+			this->label1->Location = System::Drawing::Point(370, 826);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(308, 32);
 			this->label1->TabIndex = 43;
@@ -389,7 +389,7 @@ namespace ProfileGUI {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(311, 908);
+			this->label2->Location = System::Drawing::Point(370, 768);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(202, 32);
 			this->label2->TabIndex = 44;
@@ -398,7 +398,7 @@ namespace ProfileGUI {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(311, 768);
+			this->label3->Location = System::Drawing::Point(370, 628);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(188, 32);
 			this->label3->TabIndex = 46;
@@ -407,7 +407,7 @@ namespace ProfileGUI {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(311, 821);
+			this->label4->Location = System::Drawing::Point(370, 681);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(150, 32);
 			this->label4->TabIndex = 45;
@@ -416,7 +416,7 @@ namespace ProfileGUI {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(311, 332);
+			this->label5->Location = System::Drawing::Point(370, 192);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(246, 32);
 			this->label5->TabIndex = 48;
@@ -425,7 +425,7 @@ namespace ProfileGUI {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(311, 391);
+			this->label6->Location = System::Drawing::Point(370, 251);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(208, 32);
 			this->label6->TabIndex = 47;
@@ -434,7 +434,7 @@ namespace ProfileGUI {
 			// checkBox1
 			// 
 			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(1868, 1146);
+			this->checkBox1->Location = System::Drawing::Point(499, 1193);
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(367, 36);
 			this->checkBox1->TabIndex = 49;
@@ -445,7 +445,7 @@ namespace ProfileGUI {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(311, 476);
+			this->label7->Location = System::Drawing::Point(370, 336);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(253, 32);
 			this->label7->TabIndex = 55;
@@ -454,7 +454,7 @@ namespace ProfileGUI {
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(311, 535);
+			this->label8->Location = System::Drawing::Point(370, 395);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(215, 32);
 			this->label8->TabIndex = 54;
@@ -462,21 +462,21 @@ namespace ProfileGUI {
 			// 
 			// textBox7
 			// 
-			this->textBox7->Location = System::Drawing::Point(625, 535);
+			this->textBox7->Location = System::Drawing::Point(684, 395);
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(337, 38);
 			this->textBox7->TabIndex = 53;
 			// 
 			// textBox8
 			// 
-			this->textBox8->Location = System::Drawing::Point(625, 476);
+			this->textBox8->Location = System::Drawing::Point(684, 336);
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(337, 38);
 			this->textBox8->TabIndex = 52;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(984, 476);
+			this->button1->Location = System::Drawing::Point(1043, 336);
 			this->button1->Margin = System::Windows::Forms::Padding(6, 4, 6, 4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(382, 97);
@@ -489,7 +489,7 @@ namespace ProfileGUI {
 			// 
 			this->label9->AutoSize = true;
 			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
-			this->label9->Location = System::Drawing::Point(42, 464);
+			this->label9->Location = System::Drawing::Point(101, 324);
 			this->label9->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(252, 54);
@@ -499,7 +499,7 @@ namespace ProfileGUI {
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(311, 630);
+			this->label10->Location = System::Drawing::Point(370, 490);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(252, 32);
 			this->label10->TabIndex = 61;
@@ -508,7 +508,7 @@ namespace ProfileGUI {
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(311, 683);
+			this->label11->Location = System::Drawing::Point(370, 543);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(214, 32);
 			this->label11->TabIndex = 60;
@@ -516,21 +516,21 @@ namespace ProfileGUI {
 			// 
 			// textBox9
 			// 
-			this->textBox9->Location = System::Drawing::Point(625, 683);
+			this->textBox9->Location = System::Drawing::Point(684, 543);
 			this->textBox9->Name = L"textBox9";
 			this->textBox9->Size = System::Drawing::Size(337, 38);
 			this->textBox9->TabIndex = 59;
 			// 
 			// textBox10
 			// 
-			this->textBox10->Location = System::Drawing::Point(625, 624);
+			this->textBox10->Location = System::Drawing::Point(684, 484);
 			this->textBox10->Name = L"textBox10";
 			this->textBox10->Size = System::Drawing::Size(337, 38);
 			this->textBox10->TabIndex = 58;
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(984, 624);
+			this->button2->Location = System::Drawing::Point(1043, 484);
 			this->button2->Margin = System::Windows::Forms::Padding(6, 4, 6, 4);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(382, 97);
@@ -544,7 +544,7 @@ namespace ProfileGUI {
 			this->label12->AutoSize = true;
 			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label12->Location = System::Drawing::Point(42, 624);
+			this->label12->Location = System::Drawing::Point(101, 484);
 			this->label12->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(262, 54);
@@ -555,7 +555,7 @@ namespace ProfileGUI {
 			// 
 			this->label14->AutoSize = true;
 			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			this->label14->Location = System::Drawing::Point(1730, 318);
+			this->label14->Location = System::Drawing::Point(1730, 194);
 			this->label14->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(344, 46);
@@ -567,7 +567,7 @@ namespace ProfileGUI {
 			// 
 			this->label15->AutoSize = true;
 			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			this->label15->Location = System::Drawing::Point(1741, 578);
+			this->label15->Location = System::Drawing::Point(1730, 612);
 			this->label15->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(354, 46);

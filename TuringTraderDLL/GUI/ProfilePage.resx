@@ -117,4 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label68.Text" xml:space="preserve">
+    <value>Welcome to TuringTrader  
+ TuringTrader is a simulated investing application for individuals that are new to finance  and seeking a consequence-free way to practice investing in stocks alongside an interactive group.  
+Use our groups page to compete against other users and track your progess in the group.If you are interested in joining a group, please head to the group page and click the join group button!To create a group, click the create group button on the groups page and shares the generated code with all you friends 
+To begin investing, go to the the trading page.On the trading page, you can see stocks you are watching as well as search for stocks Unsure of where to start? Checkout our selection of default stocks!Click on a stock to find more information about the company, add it to your watchlist  or buy and sell shares.
+Once you own stock, you can head over to the porfolio page where you can see your current postions as well as the porfolios value over it's lifetime and how it currently stands.</value>
+  </data>
+  <data name="label67.Text" xml:space="preserve">
+    <value>Active trading is what an investor who places 10 or more trades per month does. Typically, they use a strategy that relies heavily on timing the market,  trying to take advantage of short-term events (at the company level or based on market fluctuations) to turn a profit in the coming weeks or months.  
+ Day trading is the strategy employed by investors who play hot potato with stocks — buying, selling and closing their positions of the same stock in a single trading day,  caring little about the inner workings of the underlying businesses.  (Position refers to the amount of a particular stock or fund you own.)   The aim of the day trader is to make a few bucks in the next few minutes, hours or days based on daily price fluctuations.</value>
+  </data>
 </root>
