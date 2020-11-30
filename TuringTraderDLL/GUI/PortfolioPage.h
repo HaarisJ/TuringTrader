@@ -502,7 +502,7 @@ namespace PortfolioGUI {
 				company.updateMarketVals();
 				float currentPrice = company.getCurrentPrice();
 				float companyPL = company.getPL();
-				float priceChange = ((((companyPL + currentPrice) / currentPrice) - 1) * 100);
+				float priceChange = (((companyPL + currentPrice) / currentPrice) - 1);
 				float companyEquity = currentPrice * userHoldings[i].getQty();
 				totalEquity += companyEquity;
 
@@ -547,8 +547,8 @@ namespace PortfolioGUI {
 			MessageBox::Show("something has gone wrong");
 		}
 		portfolioVal->Text = "Current Portfolio Value: $" + " \r\n " + totalPortfolioValue;
-		int percentageReturnValue = ((totalPortfolioValue / 100000) * 100);
-		percentageReturn->Text = "Percentage Return: " + " \r\n " + percentageReturnValue + "%";
+		int percentageReturnValue = (totalPortfolioValue-100000) / 100000;
+		percentageReturn->Text = "Percentage Return: " + " \r\n " + percentageReturnValue.ToString(L"p");
 		int percentageEquity = (totalEquity / totalPortfolioValue) * 100;
 		equityCashRatio->Text = "Equity/Cash Balance: " + " \r\n " + percentageEquity + "/" + (100 - percentageEquity);
 		chart2->Series["Series1"]->Points->AddY(percentageEquity);
