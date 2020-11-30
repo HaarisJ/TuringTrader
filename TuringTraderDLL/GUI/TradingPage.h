@@ -268,6 +268,7 @@ private: System::Windows::Forms::Label^ label8;
 			this->Apple->Size = System::Drawing::Size(196, 138);
 			this->Apple->TabIndex = 61;
 			this->Apple->Text = L"S&&P 500:\r\n3,408.54\r\n-0.51%";
+			this->Apple->Click += gcnew System::EventHandler(this, &TradingPage::Apple_Click);
 			// 
 			// McLeod
 			// 
@@ -280,6 +281,7 @@ private: System::Windows::Forms::Label^ label8;
 			this->McLeod->Size = System::Drawing::Size(196, 138);
 			this->McLeod->TabIndex = 60;
 			this->McLeod->Text = L"NASDAQ:\r\n11,329.95\r\n+1.24%";
+			this->McLeod->Click += gcnew System::EventHandler(this, &TradingPage::McLeod_Click);
 			// 
 			// DowJones
 			// 
@@ -292,6 +294,7 @@ private: System::Windows::Forms::Label^ label8;
 			this->DowJones->Size = System::Drawing::Size(196, 138);
 			this->DowJones->TabIndex = 59;
 			this->DowJones->Text = L"DJIA:\r\n28,129.90\r\n+0.07%";
+			this->DowJones->Click += gcnew System::EventHandler(this, &TradingPage::DowJones_Click);
 			// 
 			// searchBox
 			// 
@@ -670,6 +673,7 @@ private: System::Windows::Forms::Label^ label8;
 			this->Microsoft->Size = System::Drawing::Size(196, 138);
 			this->Microsoft->TabIndex = 80;
 			this->Microsoft->Text = L"S&&P 500:\r\n3,408.54\r\n-0.51%";
+			this->Microsoft->Click += gcnew System::EventHandler(this, &TradingPage::Microsoft_Click);
 			// 
 			// newsImage2
 			// 
@@ -1777,6 +1781,21 @@ private: System::Void dataGridView1_CellContentClick(System::Object^ sender, Sys
 	DataGridViewRow^ row = dataGridView1->Rows[e->RowIndex];
 	str = row->Cells[0]->Value->ToString();
 	CompanyPage^ companyPage = gcnew CompanyPage(str);
+	openChildForm(companyPage);
+}
+private: System::Void DowJones_Click(System::Object^ sender, System::EventArgs^ e) {
+	CompanyPage^ companyPage = gcnew CompanyPage("DIJA");
+	openChildForm(companyPage);
+}
+private: System::Void McLeod_Click(System::Object^ sender, System::EventArgs^ e) {
+	System::Diagnostics::Process::Start("https://research.cs.queensu.ca/home/cisc320/");
+}
+private: System::Void Apple_Click(System::Object^ sender, System::EventArgs^ e) {
+	CompanyPage^ companyPage = gcnew CompanyPage("AAPL");
+	openChildForm(companyPage);
+}
+private: System::Void Microsoft_Click(System::Object^ sender, System::EventArgs^ e) {
+	CompanyPage^ companyPage = gcnew CompanyPage("MSFT");
 	openChildForm(companyPage);
 }
 };

@@ -49,15 +49,15 @@ C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\Turi
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioDetails.h(196,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioDetails.h(201,21): warning C4101: 'ex': unreferenced local variable
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(494,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(498,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(543,46): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(550,29): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(552,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(526,21): warning C4101: 'ex': unreferenced local variable
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(546,21): warning C4101: 'ex': unreferenced local variable
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\GroupsPage.h(338,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\GroupsPage.h(346,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(522,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(526,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(571,46): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(578,29): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(580,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(554,21): warning C4101: 'ex': unreferenced local variable
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(574,21): warning C4101: 'ex': unreferenced local variable
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\GroupsPage.h(336,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\GroupsPage.h(344,23): warning C4018: '<': signed/unsigned mismatch
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\News.h(24,28): warning C4251: 'News::newsVector': class 'std::vector<News::news,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'News'
           with
           [
@@ -124,15 +124,15 @@ C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\CompanyPage.h(1289,21): warning C4018: '<': signed/unsigned mismatch
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioDetails.h(196,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioDetails.h(201,21): warning C4101: 'ex': unreferenced local variable
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(494,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(498,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(543,46): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(550,29): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(552,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(526,21): warning C4101: 'ex': unreferenced local variable
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(546,21): warning C4101: 'ex': unreferenced local variable
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\GroupsPage.h(338,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\GroupsPage.h(346,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(522,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(526,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(571,46): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(578,29): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(580,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(554,21): warning C4101: 'ex': unreferenced local variable
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\PortfolioPage.h(574,21): warning C4101: 'ex': unreferenced local variable
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\GroupsPage.h(336,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\GUI\GroupsPage.h(344,23): warning C4018: '<': signed/unsigned mismatch
 C:\Users\lfieb\Documents\School\CISC320\TuringTrader\turing\TuringTraderDLL\TuringTraderDLL\News.h(24,28): warning C4251: 'News::newsVector': class 'std::vector<News::news,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'News'
           with
           [
